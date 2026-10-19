@@ -156,3 +156,8 @@ dialog .close { position: absolute; right: 10px; top: 8px; border: 0; background
 .star-wide { padding: 10px; border-radius: 12px; font-weight: 700; }
 .star-wide.on { color: var(--accent); border-color: var(--accent); }
 @media (max-width: 420px) { .brand { font-size: 14px; } .seg button { padding: 6px 10px; } }
+.ev-score {
+  display: block; width: fit-content; margin-top: 4px; padding: 1px 6px; border-radius: 6px;
+  font-size: 11px; font-weight: 800; color: #fff; background: var(--low);
+}
+.ev-score.hi { background: var(--good); } .ev-score.mid { background: var(--mid); }

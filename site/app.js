@@ -201,7 +201,7 @@ function streamRow(e) {
   const where = [e.venue, e.neighborhood, price(e)].filter(Boolean).join(" · ");
   const blurb = e.score_reason || e.desc || "";
   return `<div class="ev ${scoreClass(e.score)}" role="button" tabindex="0" data-id="${esc(e.id)}">
-    <div class="ev-time">${esc(timeLabel(e))}</div>
+    <div class="ev-time">${esc(timeLabel(e))}<span class="ev-score ${scoreClass(e.score)}">${e.score ?? "–"}</span></div>
     <div class="ev-body">
       <div class="ev-title">${esc(e.title)}${badges(e)}</div>
       <div class="ev-where">${esc(where)}</div>
