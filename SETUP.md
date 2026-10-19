@@ -38,8 +38,10 @@ Tick these off as you go (details for each step are in README.md).
 - [x] Secrets `ANTHROPIC_API_KEY` and `APIFY_TOKEN` (the values in `.env`). Do this soon: until
       the key is there, scheduled runs can't read the venue sites and their shows drop off after ~7h
 - [x] Variable `PAGES_URL` = `https://jackdavison.github.io/rio-music/`
-- [ ] Actions → **collect** → Run workflow; check the log and `status` table
-- [ ] After the first run, check API spend in the Anthropic console and adjust the model if needed
+- [x] First collect + instagram runs on GitHub (2026-10-19): 0 failures, site live at
+      https://jackdavison.github.io/rio-music/ (Shotgun skipped in CI: blocks GitHub IPs)
+- [ ] ~2026-10-26: check API spend in the Anthropic console (expect ~$45/month) and Apify usage
+      (free plan ~$5/month)
 
 ## Fill in your own data
 - [ ] `config/watchlist.txt`: artists and venues to be alerted about (replace the placeholders)
