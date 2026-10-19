@@ -1,12 +1,5 @@
-# Instagram accounts for sp (one handle per line, with or without @). Used only when
-# ENABLE_INSTAGRAM=1 and APIFY_TOKEN is set. Venues whose calendar lives only on Instagram go here.
-#
-# Seed venues whose calendar lives only on Instagram (added during the build;
-# handles could not be verified because Instagram blocks logged-out access):
-odoborogodo      # Ó do Borogodó — no website (unverified handle)
-tracodeuniao     # Traço de União — moved/website gone (unverified handle)
-auditorioibirapuera  # Auditório Ibirapuera — website lost (unverified handle)
-
-# PLACEHOLDERS: add your own handles below.
-# placeholder_handle_1
-# placeholder_handle_2
+# São Paulo venues and collectives on Instagram (one handle per line). Musicians go in
+# instagram_artists.txt instead.
+# None yet: the venue sites (Casa de Francisca, Bourbon, JazzB...) are scraped directly.
+# Dropped 2026-10-18 (no posts returned, handles probably wrong): odoborogodo, tracodeuniao,
+# auditorioibirapuera

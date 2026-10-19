@@ -1,5 +1,42 @@
-# Musicians (and touring collectives) to follow on Instagram, read for every city.
-# One handle per line, optionally followed by a home city slug (default rio):
-#   carlosmalta rio
-# A flyer's printed city decides where a gig is filed, so an SP date by a Rio artist lands in SP.
-# Flyers with no city go to the home city. Venue accounts go in instagram_<city>.txt instead.
+# Musicians to follow on Instagram, read for every city. Format: `handle home`.
+# A flyer's printed city decides where a gig is filed; flyers with no city go to `home`.
+# Use a home other than rio/sp (e.g. `bh`, `br`) to keep only flyers that name Rio or SP.
+
+# Rio
+carlos_malta_oficial rio        # Carlos Malta, sopros
+igormusico7 rio                 # Igor Souza
+hamiltondeholanda rio           # Hamilton de Holanda
+guinga_oficial rio              # Guinga
+joaoboscoreal rio               # João Bosco
+arlindinhooficial rio           # Arlindinho Cruz, samba
+gabrieldamuda rio               # Gabriel Cavalcante, samba
+agua.demoringa rio              # Água de Moringa, choro sextet
+itiberezwarg rio                # Itiberê Zwarg
+cacaguifer rio                  # Cacá Guifer, Itiberê Zwarg Quarteto
+ajurina_zwarg rio               # Ajurinã Zwarg
+edunevesmusica rio              # Edu Neves, flute/sax
+gabrielgrossi rio               # Gabriel Grossi, harmonica
+marciobahiadrums rio            # Márcio Bahia
+flautista.antonio.rocha rio     # Antonio Rocha, flute (Niterói)
+ritmoaguiarbernardo rio         # Bernardo Aguiar, pandeiro
+marcos.china rio                # Marcos China, percussion
+
+# São Paulo
+tecocardosooficial sp           # Teco Cardoso
+andremarquespianist sp          # André Marques
+arismar1i sp                    # Arismar do Espírito Santo
+jotapsax sp                     # Jota P
+fabioperonbandolim sp           # Fábio Peron, bandolim
+maiaramoraes_flauti sp          # Maiara Moraes, flute
+carolpanesi sp                  # Carol Panesi
+rafaeltoledopandeiro sp         # Rafael Toledo, Escola de Choro SP
+pandeiro_arte sp                # Bruna Pia, pandeiro
+
+# Home city unclear or elsewhere: only flyers naming Rio/SP count
+ti.ram.ba.co br                 # Tirambaço
+bebekrameroficial br            # Bebê Kramer, accordion
+matheusrvdonato br              # Matheus Donato
+sergio.alvares.br br            # Sergio Alvares
+rafael_barata_drummer br        # Rafael Barata
+luisamitrepiano bh              # Luísa Mitre
+natmitre bh                     # Natalia Mitre

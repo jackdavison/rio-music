@@ -69,3 +69,18 @@ def test_extract_caches_and_retries_on_failure(monkeypatch):
     assert ig.extract(p) is None                  # failure: not cached
     assert ig.extract(p) == [] and ig.extract(p) == []
     assert len(seen) == 2 and seen[0]["task"] == "vision" and len(seen[0]["images"]) == 1
+
+
+def test_collab_post_credited_to_requested_account(monkeypatch):
+    class R:
+        def raise_for_status(self): pass
+        def json(self): return [_post(owner="teatrorivalpetrobras", pid="c1",
+                                      inputUrl="https://www.instagram.com/guinga_oficial")]
+
+    class S:
+        def post(self, *a, **k): return R()
+
+    monkeypatch.setenv("APIFY_TOKEN", "t")
+    monkeypatch.setattr(ig.http, "session", lambda: S())
+    monkeypatch.setattr(ig, "_fetched", {})
+    assert [p["id"] for p in ig.posts_for(["guinga_oficial"], 6, 10)] == ["c1"]

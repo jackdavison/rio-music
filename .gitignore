@@ -6,3 +6,5 @@ __pycache__/
 site/events.json
 site/*.ics
 data/model-comparison.md
+data/instagram_data*
+data/instagram-*

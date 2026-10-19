@@ -160,7 +160,7 @@ def _rank(cities: list[CityConfig], models: list[str], sample: int) -> list[str]
     return out
 
 
-def _vision(models: list[str], sample: int = 30) -> list[str]:
+def _vision(models: list[str], sample: int = 100) -> list[str]:
     from .collectors import instagram as ig
     out = ["## Instagram flyers", ""]
     rows = db.conn().execute("SELECT value FROM cache WHERE ns='instagram_post' ORDER BY created DESC "

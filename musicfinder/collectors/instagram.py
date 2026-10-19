@@ -95,11 +95,16 @@ def posts_for(accounts: list[str], per_account: int, since_days: int) -> list[di
         for a in todo:
             _fetched[a.lower()] = []
         for p in fetch_posts(todo, per_account, since_days):
-            owner = str(p.get("ownerUsername") or p.get("inputUrl") or "").lower().rstrip("/").split("/")[-1]
-            _fetched.setdefault(owner, []).append(p)
+            # credit the account we asked for: collab posts carry the partner as ownerUsername
+            _fetched.setdefault(_source_account(p), []).append(p)
             if p.get("id") or p.get("shortCode"):
                 db.cache_put("instagram_post", _post_id(p), p)
     return [p for a in accounts for p in _fetched.get(a.lower(), [])]
+
+
+def _source_account(p: dict) -> str:
+    src = p.get("inputUrl") or p.get("ownerUsername") or ""
+    return str(src).lower().rstrip("/").split("/")[-1].split("?")[0]
 
 
 def _post_id(p: dict) -> str:
@@ -178,6 +183,8 @@ def to_events(city: str, post: dict, items: list[dict], city_name: str = "",
             d = datetime.fromisoformat(it["date"]).date()
         except (KeyError, ValueError):
             continue
+        if it.get("time") in ("23:59", "00:00"):
+            it["time"] = ""  # what the model writes for "no time on the flyer" despite the prompt
         hh, mm = (it.get("time") or "20:00").split(":")[:2] if it.get("time") else ("20", "00")
         start = datetime(d.year, d.month, d.day, int(hh), int(mm), tzinfo=TZ)
         ev = Event(
@@ -230,7 +237,7 @@ def collect(city, cfg):
         ts = p.get("timestamp")
         if ts and datetime.fromisoformat(ts.replace("Z", "+00:00")) < cutoff:
             continue
-        owner = str(p.get("ownerUsername") or "").lower()
+        owner = _source_account(p)
         # venue accounts listed for this city keep city-less flyers; artist accounts only in
         # their home city
         default_city = owner not in home or home[owner] == city.slug or owner in {a.lower() for a in local}
