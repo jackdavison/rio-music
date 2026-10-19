@@ -4,6 +4,9 @@
 #   venue: <name>    matches the venue
 #   <text>           matches either
 #
-# PLACEHOLDERS: replace these with your own.
-artist: PLACEHOLDER Artist Name
-venue: PLACEHOLDER Venue Name
+# Without Telegram these just get a "watch" badge on the site.
+Portela
+Salgueiro
+Mangueira
+Império Serrano
+venue: Renascença
