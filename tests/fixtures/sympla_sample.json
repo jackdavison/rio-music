@@ -1,0 +1,343 @@
+{
+ "data": [
+  {
+   "id": 3585987,
+   "name": "Orquestra Furiosa Portátil - Temporada 2026 - CHOROS PARA MOACIR - Casa do Choro",
+   "start_date": "2026-10-28T22:00:00+00:00",
+   "end_date": "2026-10-28T23:00:00+00:00",
+   "start_date_utc": "2026-10-28T22:00:00+00:00",
+   "end_date_utc": "2026-10-28T23:00:00+00:00",
+   "start_date_formats": {
+    "pt": "Qua, 28 Out - 2026 · 19:00",
+    "en": "Wed, 28 Oct - 2026 · 19:00",
+    "es": "Mie, 28 Oct - 2026 · 19:00"
+   },
+   "url": "https://www.sympla.com.br/evento/orquestra-furiosa-portatil-temporada-2026-choros-para-moacir-casa-do-choro/3585987",
+   "images": {
+    "original": "https://images.sympla.com.br/699e0d892bc97.png",
+    "xs": "https://images.sympla.com.br/699e0d892bc97-xs.png",
+    "lg": "https://images.sympla.com.br/699e0d892bc97-lg.png"
+   },
+   "location": {
+    "country": "BRASIL",
+    "address": "Rua da Carioca",
+    "address_alt": "",
+    "city": "Rio de Janeiro",
+    "address_num": "38",
+    "name": "Rua da Carioca, 38",
+    "lon": -43.1803408,
+    "state": "RJ",
+    "neighborhood": "Centro",
+    "zip_code": "20050-008",
+    "lat": -22.9064584
+   },
+   "organizer": {
+    "image": "",
+    "organizer_range": "MID_TAIL",
+    "name": "Casa do Choro",
+    "id": "10479182",
+    "url": "",
+    "email": "financeiro@casadochoro.com.br",
+    "organizer_range_id": "2"
+   },
+   "theme_name": "Música",
+   "subtheme_name": "Multigênero",
+   "format_name": "Apresentações e espetáculos",
+   "format_sk": 157,
+   "theme_sk": 99,
+   "category_prim": {
+    "name": "musica"
+   },
+   "is_free": false,
+   "duration_type": "single",
+   "event_type": "NORMAL",
+   "type": "NORMAL",
+   "city": "Rio de Janeiro",
+   "state": "RJ",
+   "timezone": "America/Sao_Paulo"
+  },
+  {
+   "id": 3607241,
+   "name": "Samba Trombonado, com Fernando Jovem e Convidados",
+   "start_date": "2026-10-24T22:00:00+00:00",
+   "end_date": "2026-10-25T02:30:00+00:00",
+   "start_date_utc": "2026-10-24T22:00:00+00:00",
+   "end_date_utc": "2026-10-25T02:30:00+00:00",
+   "start_date_formats": {
+    "pt": "Sab, 24 Out - 2026 · 19:00",
+    "en": "Sat, 24 Oct - 2026 · 19:00",
+    "es": "Sab, 24 Oct - 2026 · 19:00"
+   },
+   "url": "https://www.sympla.com.br/evento/samba-trombonado-com-fernando-jovem-e-convidados/3607241",
+   "images": {
+    "original": "https://images.sympla.com.br/6ac992f01334b.jpg",
+    "xs": "https://images.sympla.com.br/6ac992f01334b-xs.jpg",
+    "lg": "https://images.sympla.com.br/6ac992f01334b-lg.jpg"
+   },
+   "location": {
+    "country": "BRASIL",
+    "address": "Rua do Catete",
+    "address_alt": "",
+    "city": "Rio de Janeiro",
+    "address_num": "97",
+    "name": "Glorioso Cultural",
+    "lon": -43.1767595,
+    "state": "RJ",
+    "neighborhood": "Catete",
+    "zip_code": "22220-001",
+    "lat": -22.924014
+   },
+   "organizer": {
+    "image": "",
+    "organizer_range": "LONG_TAIL",
+    "name": "Paulo Cesar Figueiredo",
+    "id": "320766547",
+    "url": "",
+    "email": "orum.prod.artisticas@gmail.com",
+    "organizer_range_id": "3"
+   },
+   "theme_name": "Música",
+   "subtheme_name": "Samba | Pagode",
+   "format_name": "Festa",
+   "format_sk": 80,
+   "theme_sk": 99,
+   "category_prim": {
+    "name": "musica"
+   },
+   "is_free": false,
+   "duration_type": "single",
+   "event_type": "NORMAL",
+   "type": "NORMAL",
+   "city": "Rio de Janeiro",
+   "state": "RJ",
+   "timezone": "America/Sao_Paulo"
+  },
+  {
+   "id": 3621365,
+   "name": "Wave hunters surf camp",
+   "start_date": "2026-10-16T17:30:00+00:00",
+   "end_date": "2026-10-16T23:00:00+00:00",
+   "start_date_utc": "2026-10-16T17:30:00+00:00",
+   "end_date_utc": "2026-10-16T23:00:00+00:00",
+   "start_date_formats": {
+    "pt": "Sex, 16 Out - 2026 · 14:30",
+    "en": "Fri, 16 Oct - 2026 · 14:30",
+    "es": "Vie, 16 Oct - 2026 · 14:30"
+   },
+   "url": "https://www.sympla.com.br/evento/wave-hunters-surf-camp/3621365",
+   "images": {
+    "original": "https://images.sympla.com.br/6ad25cb6a69ea.jpg",
+    "xs": "https://images.sympla.com.br/6ad25cb6a69ea-xs.jpg",
+    "lg": "https://images.sympla.com.br/6ad25cb6a69ea-lg.jpg"
+   },
+   "location": {
+    "country": "BRASIL",
+    "address": "Rua FW",
+    "address_alt": "",
+    "city": "Rio de Janeiro",
+    "address_num": "74",
+    "name": "Wave hunters Surfcamp ",
+    "lon": -43.479857,
+    "state": "RJ",
+    "neighborhood": "Recreio dos bandeirantes ",
+    "zip_code": "22795-810",
+    "lat": -23.0272269
+   },
+   "organizer": {
+    "image": "",
+    "organizer_range": "LONG_TAIL",
+    "name": "Wave hunters hostel e surf camp",
+    "id": "318626901",
+    "url": "",
+    "email": "biancardinicollas@gmail.com",
+    "organizer_range_id": "3"
+   },
+   "theme_name": "Música",
+   "subtheme_name": "Multigênero",
+   "format_name": "Festa",
+   "format_sk": 80,
+   "theme_sk": 99,
+   "category_prim": {
+    "name": "empreendedorismo-negocios-e-inovacao"
+   },
+   "is_free": true,
+   "duration_type": "single",
+   "event_type": "NORMAL",
+   "type": "NORMAL",
+   "city": "Rio de Janeiro",
+   "state": "RJ",
+   "timezone": "America/Sao_Paulo"
+  },
+  {
+   "id": 50115983,
+   "name": "Visitação Diária",
+   "start_date": "2026-10-16T02:00:00+00:00",
+   "end_date": "2026-11-08T02:00:00+00:00",
+   "start_date_utc": "2026-10-16T02:00:00+00:00",
+   "end_date_utc": "2026-11-08T02:00:00+00:00",
+   "start_date_formats": {
+    "pt": "Qui, 15 Out - 2026 · 23:00",
+    "en": "Thu, 15 Oct - 2026 · 23:00",
+    "es": "Jue, 15 Oct - 2026 · 23:00"
+   },
+   "url": "https://bileto.sympla.com.br/event/115983",
+   "images": {
+    "original": "https://assets.bileto.sympla.com.br/eventmanager/production/2k7h2m5ju6b9s5vvs2jlhng57a6j0le5vvp895v9sjoetafrshrqn8j9lq9vi0544a1i9fmq2lekl6e45qrr48rgv6qk92n728ddila.jpeg",
+    "lg": "https://assets.bileto.sympla.com.br/eventmanager/production/2k7h2m5ju6b9s5vvs2jlhng57a6j0le5vvp895v9sjoetafrshrqn8j9lq9vi0544a1i9fmq2lekl6e45qrr48rgv6qk92n728ddila.jpeg",
+    "xs": "https://assets.bileto.sympla.com.br/eventmanager/production/2k7h2m5ju6b9s5vvs2jlhng57a6j0le5vvp895v9sjoetafrshrqn8j9lq9vi0544a1i9fmq2lekl6e45qrr48rgv6qk92n728ddila.jpeg"
+   },
+   "location": {
+    "country": "",
+    "address": " Praça Ênio",
+    "address_alt": "",
+    "city": "Rio de Janeiro",
+    "address_num": "0",
+    "name": "Arena Carioca Jovelina Pérola Negra",
+    "lon": -43.3577227,
+    "state": "RJ",
+    "neighborhood": "",
+    "zip_code": "",
+    "lat": -22.8071899
+   },
+   "organizer": {
+    "image": "",
+    "organizer_range": "LONG_TAIL",
+    "name": "Município de Rio de Janeiro - Arena Cultural Jovelina Pérola Negra",
+    "id": "5799",
+    "url": "",
+    "email": "jovelinaperolanegra.arena@gmail.com",
+    "organizer_range_id": "3"
+   },
+   "theme_name": "Música",
+   "subtheme_name": "Multigênero",
+   "format_name": "Festa",
+   "format_sk": 80,
+   "theme_sk": 99,
+   "category_prim": {
+    "name": "Especiais"
+   },
+   "is_free": false,
+   "duration_type": "multiple",
+   "event_type": "NORMAL",
+   "type": "NORMAL",
+   "city": "Rio de Janeiro",
+   "state": "RJ",
+   "timezone": "America/Sao_Paulo"
+  },
+  {
+   "id": 3615189,
+   "name": "Mulheres Negras em Estado de Primavera: Florescendo as Potências de Dentro",
+   "start_date": "2026-10-16T15:00:00+00:00",
+   "end_date": "2026-10-17T01:00:00+00:00",
+   "start_date_utc": "2026-10-16T15:00:00+00:00",
+   "end_date_utc": "2026-10-17T01:00:00+00:00",
+   "start_date_formats": {
+    "pt": "Sex, 16 Out - 2026 · 12:00",
+    "en": "Fri, 16 Oct - 2026 · 12:00",
+    "es": "Vie, 16 Oct - 2026 · 12:00"
+   },
+   "url": "https://www.sympla.com.br/evento/mulheres-negras-em-estado-de-primavera-florescendo-as-potencias-de-dentro/3615189",
+   "images": {
+    "original": "https://images.sympla.com.br/6acd0e7d9230b.jpg",
+    "xs": "https://images.sympla.com.br/6acd0e7d9230b-xs.jpg",
+    "lg": "https://images.sympla.com.br/6acd0e7d9230b-lg.jpg"
+   },
+   "location": {
+    "country": "BRASIL",
+    "address": "Rua Pedro Ernesto",
+    "address_alt": "",
+    "city": "Rio de Janeiro",
+    "address_num": "80",
+    "name": "MUHCAB - Museu da História e da Cultura Afro-Brasileira",
+    "lon": -43.1942807,
+    "state": "RJ",
+    "neighborhood": "GAMBOA",
+    "zip_code": "20220-350",
+    "lat": -22.8961376
+   },
+   "organizer": {
+    "image": "",
+    "organizer_range": "LONG_TAIL",
+    "name": "Millena Alves da Silva",
+    "id": "6747197",
+    "url": "",
+    "email": "mille.alvesbb@gmail.com",
+    "organizer_range_id": "3"
+   },
+   "theme_name": "Música",
+   "subtheme_name": "Multigênero",
+   "format_name": "Festa",
+   "format_sk": 80,
+   "theme_sk": 99,
+   "category_prim": {
+    "name": "sociedade-e-cultura"
+   },
+   "is_free": true,
+   "duration_type": "single",
+   "event_type": "NORMAL",
+   "type": "NORMAL",
+   "city": "Rio de Janeiro",
+   "state": "RJ",
+   "timezone": "America/Sao_Paulo"
+  },
+  {
+   "id": 2737423,
+   "name": "7º Live solidária- Uneb",
+   "start_date": "2024-11-20T22:49:00+00:00",
+   "end_date": "2034-11-21T00:00:00+00:00",
+   "start_date_utc": "2024-11-20T22:49:00+00:00",
+   "end_date_utc": "2034-11-21T00:00:00+00:00",
+   "start_date_formats": {
+    "pt": "Qua, 20 Nov - 2024 · 19:49",
+    "en": "Wed, 20 Nov - 2024 · 19:49",
+    "es": "Mie, 20 Nov - 2024 · 19:49"
+   },
+   "url": "https://www.sympla.com.br/evento-online/7o-live-solidaria-uneb/2737423",
+   "images": {
+    "original": "https://images.sympla.com.br/67382e6732b01.jpg",
+    "xs": "https://images.sympla.com.br/67382e6732b01-xs.jpg",
+    "lg": "https://images.sympla.com.br/67382e6732b01-lg.jpg"
+   },
+   "location": {
+    "country": "",
+    "address": "",
+    "address_alt": "",
+    "city": "",
+    "address_num": "0",
+    "name": "",
+    "lon": 0,
+    "state": "",
+    "neighborhood": "",
+    "zip_code": "",
+    "lat": 0
+   },
+   "organizer": {
+    "image": "",
+    "organizer_range": "LONG_TAIL",
+    "name": "Alana Gomes Serra",
+    "id": "20323059",
+    "url": "",
+    "email": "gomesalana686@gmail.com",
+    "organizer_range_id": "3"
+   },
+   "theme_name": "Música",
+   "subtheme_name": "Música Eletrônica",
+   "format_name": "Palestra | Conferência | Painel",
+   "format_sk": 84,
+   "theme_sk": 99,
+   "category_prim": {
+    "name": "academico-e-cientifico"
+   },
+   "is_free": true,
+   "duration_type": "multiple",
+   "event_type": "ONLINE",
+   "type": "ONLINE",
+   "city": "",
+   "state": "",
+   "timezone": "America/Sao_Paulo"
+  }
+ ],
+ "total": 6,
+ "limit": 24,
+ "page": 1
+}

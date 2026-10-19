@@ -1,0 +1,5 @@
+# Musicians (and touring collectives) to follow on Instagram, read for every city.
+# One handle per line, optionally followed by a home city slug (default rio):
+#   carlosmalta rio
+# A flyer's printed city decides where a gig is filed, so an SP date by a Rio artist lands in SP.
+# Flyers with no city go to the home city. Venue accounts go in instagram_<city>.txt instead.

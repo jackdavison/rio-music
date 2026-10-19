@@ -1,0 +1,78 @@
+# São Paulo. Same shape as rio.yaml.
+name: São Paulo
+timezone: America/Sao_Paulo
+ics_min_score: 65
+gcal_calendar_id_env: GCAL_ID_SP
+
+digest:
+  style: top             # top picks next N days + big shows further out
+  top_days: 14           # "next 14 days' top picks"
+  top_min_score: 70
+  max_top: 12
+  big_min_score: 85      # "big shows further out"
+  big_days: 90
+  max_big: 6
+
+collectors:
+  recurring: {}           # config/recurring_<city>.yaml
+  gigs: {}                # config/gigs_<city>.yaml: one-off gigs / tips added by hand
+  instagram:               # needs ENABLE_INSTAGRAM=1 + APIFY_TOKEN; runs on its own schedule
+    posts_per_account: 6
+    since_days: 10
+  sympla:
+    city_name: São Paulo
+    state: SP
+    include_arts: true
+  sesc_sp:                 # sescsp.org.br public WP JSON API (linguagem=musica)
+    include_metro: false   # true adds Guarulhos, Mogi, Osasco, Santo André, São Caetano
+    extra_units: []        # any unit slug, e.g. [santos]
+    # units: [...]         # default: all ~20 units in the city of São Paulo
+  eventim:
+    city_id: "943"
+    city_name: São Paulo
+  bilheteria_digital:
+    state: SP
+    cities: [São Paulo]
+  shotgun:
+    city_slug: sao-paulo
+    max_details: 250
+  queremos:
+    city_names: [sao paulo, sp]
+    default_time: "21:00"
+  fever:
+    city_slug: sao-paulo
+    filters: [eventos-musica, concertos, candlelight, the-jazz-room, opera, festivais]
+    city_codes: [GRU, CCE, NDF]  # SP, ABC, Guarulhos
+  venues:
+    venues:
+      - name: Casa de Francisca
+        url: https://casadefrancisca.art.br/novo/programacao
+        neighborhood: Sé
+      - name: Blue Note São Paulo
+        url: https://bluenotesp.com/
+        neighborhood: Bela Vista
+        mode: wp_rest
+        api: https://bluenotesp.com/wp-json/wp/v2/shows
+        fields:
+          start: acf.data_e_hora_de_inicio
+          subtitle: acf.subtitulo
+          ticket_url: acf.sets.0.link_para_compra
+          sold_out: acf.ingresso_esgotado
+        sets: {path: acf.sets, time: horario_do_set, ticket_url: link_para_compra}
+      - name: JazzB (Jazz nos Fundos)
+        url: https://www.jazzb.com.br/shows
+        neighborhood: República
+      - name: Bourbon Street Music Club
+        url: https://bourbonstreet.com.br/
+        neighborhood: Moema
+      - name: Teatro Sérgio Cardoso
+        url: https://amigosdaarte.org.br/equipamentos/teatro-sergio-cardoso/
+        neighborhood: Bela Vista
+        mode: fullcalendar
+        api: https://amigosdaarte.org.br/wp-json/bdd-calendar/v1/events
+        terms: [Teatro Sérgio Cardoso]
+        music_only: true             # feed is mostly theatre/dance
+        music_keywords: [soprano, mezzo, spirituals, canta, cantora, concerto, recital, opera, sinfon, orquestra, piano, coral]
+      - name: Casa Natura Musical    # added: replaces Auditório Ibirapuera (domain lost)
+        url: https://casanaturamusical.com.br/
+        neighborhood: Pinheiros

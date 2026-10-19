@@ -1,0 +1,12 @@
+anthropic>=1.15,<2
+requests>=2.32
+PyYAML>=6.0
+rapidfuzz>=3.9
+icalendar>=6.0
+beautifulsoup4>=4.12
+lxml>=5.0
+python-dateutil>=2.9
+google-api-python-client>=2.150
+google-auth>=2.35
+pytest>=8
+curl_cffi>=0.7        # Shotgun: browser TLS fingerprint to get past its bot checkpoint

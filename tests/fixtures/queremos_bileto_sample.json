@@ -1,0 +1,202 @@
+{
+ "data": {
+  "id": 123300,
+  "tributes_percentage": "18.38",
+  "name": "Queremos! Ocean Alley",
+  "event_category_id": 5,
+  "event_genre_id": 101,
+  "notification_image": "https://assets.bileto.sympla.com.br/eventmanager/production/30gnlucbn5n2ci2risvqdqesfgtkjvlq36gothdooahj498h7i153t5a0en61v2jvd984i1g8l7uf4eov4f13bvhgkcqcdf0agmcsd4.webp",
+  "presentations": {
+   "items": [
+    {
+     "id": 397656,
+     "name": "Queremos! Ocean Alley",
+     "sectors": [
+      {
+       "id": 2618028,
+       "name": "Pista",
+       "access_gate": ".",
+       "lowest_price": {
+        "currency": "BRL",
+        "value": "18000"
+       },
+       "highest_price": {
+        "currency": "BRL",
+        "value": "36000"
+       },
+       "total_booked": 487,
+       "total_capacity": 2300,
+       "total_blocked": 100,
+       "total_available": 1713,
+       "highest_prices": {
+        "BRL": {
+         "currency": "BRL",
+         "value": "36000"
+        }
+       },
+       "lowest_prices": {
+        "BRL": {
+         "currency": "BRL",
+         "value": "18000"
+        }
+       },
+       "order_index": 0,
+       "has_seats_available": true,
+       "partial_table": false,
+       "bookables": [
+        "SEATS"
+       ]
+      }
+     ],
+     "presentation_date_time": 1793925000,
+     "presentation_local_date_time": "2026-11-05T21:30:00-03:00",
+     "enabled": true,
+     "sales_start_date_time": 1782995056,
+     "closing_sales_date_time": 1793924100,
+     "timezone": "America/Sao_Paulo",
+     "enabled_for_channel": true,
+     "highest_price": {
+      "currency": "BRL",
+      "value": "36000"
+     },
+     "highest_prices": {
+      "BRL": {
+       "currency": "BRL",
+       "value": "36000"
+      }
+     },
+     "lowest_prices": {
+      "BRL": {
+       "currency": "BRL",
+       "value": "18000"
+      }
+     },
+     "lowest_price": {
+      "currency": "BRL",
+      "value": "18000"
+     },
+     "total_booked": 487,
+     "total_blocked": 100,
+     "total_available": 1713,
+     "total_capacity": 2300
+    }
+   ],
+   "next_date_time": 1793925000,
+   "next_local_date_time": "2026-11-05T21:30:00-03:00",
+   "highest_price": {
+    "currency": "BRL",
+    "value": "36000"
+   },
+   "highest_prices": {
+    "BRL": {
+     "currency": "BRL",
+     "value": "36000"
+    }
+   },
+   "lowest_price": {
+    "currency": "BRL",
+    "value": "18000"
+   },
+   "lowest_prices": {
+    "BRL": {
+     "currency": "BRL",
+     "value": "18000"
+    }
+   },
+   "total_booked": 487,
+   "total_blocked": 100,
+   "total_available": 1713,
+   "total_capacity": 2300
+  },
+  "venue": {
+   "id": 42,
+   "name": "Circo Voador",
+   "locale": {
+    "address": "Rua dos Arcos",
+    "city": {
+     "id": 713,
+     "name": "Rio de Janeiro",
+     "state_id": 2
+    },
+    "state": {
+     "id": 2,
+     "name": "Rio de Janeiro",
+     "country_id": 1
+    },
+    "country": {
+     "id": 1,
+     "name": "Brasil"
+    },
+    "postal_code": "20230060",
+    "lat": -22.912193,
+    "lon": -43.1812126
+   },
+   "data": {
+    "medias": [
+     {
+      "rel": "profile",
+      "url": "https://static.bileto.sympla.com.br/img/venues/lI004887.jpg",
+      "type": "image/jpg"
+     }
+    ],
+    "access_code_type_id": 4
+   },
+   "external_id": 288,
+   "created_at": 1498054578,
+   "updated_at": 1498054578
+  },
+  "next_local_date_time": "2026-11-05T21:30:00-03:00",
+  "last_local_date_time": "2026-11-05T21:30:00-03:00",
+  "publish_date_time": "2026-07-02T09:24:17-03:00",
+  "planner_information": {
+   "age_rating": {
+    "age_rating_value": 6,
+    "age_rating_name": "18 anos"
+   }
+  },
+  "organizer_id": 5951,
+  "hide_event_time": false,
+  "description": {
+   "raw": "<h2 style=\"text-align: center;\"><strong>OCEAN ALLEY FAZ SHOW NO RIO PROMOVIDO PELO QUEREMOS!<br /></strong><span style=\"font-size: 12pt;\"><em>Em seu retorno ao Brasil, banda australiana se apresenta no Rio de Janeiro pela primeira vez e chega ao Circo Voador dia 5 de novembro<strong><br /></strong></em></span></h2>\n<h2 align=\"center\">&nbsp;</h2>\n<h2 style=\"text-align: center;\"><em style=\"font-size: 11px;\"><span style=\"font-weight: 400;\"><img src=\"https://i.ibb.co/WWZrsSHz/images.jpg\" alt=\"\" width=\"588\" height=\"463\" /></span></em></h2>\n<p style=\"text-align: center;\"><strong>QUEREMOS! TRAZ OCEAN",
+   "title": "Queremos! Ocean Alley"
+  },
+  "white_label_sympla_bileto": true,
+  "user_auth_required": false,
+  "tags": {
+   "PARTY": "Festa",
+   "CONCERT": "Show"
+  },
+  "medias": [
+   {
+    "rel": "profile",
+    "url": "https://assets.bileto.sympla.com.br/eventmanager/production/30gnlucbn5n2ci2risvqdqesfgtkjvlq36gothdooahj498h7i153t5a0en61v2jvd984i1g8l7uf4eov4f13bvhgkcqcdf0agmcsd4.webp",
+    "type": "image/webp",
+    "aspect_ratio": "16:9"
+   },
+   {
+    "rel": "profile",
+    "url": "https://assets.bileto.sympla.com.br/eventmanager/production/cqigpqu6g78u6pev8sab1sl39leo8ashdl8e557onptqg5n7l86rp15ajvo5v3ceapijm7cdubhnnmj7j2484tct7op073k177ql7u.jpeg",
+    "type": "image/jpeg",
+    "aspect_ratio": "16:9"
+   }
+  ],
+  "transfer": {
+   "due_at": "",
+   "enabled": false
+  },
+  "sales_flow_type": 1,
+  "postponed_delivery": false,
+  "financial_tracking_disabled": {
+   "facebook": false,
+   "fitmedia": true,
+   "google_adwords": false,
+   "google_analytics": false
+  },
+  "date_summary": {
+   "week": "Abertura da Casa: 20h | Início do Show: 21h30",
+   "period": "5 de Novembro"
+  },
+  "hide_event_date_time": false,
+  "status": "STARTED"
+ }
+}

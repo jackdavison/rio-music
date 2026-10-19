@@ -1,0 +1,9 @@
+# Watchlist: an event matching any line triggers an instant Telegram alert the first time it
+# appears (either city), and when it is close to selling out. Matching is accent/case-insensitive.
+#   artist: <name>   matches title or artists
+#   venue: <name>    matches the venue
+#   <text>           matches either
+#
+# PLACEHOLDERS: replace these with your own.
+artist: PLACEHOLDER Artist Name
+venue: PLACEHOLDER Venue Name

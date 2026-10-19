@@ -1,0 +1,492 @@
+[
+ {
+  "Id": 56688,
+  "mod_date": "2026-07-08 13:25:22",
+  "slug": "2026-10-16-ira",
+  "meta_titulo": "Ira! :: Circo Voador",
+  "meta_descricao": "Uma noite para revisitar um clássico do rock brazuca. Sexta, 24 de novembro, o IRA! sobe ao palco do Circo para comemorar os 35 anos do álbum ‘Psicoacústica’, cultuado por sua sonoridade conceitual, experimental e altamente lisérgica. Além de tocar o disco na íntegra, Nasi, Scandurra e cia despejam hits dos seus mais de 40 anos de carreira, como ‘Flores em Você’, ‘Envelheço na Cidade’, ‘Dias de Luta’ e ‘Tarde Vazia’.",
+  "meta_imagem": {
+   "id": 38427,
+   "alt": "",
+   "title": "imagem_spotify",
+   "caption": "",
+   "description": "",
+   "mime_type": "image/png",
+   "url": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2023/06/imagem_spotify.png",
+   "width": 548,
+   "height": 665,
+   "sizes": {
+    "thumbnail": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2023/06/imagem_spotify-150x150.png",
+    "thumbnail-width": 150,
+    "thumbnail-height": 150,
+    "medium": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2023/06/imagem_spotify-247x300.png",
+    "medium-width": 247,
+    "medium-height": 300,
+    "medium_large": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2023/06/imagem_spotify.png",
+    "medium_large-width": 548,
+    "medium_large-height": 665,
+    "large": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2023/06/imagem_spotify.png",
+    "large-width": 548,
+    "large-height": 665,
+    "1536x1536": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2023/06/imagem_spotify.png",
+    "1536x1536-width": 548,
+    "1536x1536-height": 665,
+    "2048x2048": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2023/06/imagem_spotify.png",
+    "2048x2048-width": 548,
+    "2048x2048-height": 665,
+    "darken": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2023/06/imagem_spotify.png",
+    "darken-width": 548,
+    "darken-height": 665,
+    "evento-capa": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2023/06/imagem_spotify-548x503.png",
+    "evento-capa-width": 548,
+    "evento-capa-height": 503
+   }
+  },
+  "meta_keywords": "ira!",
+  "data": "16/10",
+  "imagem_capa": {
+   "id": 56689,
+   "alt": "",
+   "title": "Site_Circo (35)",
+   "caption": "",
+   "description": "",
+   "mime_type": "image/png",
+   "url": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/07/Site_Circo-35.png",
+   "width": 1920,
+   "height": 1080,
+   "sizes": {
+    "thumbnail": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/07/Site_Circo-35-150x150.png",
+    "thumbnail-width": 150,
+    "thumbnail-height": 150,
+    "medium": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/07/Site_Circo-35-300x169.png",
+    "medium-width": 300,
+    "medium-height": 169,
+    "medium_large": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/07/Site_Circo-35-768x432.png",
+    "medium_large-width": 640,
+    "medium_large-height": 360,
+    "large": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/07/Site_Circo-35-1024x576.png",
+    "large-width": 640,
+    "large-height": 360,
+    "1536x1536": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/07/Site_Circo-35-1536x864.png",
+    "1536x1536-width": 1536,
+    "1536x1536-height": 864,
+    "2048x2048": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/07/Site_Circo-35.png",
+    "2048x2048-width": 1920,
+    "2048x2048-height": 1080,
+    "darken": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/07/Site_Circo-35.png",
+    "darken-width": 1920,
+    "darken-height": 1080,
+    "evento-capa": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/07/Site_Circo-35-1000x503.png",
+    "evento-capa-width": 1000,
+    "evento-capa-height": 503
+   }
+  },
+  "opacidade_capa": "",
+  "artistas": [
+   "Ira! Acústico 20 anos"
+  ],
+  "texto_adicional_capa": "<p>&#8211;<br />\nAbertura dos Portões: 20:00</p>\n",
+  "status": "comprar",
+  "url_botao": "https://www.eventim.com.br/artist/ira/?affiliate=C2Q",
+  "texto_extra_botao": "",
+  "lotes": [
+   {
+    "esgotado": true,
+    "nome": "Lote 1 | ESGOTADO",
+    "preco-inteira": "R$ 80 (meia/ solidário)*",
+    "preco-meia": "R$ 160 (inteira)"
+   },
+   {
+    "esgotado": true,
+    "nome": "Lote 2 | ESGOTADO",
+    "preco-inteira": "R$ 90 (meia/ solidário)*",
+    "preco-meia": "R$ 180 (inteira)"
+   },
+   {
+    "esgotado": false,
+    "nome": "Lote 3",
+    "preco-inteira": "R$ 100 (meia/ solidário)*",
+    "preco-meia": "R$ 200 (inteira)"
+   }
+  ],
+  "lotes_infos_extra": "<p class=\"p1\"><span class=\"s1\"><b>&#8211;<br />\n</b></span><span class=\"s1\"><b>*Ingressos com desconto (50%):<br />\n</b></span><span class=\"s1\"><b>Meia-entrada:</b> estudantes; menores de 21 anos; maiores de 60 anos; pessoas com deficiência; jovens pertencentes a famílias de baixa renda com idades de 15 a 29 anos; diretores, coordenadores pedagógicos, supervisores e titulares de cargos do quadro de apoio das escolas das redes estadual e municipal do RJ e professores da rede pública estadual e municipal do RJ;<br />\n</span><span class=\"s1\"><b>Solidário:</b> desconto de 50% para quem trouxer 1kg de alimento não-perecível para doação. Na compra do ingresso solidário, a doação deve ser entregue no dia do show;<br />\n</span><span class=\"s1\"><b>Clube O Globo:</b> válido para clientes que apresentarem a carteirinha de associado do Clube O Globo. Desconto limitado a 02 (dois) ingressos por associado;<br />\n</span><span class=\"s1\"><b>Giro MetrôRio:</b> cadastre seu cartão no site do <a href=\"https://www.metrorio.com.br/giro/vantagens\" target=\"_blank\" rel=\"noopener\">Giro MetrôRio</a> e pague meia-entrada em até 02 (dois) ingressos.</span></p>\n<p class=\"p1\"><span class=\"s1\"><b>&#8211;<br />\n</b></span><span class=\"s1\"><b>PONTOS DE VENDA<br />\n</b></span><span class=\"s1\">Bilheteria do Circo (dinheiro e cartão de débito/crédito Elo, Visa e Mastercard)<br />\n</span><span class=\"s1\"><a href=\"https://www.eventim.com.br/search/?affiliate=BR1&amp;searchterm=circo+voador\">Plataformas da Eventim</a></span></p>\n<p class=\"p1\"><span class=\"s1\"><b>&#8211;<br />\n</b></span><span class=\"s1\"><b>HORÁRIO DA BILHETERIA<br />\n</b></span>A bilheteria do Circo Voador abre 2 horas antes da abertura dos portões.<br />\nIngressos disponíveis para toda a programação.</p>\n<p class=\"p1\"><span class=\"s1\"><b>&#8211;<br />\n</b></span><span class=\"s1\"><b>CLASSIFICAÇÃO<br />\n</b></span><span class=\"s1\">18 anos (de 14 a 17 anos somente acompanhado do responsável legal)</span></p>\n",
+  "spotify_list": [
+   "https://open.spotify.com/track/4AwNUVU4h3QmUMHIbzurRa?si=25c8947093b0416d\r",
+   "https://open.spotify.com/track/6OwunUyuA5gtuJOdrE43vH?si=3feb7b257bd348cc\r",
+   "https://open.spotify.com/track/74I1z55PBTBkBC6Ay5ydf5?si=f1b9cd8749aa4b9c\r",
+   "https://open.spotify.com/track/3Yigtl1JHFsiSVpx4lr3l6?si=1f373e3bb2ee4185"
+  ],
+  "chamada": "<p>Uma noite para reviver o disco na íntegra!</p>\n",
+  "cor-faixa": "#721830",
+  "linhas": [
+   {
+    "blocos": [
+     {
+      "acf_fc_layout": "spotify",
+      "coluna": "1.25",
+      "center": "",
+      "largura": "1.75",
+      "capa": {
+       "id": 56690,
+       "alt": "",
+       "title": "Spotify_Site (2)",
+       "caption": "",
+       "description": "",
+       "mime_type": "image/jpeg",
+       "url": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/07/Spotify_Site-2.jpg",
+       "width": 548,
+       "height": 665,
+       "sizes": {
+        "thumbnail": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/07/Spotify_Site-2-150x150.jpg",
+        "thumbnail-width": 150,
+        "thumbnail-height": 150,
+        "medium": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/07/Spotify_Site-2-247x300.jpg",
+        "medium-width": 247,
+        "medium-height": 300,
+        "medium_large": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/07/Spotify_Site-2.jpg",
+        "medium_large-width": 548,
+        "medium_large-height": 665,
+        "large": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/07/Spotify_Site-2.jpg",
+        "large-width": 548,
+        "large-height": 665,
+        "1536x1536": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/07/Spotify_Site-2.jpg",
+        "1536x1536-width": 548,
+        "1536x1536-height": 665,
+        "2048x2048": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/07/Spotify_Site-2.jpg",
+        "2048x2048-width": 548,
+        "2048x2048-height": 665,
+        "darken": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/07/Spotify_Site-2.jpg",
+        "darken-width": 548,
+        "darken-height": 665,
+        "evento-capa": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/07/Spotify_Site-2-548x503.jpg",
+        "evento-capa-width": 548,
+        "evento-capa-height": 503
+       }
+      },
+      "embed_spotify": "https://open.spotify.com/playlist/2afjnUf7kP6PSpB0HN18Ht?si=b0e2b5aa6d394a8b"
+     },
+     {
+      "acf_fc_layout": "texto",
+      "coluna": "3.25",
+      "center": true,
+      "largura": "1.5",
+      "texto": "<p>Após rodar o país celebrando os 20 anos do seu meteórico álbum &#8220;Acústico MTV&#8221;, o IRA! desembarca no Circo Voador para a despedida carioca. Sexta, 16 de outubro, a banda revive o repertório do disco, tocando ele na íntegra, além de outros petardos que a acompanham há décadas e que ficaram de fora do clássico trabalho. É noite pra cantar junto do início ao fim! Abertura dos portões: 20h.</p>\n"
+     }
+    ]
+   }
+  ],
+  "texto_botao": "Comprar",
+  "cor_botao": "#FF2A2A",
+  "vespera_de_feriado": false,
+  "artistas_category": [
+   {
+    "term_id": 447,
+    "name": "IRA!",
+    "slug": "ira",
+    "term_group": 0,
+    "term_taxonomy_id": 447,
+    "taxonomy": "artistas_categories",
+    "description": "",
+    "parent": 0,
+    "count": 5,
+    "filter": "raw"
+   },
+   {
+    "term_id": 1142,
+    "name": "Vespas Mandarinas",
+    "slug": "vespas-mandarinas",
+    "term_group": 0,
+    "term_taxonomy_id": 1142,
+    "taxonomy": "artistas_categories",
+    "description": "",
+    "parent": 0,
+    "count": 3,
+    "filter": "raw"
+   }
+  ],
+  "lang": {
+   "language_code": null,
+   "locale": false,
+   "text_direction": false,
+   "display_name": null,
+   "native_name": null,
+   "different_language": true
+  },
+  "data_raw": "20261016",
+  "data_semana": "Sexta",
+  "dataAtualPonderada": "20261016",
+  "dataAtualPonderadaCompleta": "20261016 09:09",
+  "dataLimite": "20261016",
+  "dataLimiteCompleta": "20261016 12:00",
+  "sugestaoProximoMesmoArtista": false,
+  "previous": "undefined",
+  "next": "undefined"
+ },
+ {
+  "Id": 57125,
+  "mod_date": "2026-08-10 17:23:51",
+  "slug": "2026-10-17-mestre-ambrosio-eddie",
+  "meta_titulo": "Ira! :: Circo Voador",
+  "meta_descricao": "Uma noite para revisitar um clássico do rock brazuca. Sexta, 24 de novembro, o IRA! sobe ao palco do Circo para comemorar os 35 anos do álbum ‘Psicoacústica’, cultuado por sua sonoridade conceitual, experimental e altamente lisérgica. Além de tocar o disco na íntegra, Nasi, Scandurra e cia despejam hits dos seus mais de 40 anos de carreira, como ‘Flores em Você’, ‘Envelheço na Cidade’, ‘Dias de Luta’ e ‘Tarde Vazia’.",
+  "meta_imagem": {
+   "id": 38427,
+   "alt": "",
+   "title": "imagem_spotify",
+   "caption": "",
+   "description": "",
+   "mime_type": "image/png",
+   "url": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2023/06/imagem_spotify.png",
+   "width": 548,
+   "height": 665,
+   "sizes": {
+    "thumbnail": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2023/06/imagem_spotify-150x150.png",
+    "thumbnail-width": 150,
+    "thumbnail-height": 150,
+    "medium": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2023/06/imagem_spotify-247x300.png",
+    "medium-width": 247,
+    "medium-height": 300,
+    "medium_large": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2023/06/imagem_spotify.png",
+    "medium_large-width": 548,
+    "medium_large-height": 665,
+    "large": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2023/06/imagem_spotify.png",
+    "large-width": 548,
+    "large-height": 665,
+    "1536x1536": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2023/06/imagem_spotify.png",
+    "1536x1536-width": 548,
+    "1536x1536-height": 665,
+    "2048x2048": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2023/06/imagem_spotify.png",
+    "2048x2048-width": 548,
+    "2048x2048-height": 665,
+    "darken": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2023/06/imagem_spotify.png",
+    "darken-width": 548,
+    "darken-height": 665,
+    "evento-capa": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2023/06/imagem_spotify-548x503.png",
+    "evento-capa-width": 548,
+    "evento-capa-height": 503
+   }
+  },
+  "meta_keywords": "ira!",
+  "data": "17/10",
+  "imagem_capa": {
+   "id": 57154,
+   "alt": "",
+   "title": "Site_Circo (2)",
+   "caption": "",
+   "description": "",
+   "mime_type": "image/png",
+   "url": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Site_Circo-2.png",
+   "width": 1920,
+   "height": 1080,
+   "sizes": {
+    "thumbnail": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Site_Circo-2-150x150.png",
+    "thumbnail-width": 150,
+    "thumbnail-height": 150,
+    "medium": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Site_Circo-2-300x169.png",
+    "medium-width": 300,
+    "medium-height": 169,
+    "medium_large": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Site_Circo-2-768x432.png",
+    "medium_large-width": 640,
+    "medium_large-height": 360,
+    "large": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Site_Circo-2-1024x576.png",
+    "large-width": 640,
+    "large-height": 360,
+    "1536x1536": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Site_Circo-2-1536x864.png",
+    "1536x1536-width": 1536,
+    "1536x1536-height": 864,
+    "2048x2048": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Site_Circo-2.png",
+    "2048x2048-width": 1920,
+    "2048x2048-height": 1080,
+    "darken": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Site_Circo-2.png",
+    "darken-width": 1920,
+    "darken-height": 1080,
+    "evento-capa": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Site_Circo-2-1000x503.png",
+    "evento-capa-width": 1000,
+    "evento-capa-height": 503
+   }
+  },
+  "opacidade_capa": "",
+  "artistas": [
+   "Mestre Ambrósio<br />Eddie"
+  ],
+  "texto_adicional_capa": "<p>DJ Sthael<br />\n&#8211;<br />\nAbertura dos Portões: 20:00</p>\n",
+  "status": "comprar",
+  "url_botao": "https://www.eventim.com.br/artist/circo-voador/mestre-ambrosio-banda-eddie-no-circo-voador-4207035/?affiliate=C2Q",
+  "texto_extra_botao": "",
+  "lotes": [
+   {
+    "esgotado": true,
+    "nome": "Lote 1 | ESGOTADO",
+    "preco-inteira": "R$ 80 (meia/ solidário)*",
+    "preco-meia": "R$ 160 (inteira)"
+   },
+   {
+    "esgotado": false,
+    "nome": "Lote 2",
+    "preco-inteira": "R$ 90 (meia/ solidário)*",
+    "preco-meia": "R$ 180 (inteira)"
+   },
+   {
+    "esgotado": true,
+    "nome": "Lote 3",
+    "preco-inteira": "R$ 100 (meia/ solidário)*",
+    "preco-meia": "R$ 200 (inteira)"
+   }
+  ],
+  "lotes_infos_extra": "<p class=\"p1\"><span class=\"s1\"><b>&#8211;<br />\n</b></span><span class=\"s1\"><b>*Ingressos com desconto (50%):<br />\n</b></span><span class=\"s1\"><b>Meia-entrada:</b> estudantes; menores de 21 anos; maiores de 60 anos; pessoas com deficiência; jovens pertencentes a famílias de baixa renda com idades de 15 a 29 anos; diretores, coordenadores pedagógicos, supervisores e titulares de cargos do quadro de apoio das escolas das redes estadual e municipal do RJ e professores da rede pública estadual e municipal do RJ;<br />\n</span><span class=\"s1\"><b>Solidário:</b> desconto de 50% para quem trouxer 1kg de alimento não-perecível para doação. Na compra do ingresso solidário, a doação deve ser entregue no dia do show;<br />\n</span><span class=\"s1\"><b>Clube O Globo:</b> válido para clientes que apresentarem a carteirinha de associado do Clube O Globo. Desconto limitado a 02 (dois) ingressos por associado;<br />\n</span><span class=\"s1\"><b>Giro MetrôRio:</b> cadastre seu cartão no site do <a href=\"https://www.metrorio.com.br/giro/vantagens\" target=\"_blank\" rel=\"noopener\">Giro MetrôRio</a> e pague meia-entrada em até 02 (dois) ingressos.</span></p>\n<p class=\"p1\"><span class=\"s1\"><b>&#8211;<br />\n</b></span><span class=\"s1\"><b>PONTOS DE VENDA<br />\n</b></span><span class=\"s1\">Bilheteria do Circo (dinheiro e cartão de débito/crédito Elo, Visa e Mastercard)<br />\n</span><span class=\"s1\"><a href=\"https://www.eventim.com.br/search/?affiliate=BR1&amp;searchterm=circo+voador\">Plataformas da Eventim</a></span></p>\n<p class=\"p1\"><span class=\"s1\"><b>&#8211;<br />\n</b></span><span class=\"s1\"><b>HORÁRIO DA BILHETERIA<br />\n</b></span>A bilheteria do Circo Voador abre 2 horas antes da abertura dos portões.<br />\nIngressos disponíveis para toda a programação.</p>\n<p class=\"p1\"><span class=\"s1\"><b>&#8211;<br />\n</b></span><span class=\"s1\"><b>CLASSIFICAÇÃO<br />\n</b></span><span class=\"s1\">18 anos (de 14 a 17 anos somente acompanhado do responsável legal)</span></p>\n",
+  "spotify_list": [
+   "https://open.spotify.com/intl-pt/track/2KpKPRvXaAabBDxjbxDue7?si=2ab703f8270140a3\r",
+   "https://open.spotify.com/intl-pt/track/5NlaSrZYy0R7M8fYXrkQli?si=cab8b35ec7a04f5c\r",
+   "https://open.spotify.com/intl-pt/track/4aYvf6sss8oMFBfPt4vobj?si=f96ad3a36fef4b98\r",
+   "https://open.spotify.com/intl-pt/track/70U43k1MfdP4kXT0BaLtZn?si=efb80e4537b843e9"
+  ],
+  "chamada": "<p>É quando Pernambuco invade o Circo Voador que a gente fica melhor!</p>\n",
+  "cor-faixa": "#c94e4e",
+  "linhas": [
+   {
+    "blocos": [
+     {
+      "acf_fc_layout": "spotify",
+      "coluna": "1.25",
+      "center": "",
+      "largura": "1.75",
+      "capa": {
+       "id": 57156,
+       "alt": "",
+       "title": "Spotify_Site (1)",
+       "caption": "",
+       "description": "",
+       "mime_type": "image/png",
+       "url": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Spotify_Site-1.png",
+       "width": 548,
+       "height": 665,
+       "sizes": {
+        "thumbnail": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Spotify_Site-1-150x150.png",
+        "thumbnail-width": 150,
+        "thumbnail-height": 150,
+        "medium": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Spotify_Site-1-247x300.png",
+        "medium-width": 247,
+        "medium-height": 300,
+        "medium_large": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Spotify_Site-1.png",
+        "medium_large-width": 548,
+        "medium_large-height": 665,
+        "large": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Spotify_Site-1.png",
+        "large-width": 548,
+        "large-height": 665,
+        "1536x1536": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Spotify_Site-1.png",
+        "1536x1536-width": 548,
+        "1536x1536-height": 665,
+        "2048x2048": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Spotify_Site-1.png",
+        "2048x2048-width": 548,
+        "2048x2048-height": 665,
+        "darken": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Spotify_Site-1.png",
+        "darken-width": 548,
+        "darken-height": 665,
+        "evento-capa": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Spotify_Site-1-548x503.png",
+        "evento-capa-width": 548,
+        "evento-capa-height": 503
+       }
+      },
+      "embed_spotify": "https://open.spotify.com/intl-pt/artist/0wKRws4cmydv070MEENn0k?si=cUZCF9w3S8S6wWF6NO2ffg"
+     },
+     {
+      "acf_fc_layout": "texto",
+      "coluna": "3.25",
+      "center": true,
+      "largura": "1.5",
+      "texto": "<p>Sábado, 17 de outubro, Mestre Ambrósio está de volta aos palcos com sua formação original para celebrar os 30 anos do seu primeiro álbum homônimo, um marco do movimento manguebeat. Pra completar, a Banda Eddie chega junto para o lançamento de sua nova empreitada, o álbum &#8220;Noturna&#8221;. É noite pra sacudir o corpo todinho. Abertura dos portões: 20h.</p>\n"
+     },
+     {
+      "acf_fc_layout": "spotify",
+      "coluna": "3.25",
+      "center": "",
+      "largura": "2",
+      "capa": {
+       "id": 57155,
+       "alt": "",
+       "title": "Spotify_Site (2)",
+       "caption": "",
+       "description": "",
+       "mime_type": "image/png",
+       "url": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Spotify_Site-2.png",
+       "width": 548,
+       "height": 665,
+       "sizes": {
+        "thumbnail": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Spotify_Site-2-150x150.png",
+        "thumbnail-width": 150,
+        "thumbnail-height": 150,
+        "medium": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Spotify_Site-2-247x300.png",
+        "medium-width": 247,
+        "medium-height": 300,
+        "medium_large": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Spotify_Site-2.png",
+        "medium_large-width": 548,
+        "medium_large-height": 665,
+        "large": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Spotify_Site-2.png",
+        "large-width": 548,
+        "large-height": 665,
+        "1536x1536": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Spotify_Site-2.png",
+        "1536x1536-width": 548,
+        "1536x1536-height": 665,
+        "2048x2048": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Spotify_Site-2.png",
+        "2048x2048-width": 548,
+        "2048x2048-height": 665,
+        "darken": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Spotify_Site-2.png",
+        "darken-width": 548,
+        "darken-height": 665,
+        "evento-capa": "https://www.circovoador.com.br/circo2017/api/wp-content/uploads/2026/08/Spotify_Site-2-548x503.png",
+        "evento-capa-width": 548,
+        "evento-capa-height": 503
+       }
+      },
+      "embed_spotify": "https://open.spotify.com/intl-pt/album/5gYDZPi88CjRuPurFIkt7u?si=DpDsXOQTTweGp4ER7RxvSg"
+     }
+    ]
+   }
+  ],
+  "texto_botao": "Comprar",
+  "cor_botao": "#FF2A2A",
+  "vespera_de_feriado": false,
+  "artistas_category": [
+   {
+    "term_id": 447,
+    "name": "IRA!",
+    "slug": "ira",
+    "term_group": 0,
+    "term_taxonomy_id": 447,
+    "taxonomy": "artistas_categories",
+    "description": "",
+    "parent": 0,
+    "count": 5,
+    "filter": "raw"
+   },
+   {
+    "term_id": 1142,
+    "name": "Vespas Mandarinas",
+    "slug": "vespas-mandarinas",
+    "term_group": 0,
+    "term_taxonomy_id": 1142,
+    "taxonomy": "artistas_categories",
+    "description": "",
+    "parent": 0,
+    "count": 3,
+    "filter": "raw"
+   }
+  ],
+  "lang": {
+   "language_code": null,
+   "locale": false,
+   "text_direction": false,
+   "display_name": null,
+   "native_name": null,
+   "different_language": true
+  },
+  "data_raw": "20261017",
+  "data_semana": "Sábado",
+  "dataAtualPonderada": "20261016",
+  "dataAtualPonderadaCompleta": "20261016 09:09",
+  "dataLimite": "20261017",
+  "dataLimiteCompleta": "20261017 12:00",
+  "sugestaoProximoMesmoArtista": false,
+  "previous": "undefined",
+  "next": "undefined"
+ }
+]

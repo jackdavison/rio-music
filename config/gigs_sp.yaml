@@ -1,0 +1,7 @@
+# One-off gigs and tips you heard about (posters, friends, Instagram stories).
+# Full details or partial: only a title/artists and a date are required. Missing time or venue
+# shows as "a confirmar" and merges into the real listing if one appears later.
+# Fields: title, artists, date (YYYY-MM-DD), time "HH:MM", venue, neighborhood, price | free,
+#   link, genre, notes, heard (date you heard of it). Past dates are ignored; prune them anytime.
+# Easiest way to add one: tell Claude Code in this repo (see CLAUDE.md).
+gigs: []

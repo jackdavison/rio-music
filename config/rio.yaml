@@ -1,0 +1,77 @@
+# Rio de Janeiro. Each key under `collectors` names a registered collector; its value is that
+# collector's config (set `enabled: false` to turn one off without deleting it).
+name: Rio de Janeiro
+timezone: America/Sao_Paulo
+ics_min_score: 60
+gcal_calendar_id_env: GCAL_ID_RIO
+
+digest:
+  style: full            # today / tomorrow / notable next N days
+  notable_days: 60       # "next 60 days' notable shows"
+  notable_min_score: 75
+  max_notable: 15
+
+collectors:
+  recurring: {}           # config/recurring_<city>.yaml
+  gigs: {}                # config/gigs_<city>.yaml: one-off gigs / tips added by hand
+  instagram:               # needs ENABLE_INSTAGRAM=1 + APIFY_TOKEN; runs on its own schedule
+    posts_per_account: 6
+    since_days: 10
+  sympla:
+    city_name: Rio de Janeiro
+    state: RJ
+    include_arts: true     # also scan "Arte, Cinema e Cultura" — Sympla files many concerts there
+  sesc_rj:                 # cultura.sescrio.org.br (data embedded in page HTML)
+    include_metro: false   # true adds Niterói, São Gonçalo, Caxias, Nova Iguaçu, São João de Meriti
+    extra_units: []        # e.g. [Sesc Niterói]
+    # units: [...]         # default: all Sesc units in the city of Rio
+  eventim:                 # public-api.eventim.com exploration API
+    city_id: "1672"
+    city_name: Rio de Janeiro
+  bilheteria_digital:
+    state: RJ
+    cities: [Rio de Janeiro, Niterói]
+  shotgun:                 # city page + per-event MusicEvent JSON-LD
+    city_slug: rio-de-janeiro
+    max_details: 250
+  queremos:                # thin source (a handful of shows); Bileto API for details
+    city_names: [rio de janeiro, rio]
+    default_time: "21:00"
+  fever:
+    city_slug: rio-de-janeiro
+    filters: [eventos-musica, concertos, candlelight, the-jazz-room, opera, festivais]
+    city_codes: [GIG, QNT]   # Rio + Niterói
+  venues:                  # venue agenda pages; structured data where available, else Claude extraction
+    venues:
+      - name: Circo Voador
+        url: https://www.circovoador.com.br/
+        neighborhood: Lapa
+        mode: circovoador            # site's own JSON API (Angular SPA, HTML is empty)
+      - name: Teatro Rival Petrobras
+        url: https://teatrorivalpetrobras.com.br/
+        neighborhood: Cinelândia
+      - name: Blue Note Rio
+        url: https://bluenoterio.com.br/shows/
+        neighborhood: Copacabana
+        extra_urls: [https://bluenoterio.com.br/]
+      - name: Vivo Rio
+        url: https://vivorio.com.br/
+        neighborhood: Flamengo
+      - name: Casa do Pandeiro
+        url: https://casadopandeiro.com/
+        neighborhood: Centro
+        mode: gviz                   # React SPA backed by a public Google Sheet
+        sheet: 1l20Z_CZ_6aZjTHVcyVP8axFqU3etBJbBIPq4K6ft_5I
+        gid: "0"
+        music_only: true
+      - name: Sala Cecília Meireles  # added: active Lapa concert hall
+        url: https://salaceciliameireles.rj.gov.br/
+        neighborhood: Lapa
+      - name: Casa do Choro          # site lists courses only; shows are on Sympla (covered) + @casadochoro
+        url: https://casadochoro.com.br/
+        neighborhood: Centro
+        enabled: false
+      - name: Renascença Clube       # agenda only as flyer images -> Instagram @renascencaclube
+        url: https://renascencaclube.org.br/
+        neighborhood: Andaraí
+        enabled: false

@@ -1,0 +1,13 @@
+# Instagram accounts for rio (one handle per line, with or without @). Used only when
+# ENABLE_INSTAGRAM=1 and APIFY_TOKEN is set. Venues whose calendar lives only on Instagram go here.
+#
+# Seed venues whose calendar lives only on Instagram (added during the build;
+# handles could not be verified because Instagram blocks logged-out access):
+casadochoro      # Casa do Choro (shows also on Sympla)
+renascencaclube  # Renascença Clube — agenda only as flyers
+trapichegamboa   # Trapiche Gamboa — website gone (unverified handle)
+escolaportatildemusica  # Escola Portátil de Música (unverified handle)
+
+# PLACEHOLDERS: add your own handles below.
+# placeholder_handle_1
+# placeholder_handle_2

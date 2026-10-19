@@ -1,0 +1,115 @@
+:root {
+  --bg: #faf7f2; --card: #ffffff; --ink: #1d1a16; --muted: #6f675d; --line: #e7e0d5;
+  --accent: #b4462b; --accent-ink: #fff; --good: #2f7d4f; --mid: #a26b12; --low: #8a8278;
+  --chip: #f1ebe2; --radius: 14px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15130f; --card: #201d18; --ink: #f1ece4; --muted: #a39a8e; --line: #34302a;
+    --accent: #e0714f; --accent-ink: #15130f; --good: #5cc188; --mid: #e0a944; --low: #8d857a;
+    --chip: #2b2721; color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 15px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+main { max-width: 860px; margin: 0 auto; padding: 0 16px 40px; }
+button, input, select { font: inherit; color: inherit; }
+
+.top {
+  position: sticky; top: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: calc(env(safe-area-inset-top, 0px) + 10px) 16px 10px;
+  background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.brand { font-weight: 700; letter-spacing: -.01em; }
+
+.seg { display: inline-flex; background: var(--chip); border-radius: 999px; padding: 3px; }
+.seg button {
+  border: 0; background: transparent; padding: 6px 14px; border-radius: 999px; cursor: pointer;
+  color: var(--muted); font-weight: 600;
+}
+.seg button.on { background: var(--card); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.12); }
+
+.tonight { margin: 16px 0 6px; }
+.tonight h2, .day h3 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 8px; }
+.tonight-list { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 6px; scroll-snap-type: x mandatory; }
+.tonight-list .card { min-width: 240px; max-width: 280px; scroll-snap-align: start; }
+.tonight-empty { color: var(--muted); font-size: 14px; }
+
+.toolbar { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin: 14px 0 10px; flex-wrap: wrap; }
+.ghost { border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+.ghost.small { font-size: 13px; padding: 4px 12px; }
+
+.filters {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 14px; display: grid; gap: 12px; margin-bottom: 12px;
+}
+.filters .row { display: grid; gap: 6px; font-size: 14px; color: var(--muted); }
+.filters .dates { grid-template-columns: 1fr 1fr; }
+.filters .dates label { display: grid; gap: 4px; }
+.filters input[type=date], .filters select {
+  width: 100%; padding: 8px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg);
+}
+.filters .check { display: flex; gap: 8px; align-items: center; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  border: 1px solid var(--line); background: var(--chip); border-radius: 999px; padding: 4px 10px;
+  font-size: 13px; cursor: pointer; color: var(--ink);
+}
+.chip.on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+
+.day { margin: 18px 0 8px; }
+.card {
+  display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: start;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 12px; margin-bottom: 8px; cursor: pointer; text-align: left; width: 100%;
+}
+.card:active { transform: scale(.995); }
+.score {
+  width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center;
+  font-weight: 800; font-size: 16px; color: #fff; background: var(--low);
+}
+.score.hi { background: var(--good); } .score.mid { background: var(--mid); }
+.title { font-weight: 650; line-height: 1.25; }
+.sub { color: var(--muted); font-size: 13px; margin-top: 3px; }
+.badges { display: inline-flex; gap: 4px; margin-left: 4px; vertical-align: 2px; }
+.badge { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em;
+  padding: 2px 6px; border-radius: 6px; background: var(--accent); color: var(--accent-ink); }
+.badge.free { background: var(--good); color: #fff; }
+.badge.out { background: var(--low); color: #fff; }
+.badge.watch { background: var(--mid); color: #fff; }
+
+.meta { color: var(--muted); font-size: 12px; text-align: center; margin-top: 24px; }
+.feeds a { color: var(--muted); }
+.empty { color: var(--muted); text-align: center; padding: 40px 0; }
+
+dialog {
+  border: 0; padding: 0; width: min(560px, 100vw); max-width: 100vw; max-height: 92vh; border-radius: 18px 18px 0 0;
+  margin: auto auto 0; background: var(--card); color: var(--ink);
+}
+@media (min-width: 640px) { dialog { border-radius: 18px; margin: auto; } }
+dialog::backdrop { background: rgba(0,0,0,.45); }
+dialog article { position: relative; padding: 18px 18px calc(env(safe-area-inset-bottom, 0px) + 18px); overflow-y: auto; max-height: 92vh; }
+dialog .close { position: absolute; right: 10px; top: 8px; border: 0; background: var(--chip); width: 34px; height: 34px; border-radius: 50%; font-size: 20px; cursor: pointer; }
+.flyer { width: 100%; max-height: 50vh; object-fit: cover; border-radius: 12px; margin-bottom: 12px; background: var(--chip); }
+.detail h2 { margin: 0 40px 6px 0; font-size: 20px; line-height: 1.2; }
+.detail dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; font-size: 14px; margin: 12px 0; }
+.detail dt { color: var(--muted); }
+.detail dd { margin: 0; }
+.reason { background: var(--chip); border-radius: 12px; padding: 10px 12px; font-size: 14px; }
+.cta { display: block; text-align: center; background: var(--accent); color: var(--accent-ink); font-weight: 700;
+  text-decoration: none; padding: 12px; border-radius: 12px; margin-top: 14px; }
+
+/* FullCalendar tweaks */
+#calView { background: var(--card); border-radius: var(--radius); padding: 8px; border: 1px solid var(--line); }
+.fc { --fc-border-color: var(--line); --fc-page-bg-color: var(--card); --fc-today-bg-color: color-mix(in srgb, var(--accent) 10%, transparent); font-size: 13px; }
+.fc .fc-toolbar-title { font-size: 16px; }
+.fc .fc-button { padding: 4px 8px; background: var(--chip); border-color: var(--line); color: var(--ink); }
+.fc .fc-button-primary:not(:disabled).fc-button-active { background: var(--accent); border-color: var(--accent); }
+.fc-event { cursor: pointer; }

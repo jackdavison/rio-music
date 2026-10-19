@@ -1,0 +1,766 @@
+{
+ "list": {
+  "atividade": [
+   {
+    "id": 1264365,
+    "id_java": "254595",
+    "imagem": "https://www.sescsp.org.br/wp-content/uploads/2026/09/a-musica-dos-80.jpg",
+    "link": "/programacao/a-musica-dos-80-anos",
+    "titulo": "A Música Dos 80 Anos",
+    "complemento": "Com Ayrton Montarroyos, Ju Santtos, Leila Pinheiro, Paulo Serau e Silvia Borba",
+    "cancelado": "",
+    "esgotado": "",
+    "qtdeIngressosWeb": 18,
+    "qtdeIngressosRede": 57,
+    "codigoStatusEvento": "0",
+    "dataProxSessao": "2026-10-16T20:00",
+    "categorias": [],
+    "tipos_linguagens": [
+     {
+      "cor": null,
+      "link": "/tipos-linguagens/shows-espetaculos-e-performances",
+      "titulo": "Shows, Espetáculos e Performances",
+      "children": [
+       {
+        "cor": null,
+        "link": "/tipos-linguagens/musica",
+        "titulo": "Música"
+       }
+      ]
+     }
+    ],
+    "publico_tag": [
+     {
+      "cor": null,
+      "link": "/publico_tag/diversas-idades",
+      "titulo": "Diversas idades"
+     }
+    ],
+    "quantDatas": "",
+    "dataPrimeiraSessao": "2026-10-16T20:00",
+    "dataUltimaSessao": "2026-10-18T18:00",
+    "datasSessoes": [
+     "2026-10-16",
+     "2026-10-17",
+     "2026-10-18"
+    ],
+    "unidade": [
+     {
+      "name": "24 de Maio",
+      "link": "/unidades/24-de-maio"
+     }
+    ],
+    "conjunto": [
+     {
+      "name": "Festival Sesc 80 Anos",
+      "link": "/projetos/festival-sesc-80-anos"
+     }
+    ],
+    "acaoFormativa": [
+     {
+      "name": null,
+      "link": null
+     }
+    ],
+    "totem": {
+     "ativo": false,
+     "andar": null,
+     "recomendacao_etaria": null,
+     "tags": null
+    },
+    "gratuito": "",
+    "online": ""
+   },
+   {
+    "id": 1268985,
+    "id_java": "254765",
+    "imagem": "https://www.sescsp.org.br/wp-content/uploads/2026/09/10out_13-18_VendaIngressos_v2_3.jpg",
+    "link": "/programacao/tom-ze-13",
+    "titulo": "Tom Zé",
+    "complemento": "90 anos",
+    "cancelado": "",
+    "esgotado": "",
+    "qtdeIngressosWeb": 0,
+    "qtdeIngressosRede": 0,
+    "codigoStatusEvento": "2",
+    "dataProxSessao": "2026-10-16T20:00",
+    "categorias": [],
+    "tipos_linguagens": [
+     {
+      "cor": null,
+      "link": "/tipos-linguagens/shows-espetaculos-e-performances",
+      "titulo": "Shows, Espetáculos e Performances",
+      "children": [
+       {
+        "cor": null,
+        "link": "/tipos-linguagens/musica",
+        "titulo": "Música"
+       }
+      ]
+     }
+    ],
+    "publico_tag": [
+     {
+      "cor": null,
+      "link": "/publico_tag/adulto",
+      "titulo": "Adulto"
+     },
+     {
+      "cor": null,
+      "link": "/publico_tag/diversas-idades",
+      "titulo": "Diversas idades"
+     }
+    ],
+    "quantDatas": "",
+    "dataPrimeiraSessao": "2026-10-16T20:00",
+    "dataUltimaSessao": "2026-10-16T20:00",
+    "datasSessoes": [
+     "2026-10-16"
+    ],
+    "unidade": [
+     {
+      "name": "Pompeia",
+      "link": "/unidades/pompeia"
+     }
+    ],
+    "conjunto": [
+     {
+      "name": null,
+      "link": null
+     }
+    ],
+    "acaoFormativa": [
+     {
+      "name": null,
+      "link": null
+     }
+    ],
+    "totem": {
+     "ativo": false,
+     "andar": null,
+     "recomendacao_etaria": null,
+     "tags": null
+    },
+    "gratuito": "",
+    "online": ""
+   },
+   {
+    "id": 1267965,
+    "imagem": "https://www.sescsp.org.br/wp-content/uploads/2026/09/Portal-5.png",
+    "link": "/programacao/quintetinho-caracaxa-5",
+    "titulo": "Quintetinho Caracaxá",
+    "complemento": "Show",
+    "cancelado": "",
+    "esgotado": "",
+    "qtdeIngressosWeb": null,
+    "qtdeIngressosRede": null,
+    "codigoStatusEvento": null,
+    "quantDatas": "",
+    "dataProxSessao": "2026-10-16T18:30",
+    "categorias": [],
+    "tipos_linguagens": [
+     {
+      "cor": null,
+      "link": "/tipos-linguagens/shows-espetaculos-e-performances",
+      "titulo": "Shows, Espetáculos e Performances",
+      "children": [
+       {
+        "cor": null,
+        "link": "/tipos-linguagens/musica",
+        "titulo": "Música"
+       }
+      ]
+     }
+    ],
+    "publico_tag": [
+     {
+      "cor": null,
+      "link": "/publico_tag/criancas",
+      "titulo": "Crianças"
+     },
+     {
+      "cor": null,
+      "link": "/publico_tag/adulto",
+      "titulo": "Adulto"
+     },
+     {
+      "cor": null,
+      "link": "/publico_tag/diversas-idades",
+      "titulo": "Diversas idades"
+     }
+    ],
+    "dataPrimeiraSessao": "2026-10-16T17:00",
+    "dataUltimaSessao": "2026-10-16T18:30",
+    "datasSessoes": [
+     "2026-10-16"
+    ],
+    "unidade": [
+     {
+      "name": "Casa Verde",
+      "link": "/unidades/casa-verde"
+     }
+    ],
+    "conjunto": [
+     {
+      "name": "Tem Música no Meu Café",
+      "link": "/projetos/tem-musica-no-meu-cafe"
+     }
+    ],
+    "acaoFormativa": [
+     {
+      "name": null,
+      "link": null
+     }
+    ],
+    "totem": {
+     "ativo": false,
+     "andar": null,
+     "recomendacao_etaria": null,
+     "tags": null
+    },
+    "gratuito": "Atividade gratuita",
+    "online": ""
+   },
+   {
+    "id": 1267042,
+    "id_java": "254695",
+    "imagem": "https://www.sescsp.org.br/wp-content/uploads/2026/09/portal_musica_tulipa-ruiz.png",
+    "link": "/programacao/tulipa-ruiz-13",
+    "titulo": "Tulipa Ruiz",
+    "complemento": "Habilidades Extraordinárias",
+    "cancelado": "",
+    "esgotado": "",
+    "qtdeIngressosWeb": 0,
+    "qtdeIngressosRede": 0,
+    "codigoStatusEvento": "2",
+    "dataProxSessao": "2026-10-16T20:00",
+    "categorias": [],
+    "tipos_linguagens": [
+     {
+      "cor": null,
+      "link": "/tipos-linguagens/shows-espetaculos-e-performances",
+      "titulo": "Shows, Espetáculos e Performances",
+      "children": [
+       {
+        "cor": null,
+        "link": "/tipos-linguagens/musica",
+        "titulo": "Música"
+       }
+      ]
+     }
+    ],
+    "publico_tag": [
+     {
+      "cor": null,
+      "link": "/publico_tag/jovens",
+      "titulo": "Jovens"
+     },
+     {
+      "cor": null,
+      "link": "/publico_tag/adulto",
+      "titulo": "Adulto"
+     }
+    ],
+    "quantDatas": "",
+    "dataPrimeiraSessao": "2026-10-16T20:00",
+    "dataUltimaSessao": "2026-10-16T20:00",
+    "datasSessoes": [
+     "2026-10-16"
+    ],
+    "unidade": [
+     {
+      "name": "Ribeirão Preto",
+      "link": "/unidades/ribeirao-preto"
+     }
+    ],
+    "conjunto": [
+     {
+      "name": null,
+      "link": null
+     }
+    ],
+    "acaoFormativa": [
+     {
+      "name": null,
+      "link": null
+     }
+    ],
+    "totem": {
+     "ativo": false,
+     "andar": null,
+     "recomendacao_etaria": null,
+     "tags": null
+    },
+    "gratuito": "",
+    "online": ""
+   },
+   {
+    "id": 1262115,
+    "imagem": "https://www.sescsp.org.br/wp-content/uploads/2026/09/fabio-timbira_2.png",
+    "link": "/programacao/vem-conhecer-os-instrumentos-de-alem-mar",
+    "titulo": "Vem conhecer os instrumentos de Além Mar",
+    "complemento": "Com Fábio Timbira",
+    "cancelado": "",
+    "esgotado": "",
+    "qtdeIngressosWeb": null,
+    "qtdeIngressosRede": null,
+    "codigoStatusEvento": null,
+    "quantDatas": "",
+    "dataProxSessao": "2026-10-17T18:00",
+    "categorias": [],
+    "tipos_linguagens": [
+     {
+      "cor": null,
+      "link": "/tipos-linguagens/shows-espetaculos-e-performances",
+      "titulo": "Shows, Espetáculos e Performances",
+      "children": [
+       {
+        "cor": null,
+        "link": "/tipos-linguagens/musica",
+        "titulo": "Música"
+       }
+      ]
+     }
+    ],
+    "publico_tag": [
+     {
+      "cor": null,
+      "link": "/publico_tag/criancas",
+      "titulo": "Crianças"
+     },
+     {
+      "cor": null,
+      "link": "/publico_tag/jovens",
+      "titulo": "Jovens"
+     },
+     {
+      "cor": null,
+      "link": "/publico_tag/adulto",
+      "titulo": "Adulto"
+     },
+     {
+      "cor": null,
+      "link": "/publico_tag/pessoas-idosas",
+      "titulo": "Pessoas idosas"
+     },
+     {
+      "cor": null,
+      "link": "/publico_tag/diversas-idades",
+      "titulo": "Diversas idades"
+     }
+    ],
+    "dataPrimeiraSessao": "2026-10-17T16:00",
+    "dataUltimaSessao": "2026-10-17T18:00",
+    "datasSessoes": [
+     "2026-10-17"
+    ],
+    "unidade": [
+     {
+      "name": null,
+      "link": null
+     }
+    ],
+    "conjunto": [
+     {
+      "name": null,
+      "link": null
+     }
+    ],
+    "acaoFormativa": [
+     {
+      "name": null,
+      "link": null
+     }
+    ],
+    "totem": {
+     "ativo": false,
+     "andar": null,
+     "recomendacao_etaria": null,
+     "tags": null
+    },
+    "gratuito": "Atividade gratuita",
+    "online": ""
+   }
+  ],
+  "total": {
+   "value": 5,
+   "relation": "eq"
+  }
+ },
+ "details": {
+  "a-musica-dos-80-anos": {
+   "post_id": 1264365,
+   "id_java": "254595",
+   "canalVenda": "CRD",
+   "possuiMais20Sessoes": "false",
+   "sessoes": [
+    {
+     "observacao": null,
+     "dataInicialVendaOnline": 1791316800000,
+     "codigoStatusEvento": "0",
+     "idAtividade": 254595,
+     "exibirSessaoWP": null,
+     "idMapaTeatro": 5200,
+     "totalSessaoEventos": null,
+     "compraDesabilitada": null,
+     "codigoEventoSesc": "1713",
+     "minSeats": 1,
+     "dataInclusao": 1789676830000,
+     "maxTicketSessao": "4",
+     "urlCompra": "https://centralrelacionamento.sescsp.org.br/?path=detalhes-atividade&amp;unidade=52&amp;id=1713",
+     "dataInicialSessaoFmt": "2026-10-16T20:00",
+     "valorGratuitoInfantil": 0,
+     "dscStatusWP": null,
+     "dataInicialVendaOnlineFmt": "2026-10-06T17:00",
+     "codigoTipoVenda": "C",
+     "gratuitoTaxasZero": false,
+     "idEvento": 0,
+     "canalVenda": "CRD",
+     "maxSeats": 10,
+     "dataFinalSessaoFmt": "2026-10-16T20:00",
+     "dataInicialVendaRedeFmt": "2026-10-07T17:00",
+     "dscStatusEvento": "Disponivel",
+     "dataAlteracao": 1792173258000,
+     "dataFinalVendaRede": 1792195200000,
+     "dataFinalVendaRedeFmt": "2026-10-16T21:00",
+     "infoInscricao": null,
+     "urlPortal": null,
+     "dataFinalVendaOnline": 1792184400000,
+     "dataFinalSessao": 1792119600000,
+     "valorInteira": 50,
+     "nomeMapaAssentos": "TEATRO SESC 24 DE MAIO",
+     "statusSessaoSesc": "DISPONIVEL_WEB",
+     "dataFinalVendaOnlineFmt": "2026-10-16T18:00",
+     "qtdeIngressosRede": 23,
+     "valorMeia": 25,
+     "maxTicketEvento": "4",
+     "dataInicialSessao": 1792119600000,
+     "gratuito": false,
+     "qtdeIngressosWeb": 6,
+     "valorMeiaFmt": "$25.00",
+     "comentario1": null,
+     "dataInicialVendaRede": 1791403200000,
+     "nomeTipoVenda": "Cadeira Marcada",
+     "endereco": null,
+     "valorInteiraFmt": "$50.00",
+     "valorComerciarioFmt": "$15.00",
+     "periodoDeVenda": "PUBLICO_GERAL",
+     "idSessao": 995352,
+     "hasCategoriaOpcional": false,
+     "valorGratuitoInfantilFmt": "$0.00",
+     "comentario": "INGRESSO NÃO PODE SER DEVOLVIDO/TROCADO",
+     "codigoUnidadeSesc": null,
+     "statusIngresso": "Disponível",
+     "valorComerciario": 15,
+     "dataAgendada": null,
+     "codigoStatusWP": null,
+     "ingressoOnlineDisponivel": true,
+     "segunda": 0,
+     "terça": 0,
+     "quarta": 0,
+     "quinta": 0,
+     "sexta": 1,
+     "sabado": 0,
+     "domingo": 0
+    },
+    {
+     "observacao": null,
+     "dataInicialVendaOnline": 1791316800000,
+     "codigoStatusEvento": "0",
+     "idAtividade": 254595,
+     "exibirSessaoWP": null,
+     "idMapaTeatro": 5200,
+     "totalSessaoEventos": null,
+     "compraDesabilitada": null,
+     "codigoEventoSesc": "1713",
+     "minSeats": 1,
+     "dataInclusao": 1789676830000,
+     "maxTicketSessao": "4",
+     "urlCompra": "https://centralrelacionamento.sescsp.org.br/?path=detalhes-atividade&amp;unidade=52&amp;id=1713",
+     "dataInicialSessaoFmt": "2026-10-17T20:00",
+     "valorGratuitoInfantil": 0,
+     "dscStatusWP": null,
+     "dataInicialVendaOnlineFmt": "2026-10-06T17:00",
+     "codigoTipoVenda": "C",
+     "gratuitoTaxasZero": false,
+     "idEvento": 0,
+     "canalVenda": "CRD",
+     "maxSeats": 10,
+     "dataFinalSessaoFmt": "2026-10-17T20:00",
+     "dataInicialVendaRedeFmt": "2026-10-07T17:00",
+     "dscStatusEvento": "Disponivel",
+     "dataAlteracao": 1792173258000,
+     "dataFinalVendaRede": 1792281600000,
+     "dataFinalVendaRedeFmt": "2026-10-17T21:00",
+     "infoInscricao": null,
+     "urlPortal": null,
+     "dataFinalVendaOnline": 1792270800000,
+     "dataFinalSessao": 1792206000000,
+     "valorInteira": 50,
+     "nomeMapaAssentos": "TEATRO SESC 24 DE MAIO",
+     "statusSessaoSesc": "DISPONIVEL_WEB",
+     "dataFinalVendaOnlineFmt": "2026-10-17T18:00",
+     "qtdeIngressosRede": 20,
+     "valorMeia": 25,
+     "maxTicketEvento": "4",
+     "dataInicialSessao": 1792206000000,
+     "gratuito": false,
+     "qtdeIngressosWeb": 11,
+     "valorMeiaFmt": "$25.00",
+     "comentario1": null,
+     "dataInicialVendaRede": 1791403200000,
+     "nomeTipoVenda": "Cadeira Marcada",
+     "endereco": null,
+     "valorInteiraFmt": "$50.00",
+     "valorComerciarioFmt": "$15.00",
+     "periodoDeVenda": "PUBLICO_GERAL",
+     "idSessao": 995351,
+     "hasCategoriaOpcional": false,
+     "valorGratuitoInfantilFmt": "$0.00",
+     "comentario": "INGRESSO NÃO PODE SER DEVOLVIDO/TROCADO",
+     "codigoUnidadeSesc": null,
+     "statusIngresso": "Disponível",
+     "valorComerciario": 15,
+     "dataAgendada": null,
+     "codigoStatusWP": null,
+     "ingressoOnlineDisponivel": true,
+     "segunda": 0,
+     "terça": 0,
+     "quarta": 0,
+     "quinta": 0,
+     "sexta": 0,
+     "sabado": 1,
+     "domingo": 0
+    },
+    {
+     "observacao": null,
+     "dataInicialVendaOnline": 1791316800000,
+     "codigoStatusEvento": "0",
+     "idAtividade": 254595,
+     "exibirSessaoWP": null,
+     "idMapaTeatro": 5200,
+     "totalSessaoEventos": null,
+     "compraDesabilitada": null,
+     "codigoEventoSesc": "1713",
+     "minSeats": 1,
+     "dataInclusao": 1789676830000,
+     "maxTicketSessao": "4",
+     "urlCompra": "https://centralrelacionamento.sescsp.org.br/?path=detalhes-atividade&amp;unidade=52&amp;id=1713",
+     "dataInicialSessaoFmt": "2026-10-18T18:00",
+     "valorGratuitoInfantil": 0,
+     "dscStatusWP": null,
+     "dataInicialVendaOnlineFmt": "2026-10-06T17:00",
+     "codigoTipoVenda": "C",
+     "gratuitoTaxasZero": false,
+     "idEvento": 0,
+     "canalVenda": "CRD",
+     "maxSeats": 10,
+     "dataFinalSessaoFmt": "2026-10-18T18:00",
+     "dataInicialVendaRedeFmt": "2026-10-07T17:00",
+     "dscStatusEvento": "Disponivel",
+     "dataAlteracao": 1792173258000,
+     "dataFinalVendaRede": 1792360800000,
+     "dataFinalVendaRedeFmt": "2026-10-18T19:00",
+     "infoInscricao": null,
+     "urlPortal": null,
+     "dataFinalVendaOnline": 1792350000000,
+     "dataFinalSessao": 1792292400000,
+     "valorInteira": 50,
+     "nomeMapaAssentos": "TEATRO SESC 24 DE MAIO",
+     "statusSessaoSesc": "DISPONIVEL_WEB",
+     "dataFinalVendaOnlineFmt": "2026-10-18T16:00",
+     "qtdeIngressosRede": 14,
+     "valorMeia": 25,
+     "maxTicketEvento": "4",
+     "dataInicialSessao": 1792292400000,
+     "gratuito": false,
+     "qtdeIngressosWeb": 1,
+     "valorMeiaFmt": "$25.00",
+     "comentario1": null,
+     "dataInicialVendaRede": 1791403200000,
+     "nomeTipoVenda": "Cadeira Marcada",
+     "endereco": null,
+     "valorInteiraFmt": "$50.00",
+     "valorComerciarioFmt": "$15.00",
+     "periodoDeVenda": "PUBLICO_GERAL",
+     "idSessao": 995350,
+     "hasCategoriaOpcional": false,
+     "valorGratuitoInfantilFmt": "$0.00",
+     "comentario": "INGRESSO NÃO PODE SER DEVOLVIDO/TROCADO",
+     "codigoUnidadeSesc": null,
+     "statusIngresso": "Disponível",
+     "valorComerciario": 15,
+     "dataAgendada": null,
+     "codigoStatusWP": null,
+     "ingressoOnlineDisponivel": true,
+     "segunda": 0,
+     "terça": 0,
+     "quarta": 0,
+     "quinta": 0,
+     "sexta": 0,
+     "sabado": 0,
+     "domingo": 1
+    }
+   ]
+  },
+  "tom-ze-13": {
+   "post_id": 1268985,
+   "id_java": "254765",
+   "canalVenda": "CRD",
+   "possuiMais20Sessoes": "false",
+   "sessoes": [
+    {
+     "observacao": null,
+     "dataInicialVendaOnline": 1791316800000,
+     "codigoStatusEvento": "2",
+     "idAtividade": 254765,
+     "exibirSessaoWP": null,
+     "idMapaTeatro": 6310,
+     "totalSessaoEventos": null,
+     "compraDesabilitada": null,
+     "codigoEventoSesc": "10310",
+     "minSeats": 1,
+     "dataInclusao": 1790530627000,
+     "maxTicketSessao": "2",
+     "urlCompra": "https://centralrelacionamento.sescsp.org.br/?path=detalhes-atividade&amp;unidade=63&amp;id=10310",
+     "dataInicialSessaoFmt": "2026-10-16T20:00",
+     "valorGratuitoInfantil": 0,
+     "dscStatusWP": null,
+     "dataInicialVendaOnlineFmt": "2026-10-06T17:00",
+     "codigoTipoVenda": "C",
+     "gratuitoTaxasZero": false,
+     "idEvento": 0,
+     "canalVenda": "CRD",
+     "maxSeats": 10,
+     "dataFinalSessaoFmt": "2026-10-16T20:00",
+     "dataInicialVendaRedeFmt": "2026-10-07T17:00",
+     "dscStatusEvento": "Esgotado",
+     "dataAlteracao": 1792173318000,
+     "dataFinalVendaRede": 1792195200000,
+     "dataFinalVendaRedeFmt": "2026-10-16T21:00",
+     "infoInscricao": null,
+     "urlPortal": null,
+     "dataFinalVendaOnline": 1792184400000,
+     "dataFinalSessao": 1792119600000,
+     "valorInteira": 70,
+     "nomeMapaAssentos": "TEATRO SESC POMPEIA",
+     "statusSessaoSesc": "ESGOTADO",
+     "dataFinalVendaOnlineFmt": "2026-10-16T18:00",
+     "qtdeIngressosRede": 0,
+     "valorMeia": 35,
+     "maxTicketEvento": "2",
+     "dataInicialSessao": 1792119600000,
+     "gratuito": false,
+     "qtdeIngressosWeb": 0,
+     "valorMeiaFmt": "$35.00",
+     "comentario1": null,
+     "dataInicialVendaRede": 1791403200000,
+     "nomeTipoVenda": "Cadeira Marcada",
+     "endereco": null,
+     "valorInteiraFmt": "$70.00",
+     "valorComerciarioFmt": "$21.00",
+     "periodoDeVenda": "PUBLICO_GERAL",
+     "idSessao": 995681,
+     "hasCategoriaOpcional": false,
+     "valorGratuitoInfantilFmt": "$0.00",
+     "comentario": "INGRESSO NÃO PODE SER DEVOLVIDO/TROCADO",
+     "codigoUnidadeSesc": null,
+     "statusIngresso": "Esgotado",
+     "valorComerciario": 21,
+     "dataAgendada": null,
+     "codigoStatusWP": null,
+     "ingressoOnlineDisponivel": false,
+     "segunda": 0,
+     "terça": 0,
+     "quarta": 0,
+     "quinta": 0,
+     "sexta": 1,
+     "sabado": 0,
+     "domingo": 0
+    }
+   ]
+  },
+  "tulipa-ruiz-13": {
+   "post_id": 1267042,
+   "id_java": "254695",
+   "canalVenda": "CRD",
+   "possuiMais20Sessoes": "false",
+   "sessoes": [
+    {
+     "observacao": null,
+     "dataInicialVendaOnline": 1791316800000,
+     "codigoStatusEvento": "2",
+     "idAtividade": 254695,
+     "exibirSessaoWP": null,
+     "idMapaTeatro": 3,
+     "totalSessaoEventos": null,
+     "compraDesabilitada": null,
+     "codigoEventoSesc": "5437",
+     "minSeats": 1,
+     "dataInclusao": 1790189340000,
+     "maxTicketSessao": "2",
+     "urlCompra": "https://centralrelacionamento.sescsp.org.br/?path=detalhes-atividade&amp;unidade=76&amp;id=5437",
+     "dataInicialSessaoFmt": "2026-10-16T20:00",
+     "valorGratuitoInfantil": 0,
+     "dscStatusWP": null,
+     "dataInicialVendaOnlineFmt": "2026-10-06T17:00",
+     "codigoTipoVenda": "S",
+     "gratuitoTaxasZero": false,
+     "idEvento": 0,
+     "canalVenda": "CRD",
+     "maxSeats": 10,
+     "dataFinalSessaoFmt": "2026-10-16T20:00",
+     "dataInicialVendaRedeFmt": "2026-10-07T17:00",
+     "dscStatusEvento": "Esgotado",
+     "dataAlteracao": 1792173397000,
+     "dataFinalVendaRede": 1792195200000,
+     "dataFinalVendaRedeFmt": "2026-10-16T21:00",
+     "infoInscricao": null,
+     "urlPortal": null,
+     "dataFinalVendaOnline": 1792184400000,
+     "dataFinalSessao": 1792119600000,
+     "valorInteira": 30,
+     "nomeMapaAssentos": "GALPÃO DE EVENTOS",
+     "statusSessaoSesc": "ESGOTADO",
+     "dataFinalVendaOnlineFmt": "2026-10-16T18:00",
+     "qtdeIngressosRede": 0,
+     "valorMeia": 15,
+     "maxTicketEvento": "2",
+     "dataInicialSessao": 1792119600000,
+     "gratuito": false,
+     "qtdeIngressosWeb": 0,
+     "valorMeiaFmt": "$15.00",
+     "comentario1": null,
+     "dataInicialVendaRede": 1791403200000,
+     "nomeTipoVenda": "Assento Sequencial",
+     "endereco": null,
+     "valorInteiraFmt": "$30.00",
+     "valorComerciarioFmt": "$10.00",
+     "periodoDeVenda": "PUBLICO_GERAL",
+     "idSessao": 995546,
+     "hasCategoriaOpcional": false,
+     "valorGratuitoInfantilFmt": "$0.00",
+     "comentario": "INGRESSO NÃO PODE SER DEVOLVIDO/TROCADO",
+     "codigoUnidadeSesc": null,
+     "statusIngresso": "Esgotado",
+     "valorComerciario": 10,
+     "dataAgendada": null,
+     "codigoStatusWP": null,
+     "ingressoOnlineDisponivel": false,
+     "segunda": 0,
+     "terça": 0,
+     "quarta": 0,
+     "quinta": 0,
+     "sexta": 1,
+     "sabado": 0,
+     "domingo": 0
+    }
+   ]
+  }
+ },
+ "pages": {
+  "https://www.sescsp.org.br/programacao/a-musica-dos-80-anos": "<html><head><meta property=\"og:description\" content=\"Em celebração aos 80 anos do Sesc São Paulo, este show revisita a música produzida no Brasil dos anos 1940, período que coincide com a criação da instituição e marca uma profunda transformação da canção brasileira. Entre baiões, sambas-canção, choros e arranjos orquestrais, o repertório percorre obras e artistas que definiram a chamada Era de [&hellip;]\" /></head><body></body></html>",
+  "https://www.sescsp.org.br/programacao/tom-ze-13": "<html><head><meta property=\"og:description\" content=\"Há noventa anos, o mundo ganhou um tom assertivo na cultura, que nunca esqueceu de suas origens em Irará, mas desde muito novo permitiu levar sua mente para toda a via láctea! Estudou sambas, pagodes e bossas. Apareceu no movimento da Tropicália e talvez seja o que mais experimentou dessa linguagem. Em 1969, já estava [&hellip;]\" /></head><body></body></html>",
+  "https://www.sescsp.org.br/programacao/quintetinho-caracaxa-5": "<html><head><meta property=\"og:description\" content=\"O Quintetinho Caracaxá apresenta um espetáculo que aproxima o universo do choro do público infantil por meio de uma experiência sensível, interativa e lúdica. Integrando música ao vivo, teatro, jogos e dinâmicas participativas, o grupo recria a atmosfera da roda de choro. FICHA TÉCNICA Maiara Moraes – flautaCarla Pronsato – pianoLincoln Pontes – cavaquinhoPedro Cury [&hellip;]\" /></head><body><div class=\"evento--sessao--entrada\">\n\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t<p class=\"evento--sessao--entrada--gratis\">Grátis</p>\n\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p class=\"evento--sessao--entrada--local\">\n\t\t\t\t\t\tLocal: <span>&nbsp;Cafeteria</span>\n\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"info_local\">\n\t\t\t\t\t\t\t<p>Sem retirada de ingresso</p>\n\t\t\t\t\t</div>\n\t\t</div>\n\t\t</div>\n\t\t<div id='box-sessoes' data-flag=\"\" data-post=\"1267965\" data-url=\"https://portal.sescsp.org.br/\" data-esgotado=\"\" data-cancelado=\"\" data-page=\"0\">\n\t\t\t\t\t\t\t<div id=\"wp\" class=\"evento--sessao \">\n\t\t\t\t<div class=\"evento--sessao--info\">\n\t\t\t\t\t<!-- Isso aqui muda o shape do div, caso ele tenha mais de uma sessão -->\n\t\t\t\t\t\n\t\t\t\t\t<div class=\"evento--sessao--data manipula-sessoes-js\" data-range-mode=\"0\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t<p>Data e horário</p>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<p class=\"d-none\">\n\t\t\t\t\t\t\t\t16/10 a 16/10\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\n<div class=\"evento--sessao--data--horarios\">\n  <div class=\"evento--sessao--data--horario col-10\">\n        <b\n      data-inicial=\"2026-10-16T17:00\"\n      data-final=\"2026-10-16T18:30\"\n      data-dia=\"Sexta\"\n      data-data=\"2026/10/16\"\n      data-live=\"0\"\n      data-seg=\"0\"\n      data-ter=\"0\"\n      data-qua=\"0\"\n      data-qui=\"0\"\n      data-sex=\"1\"\n      data-sab=\"0\"\n      data-dom=\"0\"\n      >\n        16/10 • Sexta    </b>\n     • 17h00        \n            \n     \n  </div>\n</div>\n\t\t\t\t\t</div>\n\n\t\t\t\t\t</body></html>"
+ }
+}

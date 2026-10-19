@@ -1,0 +1,782 @@
+{
+ "page": 1,
+ "results": 8,
+ "totalPages": 1,
+ "totalResults": 8,
+ "productGroups": [
+  {
+   "categories": [
+    {
+     "name": "Shows & Música"
+    },
+    {
+     "name": "MPB",
+     "parentCategory": {
+      "name": "Shows & Música"
+     }
+    }
+   ],
+   "cities": [
+    {
+     "cityId": "943",
+     "name": "São Paulo"
+    }
+   ],
+   "currency": "BRL",
+   "endDate": "2026-10-17T22:30:00-03:00",
+   "imageUrl": "https://www.eventim.com.br/obj/media/BR-eventim/teaser/222x222/2016/Profile-222x222_WagToni.jpg",
+   "link": "https://www.eventim.com.br/artist/blue-note-sp/wagner-tiso-toninho-horta-4206313/",
+   "mainAttraction": {
+    "name": "BLUE NOTE SÃO PAULO"
+   },
+   "name": "WAGNER TISO & TONINHO HORTA",
+   "productCount": 2,
+   "productGroupId": "4206313",
+   "products": [
+    {
+     "hasRecommendation": false,
+     "link": "https://www.eventim.com.br/event/wagner-tiso-toninho-horta-blue-note-sao-paulo-21957489/",
+     "name": "WAGNER TISO & TONINHO HORTA",
+     "productId": "21957489",
+     "rating": {
+      "average": 0.0,
+      "count": 2
+     },
+     "status": "Available",
+     "tags": [
+      "TICKETDIRECT",
+      "HIDDEN_FOR_RESALE"
+     ],
+     "type": "LiveEntertainment",
+     "typeAttributes": {
+      "liveEntertainment": {
+       "location": {
+        "city": "São Paulo",
+        "geoLocation": {
+         "latitude": -23.558482195164064,
+         "longitude": -46.66003358395513
+        },
+        "name": "Blue Note São Paulo",
+        "postalCode": "01311-300",
+        "state": "SP"
+       },
+       "startDate": "2026-10-17T20:00:00-03:00"
+      }
+     },
+     "url": {
+      "domain": "https://www.eventim.com.br",
+      "path": "/event/wagner-tiso-toninho-horta-blue-note-sao-paulo-21957489/"
+     }
+    },
+    {
+     "hasRecommendation": false,
+     "link": "https://www.eventim.com.br/event/wagner-tiso-toninho-horta-blue-note-sao-paulo-21957488/",
+     "name": "WAGNER TISO & TONINHO HORTA",
+     "productId": "21957488",
+     "rating": {
+      "average": 0.0,
+      "count": 2
+     },
+     "status": "Available",
+     "tags": [
+      "TICKETDIRECT",
+      "HIDDEN_FOR_RESALE"
+     ],
+     "type": "LiveEntertainment",
+     "typeAttributes": {
+      "liveEntertainment": {
+       "location": {
+        "city": "São Paulo",
+        "geoLocation": {
+         "latitude": -23.558482195164064,
+         "longitude": -46.66003358395513
+        },
+        "name": "Blue Note São Paulo",
+        "postalCode": "01311-300",
+        "state": "SP"
+       },
+       "startDate": "2026-10-17T22:30:00-03:00"
+      }
+     },
+     "url": {
+      "domain": "https://www.eventim.com.br",
+      "path": "/event/wagner-tiso-toninho-horta-blue-note-sao-paulo-21957488/"
+     }
+    }
+   ],
+   "rating": {
+    "average": 0.0,
+    "count": 2
+   },
+   "startDate": "2026-10-17T20:00:00-03:00",
+   "status": "Available",
+   "tags": [
+    "TICKETDIRECT",
+    "HIDDEN_FOR_RESALE"
+   ],
+   "url": {
+    "domain": "https://www.eventim.com.br",
+    "path": "/artist/blue-note-sp/wagner-tiso-toninho-horta-4206313/"
+   }
+  },
+  {
+   "categories": [
+    {
+     "name": "Shows & Música"
+    },
+    {
+     "name": "Samba & Pagode",
+     "parentCategory": {
+      "name": "Shows & Música"
+     }
+    }
+   ],
+   "cities": [
+    {
+     "cityId": "943",
+     "name": "São Paulo"
+    }
+   ],
+   "description": "Jorge Ben Jor - Hospitalidade com Open Bar em São Paulo!Hospitalidade para o show do dia 17/10/2026 no Nubank Parque. Garanta seu ingresso.",
+   "endDate": "2026-10-17T19:00:00-03:00",
+   "imageUrl": "https://www.eventim.com.br/obj/media/BR-eventim/teaser/222x222/2016/ProfileV2-KV-JBJ_222X222.jpg",
+   "link": "https://www.eventim.com.br/artist/jorge-ben-jor/jorge-ben-jor-hospitalidade-com-open-bar-4168335/",
+   "mainAttraction": {
+    "name": "JORGE BEN JOR"
+   },
+   "name": "JORGE BEN JOR- HOSPITALIDADE COM OPEN BAR",
+   "productCount": 1,
+   "productGroupId": "4168335",
+   "products": [
+    {
+     "hasRecommendation": false,
+     "link": "https://www.eventim.com.br/event/jorge-ben-jor-hospitalidade-com-open-bar-nubank-parque-21734154/",
+     "name": "JORGE BEN JOR- HOSPITALIDADE COM OPEN BAR",
+     "productId": "21734154",
+     "rating": {
+      "average": 0.0,
+      "count": 0
+     },
+     "status": "Available",
+     "tags": [
+      "TICKETDIRECT",
+      "HIDDEN_FOR_RESALE"
+     ],
+     "type": "LiveEntertainment",
+     "typeAttributes": {
+      "liveEntertainment": {
+       "location": {
+        "city": "São Paulo",
+        "geoLocation": {
+         "latitude": -23.527414,
+         "longitude": -46.67848
+        },
+        "name": "Nubank Parque",
+        "postalCode": "05001200",
+        "state": "SP"
+       },
+       "startDate": "2026-10-17T19:00:00-03:00"
+      }
+     },
+     "url": {
+      "domain": "https://www.eventim.com.br",
+      "path": "/event/jorge-ben-jor-hospitalidade-com-open-bar-nubank-parque-21734154/"
+     }
+    }
+   ],
+   "rating": {
+    "average": 0.0,
+    "count": 0
+   },
+   "startDate": "2026-10-17T19:00:00-03:00",
+   "status": "Available",
+   "tags": [
+    "TICKETDIRECT",
+    "HIDDEN_FOR_RESALE"
+   ],
+   "url": {
+    "domain": "https://www.eventim.com.br",
+    "path": "/artist/jorge-ben-jor/jorge-ben-jor-hospitalidade-com-open-bar-4168335/"
+   }
+  },
+  {
+   "categories": [
+    {
+     "name": "Shows & Música"
+    },
+    {
+     "name": "Samba & Pagode",
+     "parentCategory": {
+      "name": "Shows & Música"
+     }
+    }
+   ],
+   "cities": [
+    {
+     "cityId": "943",
+     "name": "São Paulo"
+    }
+   ],
+   "description": "Jorge Ben Jor no Nubank Parque SP. Garanta seu lugar para o show no dia 17 de outubro de 2026!",
+   "endDate": "2026-10-17T19:00:00-03:00",
+   "imageUrl": "https://www.eventim.com.br/obj/media/BR-eventim/teaser/222x222/2016/jorgebenjor-eventim-profile.png",
+   "link": "https://www.eventim.com.br/artist/jorge-ben-jor/jorge-ben-jor-4157804/",
+   "mainAttraction": {
+    "name": "JORGE BEN JOR"
+   },
+   "name": "JORGE BEN JOR",
+   "productCount": 1,
+   "productGroupId": "4157804",
+   "products": [
+    {
+     "hasRecommendation": false,
+     "link": "https://www.eventim.com.br/event/jorge-ben-jor-nubank-parque-21691229/",
+     "name": "JORGE BEN JOR",
+     "productId": "21691229",
+     "rating": {
+      "average": 0.0,
+      "count": 0
+     },
+     "status": "Available",
+     "tags": [
+      "HIDDEN_FOR_RESALE"
+     ],
+     "type": "LiveEntertainment",
+     "typeAttributes": {
+      "liveEntertainment": {
+       "location": {
+        "city": "São Paulo",
+        "geoLocation": {
+         "latitude": -23.527414,
+         "longitude": -46.67848
+        },
+        "name": "Nubank Parque",
+        "postalCode": "05001200",
+        "state": "SP"
+       },
+       "startDate": "2026-10-17T19:00:00-03:00"
+      }
+     },
+     "url": {
+      "domain": "https://www.eventim.com.br",
+      "path": "/event/jorge-ben-jor-nubank-parque-21691229/"
+     }
+    }
+   ],
+   "rating": {
+    "average": 0.0,
+    "count": 0
+   },
+   "startDate": "2026-10-17T19:00:00-03:00",
+   "status": "Available",
+   "tags": [
+    "HIDDEN_FOR_RESALE"
+   ],
+   "url": {
+    "domain": "https://www.eventim.com.br",
+    "path": "/artist/jorge-ben-jor/jorge-ben-jor-4157804/"
+   }
+  },
+  {
+   "categories": [
+    {
+     "name": "Shows & Música"
+    },
+    {
+     "name": "Pop",
+     "parentCategory": {
+      "name": "Shows & Música"
+     }
+    },
+    {
+     "name": "Shows & Música"
+    },
+    {
+     "name": "Shows Internacionais",
+     "parentCategory": {
+      "name": "Shows & Música"
+     }
+    }
+   ],
+   "cities": [
+    {
+     "cityId": "943",
+     "name": "São Paulo"
+    }
+   ],
+   "currency": "BRL",
+   "description": "Mariah Carey no Nubank Parque (SP) e na Farmasi Arena (RJ)!Shows dias 17 e 21/11/2026.Garanta seu ingresso!",
+   "endDate": "2026-11-21T16:00:00-03:00",
+   "imageUrl": "https://www.eventim.com.br/obj/media/BR-eventim/teaser/222x222/2016/MC_ProfileV2_222x222.png",
+   "link": "https://www.eventim.com.br/artist/mariah-carey/mariah-carey-3668661/",
+   "mainAttraction": {
+    "name": "MARIAH CAREY"
+   },
+   "name": "MARIAH CAREY",
+   "productCount": 3,
+   "productGroupId": "3668661",
+   "products": [
+    {
+     "hasRecommendation": false,
+     "link": "https://www.eventim.com.br/event/mariah-carey-nubank-parque-21651468/",
+     "name": "MARIAH CAREY SP",
+     "productId": "21651468",
+     "rating": {
+      "average": 5.0,
+      "count": 11
+     },
+     "status": "Available",
+     "tags": [
+      "HIDDEN_FOR_RESALE"
+     ],
+     "type": "LiveEntertainment",
+     "typeAttributes": {
+      "liveEntertainment": {
+       "location": {
+        "city": "São Paulo",
+        "geoLocation": {
+         "latitude": -23.527414,
+         "longitude": -46.67848
+        },
+        "name": "Nubank Parque",
+        "postalCode": "05001200",
+        "state": "SP"
+       },
+       "startDate": "2026-11-17T16:00:00-03:00"
+      }
+     },
+     "url": {
+      "domain": "https://www.eventim.com.br",
+      "path": "/event/mariah-carey-nubank-parque-21651468/"
+     }
+    },
+    {
+     "hasRecommendation": false,
+     "link": "https://www.eventim.com.br/event/mariah-carey-nubank-parque-21723652/",
+     "name": "MARIAH CAREY SP - PACOTE VIP",
+     "productId": "21723652",
+     "rating": {
+      "average": 5.0,
+      "count": 11
+     },
+     "status": "Available",
+     "tags": [
+      "HIDDEN_FOR_RESALE"
+     ],
+     "type": "LiveEntertainment",
+     "typeAttributes": {
+      "liveEntertainment": {
+       "location": {
+        "city": "São Paulo",
+        "geoLocation": {
+         "latitude": -23.527414,
+         "longitude": -46.67848
+        },
+        "name": "Nubank Parque",
+        "postalCode": "05001200",
+        "state": "SP"
+       },
+       "startDate": "2026-11-17T16:01:00-03:00"
+      }
+     },
+     "url": {
+      "domain": "https://www.eventim.com.br",
+      "path": "/event/mariah-carey-nubank-parque-21723652/"
+     }
+    }
+   ],
+   "rating": {
+    "average": 5.0,
+    "count": 11
+   },
+   "startDate": "2026-11-17T16:00:00-03:00",
+   "status": "Available",
+   "tags": [
+    "HIDDEN_FOR_RESALE"
+   ],
+   "url": {
+    "domain": "https://www.eventim.com.br",
+    "path": "/artist/mariah-carey/mariah-carey-3668661/"
+   }
+  },
+  {
+   "categories": [
+    {
+     "name": "Shows & Música"
+    },
+    {
+     "name": "Shows Internacionais",
+     "parentCategory": {
+      "name": "Shows & Música"
+     }
+    }
+   ],
+   "cities": [
+    {
+     "cityId": "943",
+     "name": "São Paulo"
+    }
+   ],
+   "currency": "BRL",
+   "description": "Transporte Oficial para o evento Iron Maiden - Run For Your Lives World Tour 2026 em São Paulo nos dias 25 e 27/10/2026.",
+   "endDate": "2026-10-27T00:00:00-03:00",
+   "imageUrl": "https://www.eventim.com.br/obj/media/BR-eventim/teaser/222x222/2016/PROFILE-TransferASIron.png",
+   "link": "https://www.eventim.com.br/artist/as-brasil/transporte-iron-maiden-sao-paulo-4200255/",
+   "mainAttraction": {
+    "name": "AS BRASIL"
+   },
+   "name": "TRANSPORTE | IRON MAIDEN | SÃO PAULO",
+   "productCount": 2,
+   "productGroupId": "4200255",
+   "products": [
+    {
+     "hasRecommendation": false,
+     "link": "https://www.eventim.com.br/event/transporte-iron-maiden-sao-paulo-nubank-parque-21933671/",
+     "name": "TRANSPORTE | IRON MAIDEN | SÃO PAULO",
+     "productId": "21933671",
+     "rating": {
+      "average": 0.0,
+      "count": 0
+     },
+     "status": "Available",
+     "tags": [
+      "HIDDEN_FOR_RESALE"
+     ],
+     "type": "LiveEntertainment",
+     "typeAttributes": {
+      "liveEntertainment": {
+       "location": {
+        "city": "São Paulo",
+        "geoLocation": {
+         "latitude": -23.527414,
+         "longitude": -46.67848
+        },
+        "name": "Nubank Parque",
+        "postalCode": "05001200",
+        "state": "SP"
+       },
+       "startDate": "2026-10-25T00:00:00-03:00"
+      }
+     },
+     "url": {
+      "domain": "https://www.eventim.com.br",
+      "path": "/event/transporte-iron-maiden-sao-paulo-nubank-parque-21933671/"
+     }
+    },
+    {
+     "hasRecommendation": false,
+     "link": "https://www.eventim.com.br/event/transporte-iron-maiden-sao-paulo-nubank-parque-21934023/",
+     "name": "TRANSPORTE | IRON MAIDEN | SÃO PAULO",
+     "productId": "21934023",
+     "rating": {
+      "average": 0.0,
+      "count": 0
+     },
+     "status": "Available",
+     "tags": [
+      "HIDDEN_FOR_RESALE"
+     ],
+     "type": "LiveEntertainment",
+     "typeAttributes": {
+      "liveEntertainment": {
+       "location": {
+        "city": "São Paulo",
+        "geoLocation": {
+         "latitude": -23.527414,
+         "longitude": -46.67848
+        },
+        "name": "Nubank Parque",
+        "postalCode": "05001200",
+        "state": "SP"
+       },
+       "startDate": "2026-10-27T00:00:00-03:00"
+      }
+     },
+     "url": {
+      "domain": "https://www.eventim.com.br",
+      "path": "/event/transporte-iron-maiden-sao-paulo-nubank-parque-21934023/"
+     }
+    }
+   ],
+   "rating": {
+    "average": 0.0,
+    "count": 0
+   },
+   "startDate": "2026-10-25T00:00:00-03:00",
+   "status": "Available",
+   "tags": [
+    "HIDDEN_FOR_RESALE"
+   ],
+   "url": {
+    "domain": "https://www.eventim.com.br",
+    "path": "/artist/as-brasil/transporte-iron-maiden-sao-paulo-4200255/"
+   }
+  },
+  {
+   "categories": [
+    {
+     "name": "Shows & Música"
+    },
+    {
+     "name": "MPB",
+     "parentCategory": {
+      "name": "Shows & Música"
+     }
+    }
+   ],
+   "cities": [
+    {
+     "cityId": "943",
+     "name": "São Paulo"
+    }
+   ],
+   "currency": "BRL",
+   "endDate": "2026-10-16T20:00:00-03:00",
+   "imageUrl": "https://www.eventim.com.br/obj/media/BR-eventim/teaser/222x222/2016/Biafra-bluenotespout26-eventim-profile.jpg",
+   "link": "https://www.eventim.com.br/artist/blue-note-sp/biafra-no-tempo-do-vinil-4217540/",
+   "mainAttraction": {
+    "name": "BLUE NOTE SÃO PAULO"
+   },
+   "name": "BIAFRA - NO TEMPO DO VINIL",
+   "productCount": 1,
+   "productGroupId": "4217540",
+   "products": [
+    {
+     "hasRecommendation": false,
+     "link": "https://www.eventim.com.br/event/biafra-no-tempo-do-vinil-blue-note-sao-paulo-22008013/",
+     "name": "BIAFRA - NO TEMPO DO VINIL",
+     "productId": "22008013",
+     "rating": {
+      "average": 0.0,
+      "count": 2
+     },
+     "status": "Available",
+     "tags": [
+      "TICKETDIRECT",
+      "HIDDEN_FOR_RESALE"
+     ],
+     "type": "LiveEntertainment",
+     "typeAttributes": {
+      "liveEntertainment": {
+       "location": {
+        "city": "São Paulo",
+        "geoLocation": {
+         "latitude": -23.558482195164064,
+         "longitude": -46.66003358395513
+        },
+        "name": "Blue Note São Paulo",
+        "postalCode": "01311-300",
+        "state": "SP"
+       },
+       "startDate": "2026-10-16T20:00:00-03:00"
+      }
+     },
+     "url": {
+      "domain": "https://www.eventim.com.br",
+      "path": "/event/biafra-no-tempo-do-vinil-blue-note-sao-paulo-22008013/"
+     }
+    }
+   ],
+   "rating": {
+    "average": 0.0,
+    "count": 2
+   },
+   "startDate": "2026-10-16T20:00:00-03:00",
+   "status": "Available",
+   "tags": [
+    "TICKETDIRECT",
+    "HIDDEN_FOR_RESALE"
+   ],
+   "url": {
+    "domain": "https://www.eventim.com.br",
+    "path": "/artist/blue-note-sp/biafra-no-tempo-do-vinil-4217540/"
+   }
+  },
+  {
+   "categories": [
+    {
+     "name": "Shows & Música"
+    },
+    {
+     "name": "Tributos & Homenagens",
+     "parentCategory": {
+      "name": "Shows & Música"
+     }
+    }
+   ],
+   "cities": [
+    {
+     "cityId": "943",
+     "name": "São Paulo"
+    }
+   ],
+   "endDate": "2026-10-16T20:00:00-03:00",
+   "imageUrl": "https://www.eventim.com.br/obj/media/BR-eventim/teaser/222x222/2016/kassin-bluenotespout26-eventim-profile.jpg",
+   "link": "https://www.eventim.com.br/artist/blue-note-sp/miranda-kassin-nas-curvas-da-estrada-de-erasmo-4235014/",
+   "mainAttraction": {
+    "name": "BLUE NOTE SÃO PAULO"
+   },
+   "name": "MIRANDA KASSIN - NAS CURVAS DA ESTRADA DE ERASMO",
+   "productCount": 1,
+   "productGroupId": "4235014",
+   "products": [
+    {
+     "hasRecommendation": false,
+     "link": "https://www.eventim.com.br/event/miranda-kassin-nas-curvas-da-estrada-de-erasmo-blue-note-sao-paulo-22088013/",
+     "name": "MIRANDA KASSIN - NAS CURVAS DA ESTRADA DE ERASMO",
+     "productId": "22088013",
+     "rating": {
+      "average": 0.0,
+      "count": 2
+     },
+     "status": "Cancelled",
+     "tags": [
+      "TICKETDIRECT",
+      "HIDDEN_FOR_RESALE"
+     ],
+     "type": "LiveEntertainment",
+     "typeAttributes": {
+      "liveEntertainment": {
+       "location": {
+        "city": "São Paulo",
+        "geoLocation": {
+         "latitude": -23.558482195164064,
+         "longitude": -46.66003358395513
+        },
+        "name": "Blue Note São Paulo",
+        "postalCode": "01311-300",
+        "state": "SP"
+       },
+       "startDate": "2026-10-16T20:00:00-03:00"
+      }
+     },
+     "url": {
+      "domain": "https://www.eventim.com.br",
+      "path": "/event/miranda-kassin-nas-curvas-da-estrada-de-erasmo-blue-note-sao-paulo-22088013/"
+     }
+    }
+   ],
+   "rating": {
+    "average": 0.0,
+    "count": 2
+   },
+   "startDate": "2026-10-16T20:00:00-03:00",
+   "status": "Cancelled",
+   "tags": [
+    "TICKETDIRECT",
+    "HIDDEN_FOR_RESALE"
+   ],
+   "url": {
+    "domain": "https://www.eventim.com.br",
+    "path": "/artist/blue-note-sp/miranda-kassin-nas-curvas-da-estrada-de-erasmo-4235014/"
+   }
+  },
+  {
+   "categories": [
+    {
+     "name": "Espetáculos"
+    },
+    {
+     "name": "Comédia & Stand-Up",
+     "parentCategory": {
+      "name": "Espetáculos"
+     }
+    }
+   ],
+   "cities": [
+    {
+     "cityId": "943",
+     "name": "São Paulo"
+    }
+   ],
+   "description": "Clô Para Sempre em São Paulo! Espetáculo em temporada de 01/07 a 28/10/2026 no Teatro das Artes. Garanta seu ingresso e não perca essa apresentação imperdível ao vivo.",
+   "endDate": "2026-10-28T20:00:00-03:00",
+   "imageUrl": "https://www.eventim.com.br/obj/media/BR-eventim/teaser/222x222/2016/Cloparasempre-teatrodasartes-eventim-profile.png",
+   "link": "https://www.eventim.com.br/artist/teatro-das-artes/clo-para-sempre-4178749/",
+   "mainAttraction": {
+    "name": "TEATRO DAS ARTES"
+   },
+   "name": "CLÔ PARA SEMPRE",
+   "productCount": 2,
+   "productGroupId": "4178749",
+   "products": [
+    {
+     "hasRecommendation": false,
+     "link": "https://www.eventim.com.br/event/clo-para-sempre-teatro-das-artes-22231279/",
+     "name": "CLÔ PARA SEMPRE",
+     "productId": "22231279",
+     "rating": {
+      "average": 0.0,
+      "count": 1
+     },
+     "status": "Available",
+     "tags": [
+      "TICKETDIRECT",
+      "HIDDEN_FOR_RESALE"
+     ],
+     "type": "LiveEntertainment",
+     "typeAttributes": {
+      "liveEntertainment": {
+       "location": {
+        "city": "São Paulo",
+        "name": "Teatro das Artes",
+        "postalCode": "05402-000",
+        "state": "SP"
+       },
+       "startDate": "2026-10-21T20:00:00-03:00"
+      }
+     },
+     "url": {
+      "domain": "https://www.eventim.com.br",
+      "path": "/event/clo-para-sempre-teatro-das-artes-22231279/"
+     }
+    },
+    {
+     "hasRecommendation": false,
+     "link": "https://www.eventim.com.br/event/clo-para-sempre-teatro-das-artes-22231280/",
+     "name": "CLÔ PARA SEMPRE",
+     "productId": "22231280",
+     "rating": {
+      "average": 0.0,
+      "count": 1
+     },
+     "status": "Available",
+     "tags": [
+      "TICKETDIRECT",
+      "HIDDEN_FOR_RESALE"
+     ],
+     "type": "LiveEntertainment",
+     "typeAttributes": {
+      "liveEntertainment": {
+       "location": {
+        "city": "São Paulo",
+        "name": "Teatro das Artes",
+        "postalCode": "05402-000",
+        "state": "SP"
+       },
+       "startDate": "2026-10-28T20:00:00-03:00"
+      }
+     },
+     "url": {
+      "domain": "https://www.eventim.com.br",
+      "path": "/event/clo-para-sempre-teatro-das-artes-22231280/"
+     }
+    }
+   ],
+   "rating": {
+    "average": 0.0,
+    "count": 1
+   },
+   "startDate": "2026-10-21T20:00:00-03:00",
+   "status": "Available",
+   "tags": [
+    "TICKETDIRECT",
+    "HIDDEN_FOR_RESALE"
+   ],
+   "url": {
+    "domain": "https://www.eventim.com.br",
+    "path": "/artist/teatro-das-artes/clo-para-sempre-4178749/"
+   }
+  }
+ ]
+}
