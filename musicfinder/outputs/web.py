@@ -1,7 +1,9 @@
 """Write site/events.json for the static web calendar."""
 from __future__ import annotations
 
+import hashlib
 import json
+import re
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -48,8 +50,25 @@ def payload(by_city: dict[str, list[Event]], names: dict[str, str]) -> dict:
     return out
 
 
+def bust_cache(site_dir: Path) -> None:
+    """Stamp index.html's app.js/style.css links with a content hash, so a phone that cached the
+    old files (Pages sends max-age=600) picks up UI changes on the next load."""
+    index = site_dir / "index.html"
+    if not index.exists():
+        return
+    html = old = index.read_text()
+    for name in ("app.js", "style.css"):
+        f = site_dir / name
+        if f.exists():
+            h = hashlib.sha1(f.read_bytes()).hexdigest()[:8]
+            html = re.sub(rf'{re.escape(name)}(\?v=\w+)?"', f'{name}?v={h}"', html)
+    if html != old:
+        index.write_text(html)
+
+
 def write(site_dir: Path, by_city: dict[str, list[Event]], names: dict[str, str]) -> Path:
     site_dir.mkdir(parents=True, exist_ok=True)
+    bust_cache(site_dir)
     p = site_dir / "events.json"
     p.write_text(json.dumps(payload(by_city, names), ensure_ascii=False, separators=(",", ":")))
     return p
