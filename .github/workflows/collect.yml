@@ -51,7 +51,7 @@ jobs:
           PAGES_URL: ${{ vars.PAGES_URL }}
         run: |
           ARGS=""
-          if [ -n "${{ inputs.only }}" ]; then ARGS="--only ${{ inputs.only }}"; else ARGS="--skip instagram"; fi
+          if [ -n "${{ inputs.only }}" ]; then ARGS="--only ${{ inputs.only }}"; else ARGS="--skip instagram,shotgun"; fi  # shotgun blocks GitHub IPs (Vercel checkpoint); run it locally
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
           python -m musicfinder collect $ARGS
           python -m musicfinder status

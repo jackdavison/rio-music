@@ -24,6 +24,9 @@ from __future__ import annotations
 import logging
 import re
 from typing import Iterable
+from urllib.parse import urlencode
+
+import requests
 
 from .. import http
 from ..config import CityConfig
@@ -83,13 +86,34 @@ def _settings(city: CityConfig, cfg: dict) -> dict:
     return s
 
 
+_impersonate = False
+
+
+def _get_json(params: dict) -> dict:
+    """Plain session first; Akamai 403s datacenter IPs (GitHub runners) unless the TLS fingerprint
+    looks like a browser, so switch to curl_cffi for the rest of the run on a 403."""
+    global _impersonate
+    if not _impersonate:
+        try:
+            return http.get_json(API, params=params, headers=HEADERS)
+        except requests.HTTPError as exc:
+            if exc.response is None or exc.response.status_code != 403:
+                raise
+            log.info("eventim: 403, switching to curl_cffi impersonation")
+            _impersonate = True
+    from curl_cffi import requests as cffi
+    r = cffi.get(f"{API}?{urlencode(params, doseq=True)}", impersonate="chrome", timeout=40)
+    r.raise_for_status()
+    return r.json()
+
+
 def _fetch_groups(s: dict) -> Iterable[dict]:
     _, hi = horizon()
     for page in range(1, int(s["max_pages"]) + 1):
         params = {"webId": WEB_ID, "language": "pt", "retail_partner": "BR1",
                   "city_ids": str(s["city_id"]), "categories": list(s["categories"]),
                   "sort": "DateAsc", "page": page}
-        data = http.get_json(API, params=params, headers=HEADERS)
+        data = _get_json(params)
         groups = data.get("productGroups") or []
         yield from groups
         if page >= int(data.get("totalPages") or 0) or not groups:

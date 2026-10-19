@@ -242,6 +242,12 @@ Telegram, Pages and the Calendar API are free.
 
 ## Known gaps
 
+- **Shotgun from GitHub Actions:** shotgun.live's Vercel bot check blocks datacenter IPs even
+  with browser impersonation, so the collect workflow skips it. Its events (mostly club nights,
+  a few samba parties) only refresh when you run
+  `python -m musicfinder collect --only shotgun` locally and push `data/events.db`.
+- **Eventim** 403s plain requests from datacenter IPs; the collector switches to curl_cffi
+  browser impersonation automatically, which gets through.
 - **Instagram Stories aren't covered** (Apify's post scraper reads feed posts only), and
   Instagram handles added for venues without websites could not be verified (Instagram blocks
   logged-out access) — check them in `config/instagram_<city>.txt`.
