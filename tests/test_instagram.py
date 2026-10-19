@@ -52,10 +52,12 @@ def test_incremental_fetch_and_shared_accounts(monkeypatch):
     ig.posts_for(["a", "b"], 6, 10)
     ig.posts_for(["b", "c"], 6, 10)          # b already fetched this process
     assert [c["username"] for c in calls] == [["a", "b"], ["c"]]
-    assert calls[0]["onlyPostsNewerThan"] == (datetime.now(TZ) - timedelta(days=10)).date().isoformat()
+    assert calls[0]["onlyPostsNewerThan"][:10] == (datetime.now(TZ) - timedelta(days=10)).astimezone(
+        ig.timezone.utc).date().isoformat()
     monkeypatch.setattr(ig, "_fetched", {})   # next run: window starts at the last fetch
     ig.posts_for(["a"], 6, 10)
-    assert calls[-1]["onlyPostsNewerThan"] >= (datetime.now(TZ) - timedelta(days=1)).date().isoformat()
+    since = datetime.fromisoformat(calls[-1]["onlyPostsNewerThan"].replace("Z", "+00:00"))
+    assert datetime.now(TZ) - since <= ig.OVERLAP + timedelta(hours=1)
     assert db.cache_get("instagram_post", "a")["ownerUsername"] == "a"
 
 

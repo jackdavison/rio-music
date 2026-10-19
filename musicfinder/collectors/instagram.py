@@ -17,7 +17,7 @@ from __future__ import annotations
 import copy
 import logging
 import os
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 from .. import db, http, llm
 from ..config import CONFIG_DIR, _lines, flag, load_instagram_accounts
@@ -29,7 +29,7 @@ log = logging.getLogger(__name__)
 APIFY_ACTOR = os.environ.get("APIFY_INSTAGRAM_ACTOR", "apify~instagram-post-scraper")
 APIFY_URL = "https://api.apify.com/v2/acts/{actor}/run-sync-get-dataset-items"
 MAX_IMAGES = 4          # carousel slides sent to Claude (2nd/3rd slides often hold the dates)
-OVERLAP = timedelta(hours=12)
+OVERLAP = timedelta(hours=2)   # Apify bills per post returned, so keep re-fetches small
 
 CITY_ALIASES = {
     "rio": ["rio de janeiro", "rio", "rj", "niteroi"],
@@ -70,7 +70,9 @@ def fetch_posts(accounts: list[str], per_account: int, since_days: int) -> list[
     for a in accounts:
         last = db.cache_get("instagram_fetched", _state_key(a))
         since = max(floor, datetime.fromisoformat(last) - OVERLAP) if last else floor
-        windows.setdefault(since.date().isoformat(), []).append(a)
+        # hour precision (UTC ISO, which the actor accepts) so accounts fetched together share a run
+        key = since.astimezone(timezone.utc).replace(minute=0, second=0, microsecond=0)
+        windows.setdefault(key.strftime("%Y-%m-%dT%H:%M:%SZ"), []).append(a)
     posts: list[dict] = []
     for since, group in windows.items():
         payload = {"username": group, "resultsLimit": per_account,
