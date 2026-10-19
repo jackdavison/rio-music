@@ -30,13 +30,13 @@ Tick these off as you go (details for each step are in README.md).
       nothing (probably wrong); replace them when the export arrives
 - [ ] Re-run `compare-models` once ~100 posts from your accounts are cached (the first 12 were
       mostly recaps, too few to judge); Opus until then
-- [ ] Later: the same token as the `APIFY_TOKEN` repo secret
 
 ## Get it running
-- [ ] Commit and push the repo to GitHub (public, unless you have a paid plan for private Pages)
+- [x] Public repo pushed: https://github.com/jackdavison/rio-music (2026-10-19)
 - [ ] Settings → Pages → Source: **GitHub Actions**
-- [ ] Add the same key as the `ANTHROPIC_API_KEY` repo secret
-- [ ] Variable `PAGES_URL` = `https://<you>.github.io/<repo>/`
+- [ ] Secrets `ANTHROPIC_API_KEY` and `APIFY_TOKEN` (the values in `.env`). Do this soon: until
+      the key is there, scheduled runs can't read the venue sites and their shows drop off after ~7h
+- [ ] Variable `PAGES_URL` = `https://jackdavison.github.io/rio-music/`
 - [ ] Actions → **collect** → Run workflow; check the log and `status` table
 - [ ] After the first run, check API spend in the Anthropic console and adjust the model if needed
 
@@ -52,7 +52,7 @@ Tick these off as you go (details for each step are in README.md).
       it adds it to `config/gigs_<city>.yaml` and pushes (rules in CLAUDE.md)
 
 ## Subscribe
-- [ ] Google Calendar → Other calendars → From URL → `<PAGES_URL>rio.ics` (and `sp.ics`, `watchlist.ics`)
+- [ ] Google Calendar → Other calendars → From URL → `https://jackdavison.github.io/rio-music/rio.ics` (and `sp.ics`, `watchlist.ics`)
 - [ ] Add the web calendar to your phone's home screen
 
 ## Optional
