@@ -11,48 +11,59 @@
 </head>
 <body>
 <header class="top">
-  <div class="brand">Música ao vivo</div>
-  <div class="seg" id="cityToggle" role="tablist" aria-label="Cidade"></div>
+  <div class="brand" data-t="brand">Música ao vivo</div>
+  <div class="top-right">
+    <div class="seg small" id="langToggle" aria-label="Idioma / Language">
+      <button data-lang="pt">PT</button><button data-lang="en">EN</button>
+    </div>
+    <div class="seg" id="cityToggle" role="tablist"></div>
+  </div>
 </header>
 
 <main>
-  <section id="tonight" class="tonight" aria-label="Hoje à noite">
-    <h2>Hoje à noite</h2>
+  <section id="tonight" class="tonight">
+    <h2 data-t="tonight">Hoje à noite</h2>
     <div class="tonight-list" id="tonightList"></div>
   </section>
 
   <div class="toolbar">
-    <div class="seg" id="viewToggle" role="tablist" aria-label="Visualização">
-      <button data-view="list" class="on">Lista</button>
-      <button data-view="week">Semana</button>
-      <button data-view="month">Mês</button>
+    <div class="seg" id="viewToggle" role="tablist">
+      <button data-view="stream" data-t="v_stream">Fluxo</button>
+      <button data-view="list" data-t="v_list">Lista</button>
+      <button data-view="week" data-t="v_week">Semana</button>
+      <button data-view="month" data-t="v_month">Mês</button>
     </div>
-    <button id="filtersBtn" class="ghost" aria-expanded="false">Filtros <span id="filterCount"></span></button>
+    <div class="toolbar-right">
+      <button id="starBtn" class="ghost star-toggle" aria-pressed="false"><span class="star-ico">☆</span> <span data-t="starred">Favoritos</span> <span id="starCount"></span></button>
+      <button id="filtersBtn" class="ghost" aria-expanded="false"><span data-t="filters">Filtros</span> <span id="filterCount"></span></button>
+    </div>
   </div>
 
   <form id="filters" class="filters" hidden>
-    <label class="row">Nota mínima <output id="minScoreOut">50</output>
+    <label class="row"><span><span data-t="min_score">Nota mínima</span> <output id="minScoreOut">50</output></span>
       <input type="range" id="minScore" min="0" max="100" step="5" value="50"></label>
-    <label class="check"><input type="checkbox" id="freeOnly"> Só grátis</label>
-    <label class="check"><input type="checkbox" id="newOnly"> Só novos</label>
-    <label class="row">Bairro <select id="hood"><option value="">Todos</option></select></label>
+    <label class="check"><input type="checkbox" id="freeOnly"> <span data-t="free_only">Só grátis</span></label>
+    <label class="check"><input type="checkbox" id="newOnly"> <span data-t="new_only">Só novos</span></label>
+    <label class="row"><span data-t="hood">Bairro</span> <select id="hood"></select></label>
     <div class="row dates">
-      <label>De <input type="date" id="dateFrom"></label>
-      <label>Até <input type="date" id="dateTo"></label>
+      <label><span data-t="from">De</span> <input type="date" id="dateFrom"></label>
+      <label><span data-t="to">Até</span> <input type="date" id="dateTo"></label>
     </div>
-    <div class="row"><span>Gêneros</span><div class="chips" id="genres"></div></div>
-    <button type="button" id="resetFilters" class="ghost small">Limpar filtros</button>
+    <div class="row"><span data-t="genres">Gêneros</span><div class="chips" id="genres"></div></div>
+    <button type="button" id="resetFilters" class="ghost small" data-t="clear">Limpar filtros</button>
   </form>
 
+  <div id="streamView" class="stream"></div>
   <div id="listView" class="list"></div>
   <div id="calView" hidden></div>
+  <div id="sentinel"></div>
   <p class="meta" id="meta"></p>
   <p class="meta feeds" id="feeds"></p>
 </main>
 
 <dialog id="detail">
   <article>
-    <button class="close" aria-label="Fechar" id="closeDetail">×</button>
+    <button class="close" id="closeDetail">×</button>
     <div id="detailBody"></div>
   </article>
 </dialog>

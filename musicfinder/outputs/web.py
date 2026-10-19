@@ -9,6 +9,14 @@ from ..models import Event, TZ
 from ..watchlist import matches
 
 NEW_DAYS = 3
+DESC_CHARS = 280
+
+
+def _desc(e: Event) -> str:
+    d = " ".join((e.description or "").split())
+    if d.startswith("Música ·"):
+        return ""  # Sympla's category/organizer line: nothing the card doesn't already show
+    return d if len(d) <= DESC_CHARS else d[:DESC_CHARS].rsplit(" ", 1)[0] + "…"
 
 
 def payload(by_city: dict[str, list[Event]], names: dict[str, str]) -> dict:
@@ -29,7 +37,8 @@ def payload(by_city: dict[str, list[Event]], names: dict[str, str]) -> dict:
                 "ticket_url": e.ticket_url or e.source_url, "source_url": e.source_url,
                 "sources": e.sources, "image_url": e.image_url, "score": e.score,
                 "score_reason": e.score_reason, "sold_out": e.sold_out, "genres": e.genres,
-                "is_new": first >= new_cutoff, "watch": bool(matches(e)),
+                "is_new": first >= new_cutoff, "watch": bool(matches(e)), "desc": _desc(e),
+                "tbc": bool(getattr(e, "time_unknown", False)),
             }
             if row["source_url"] == row["ticket_url"]:
                 row["source_url"] = ""

@@ -113,3 +113,46 @@ dialog .close { position: absolute; right: 10px; top: 8px; border: 0; background
 .fc .fc-button { padding: 4px 8px; background: var(--chip); border-color: var(--line); color: var(--ink); }
 .fc .fc-button-primary:not(:disabled).fc-button-active { background: var(--accent); border-color: var(--accent); }
 .fc-event { cursor: pointer; }
+
+/* header extras */
+.top-right { display: flex; gap: 8px; align-items: center; }
+.seg.small button { padding: 4px 9px; font-size: 12px; }
+.toolbar-right { display: flex; gap: 8px; }
+.ghost:disabled { opacity: .45; cursor: default; }
+.star-toggle.on { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+
+/* stars */
+.star {
+  border: 0; background: transparent; font-size: 22px; line-height: 1; padding: 4px 6px; cursor: pointer;
+  color: var(--low); align-self: center;
+}
+.star.on { color: var(--accent); }
+.card { grid-template-columns: 44px 1fr auto; }
+
+/* stream: one long chronological feed, the whole city as a club with many rooms */
+.stream-day {
+  position: sticky; top: calc(env(safe-area-inset-top, 0px) + 53px); z-index: 2;
+  margin: 0; padding: 10px 2px 6px; background: var(--bg);
+  font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
+  border-bottom: 1px solid var(--line);
+}
+.ev {
+  display: grid; grid-template-columns: 52px 1fr auto; gap: 10px; align-items: start;
+  padding: 9px 2px 9px 8px; border-bottom: 1px solid var(--line); cursor: pointer;
+  border-left: 3px solid transparent;
+}
+.ev.hi { border-left-color: var(--good); } .ev.mid { border-left-color: var(--mid); }
+.ev:active { background: var(--chip); }
+.ev-time { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 14px; padding-top: 1px; overflow-wrap: anywhere; }
+.ev-title { font-weight: 650; line-height: 1.25; }
+.ev-where { color: var(--muted); font-size: 13px; margin-top: 2px; }
+.ev-desc {
+  color: var(--muted); font-size: 13px; margin-top: 2px; font-style: italic;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.detail .desc { font-size: 14px; color: var(--muted); margin: 10px 0 0; }
+.actions { display: grid; gap: 8px; margin-top: 14px; }
+.actions .cta { margin-top: 0; }
+.star-wide { padding: 10px; border-radius: 12px; font-weight: 700; }
+.star-wide.on { color: var(--accent); border-color: var(--accent); }
+@media (max-width: 420px) { .brand { font-size: 14px; } .seg button { padding: 6px 10px; } }

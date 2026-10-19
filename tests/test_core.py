@@ -258,6 +258,15 @@ def test_web_payload_marks_new():
     assert p["events"][0]["is_new"] is True and p["cities"][0]["slug"] == "rio"
 
 
+def test_web_payload_desc():
+    e = _scored(ev("Roda"))[0]
+    e.description = "Roda   de choro\n com convidados " + "x" * 400
+    row = web.payload({"rio": [e]}, {"rio": "Rio"})["events"][0]
+    assert row["desc"].startswith("Roda de choro com convidados") and len(row["desc"]) <= web.DESC_CHARS + 1
+    e.description = "Música · Samba · Organizador: X"
+    assert "desc" not in web.payload({"rio": [e]}, {"rio": "Rio"})["events"][0]
+
+
 # ---------- hand-entered gigs ----------
 
 def test_gigs_full_and_tip(monkeypatch):
