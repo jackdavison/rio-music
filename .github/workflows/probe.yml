@@ -1,0 +1,20 @@
+name: probe
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: pip install curl_cffi requests
+      - shell: python
+        run: |
+          import requests
+          from curl_cffi import requests as cr
+          u = ("https://public-api.eventim.com/websearch/search/api/exploration/v2/productGroups"
+               "?webId=web__eventim-com-br&language=pt&retail_partner=BR1&city_ids=1672&page=1")
+          for name, get in [("requests", lambda: requests.get(u, headers={"User-Agent": "Mozilla/5.0"}, timeout=20)),
+                            ("curl_cffi chrome", lambda: cr.get(u, impersonate="chrome", timeout=20)),
+                            ("curl_cffi safari", lambda: cr.get(u, impersonate="safari", timeout=20))]:
+              try:
+                  r = get(); print(name, r.status_code, r.text[:150].replace("\n", " "))
+              except Exception as e:
+                  print(name, "ERR", e)
