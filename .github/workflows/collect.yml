@@ -29,6 +29,8 @@ jobs:
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main   # latest db, not the commit this run was queued at (runs wait on each other)
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
