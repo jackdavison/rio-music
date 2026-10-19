@@ -4,4 +4,14 @@
 # Fields: title, artists, date (YYYY-MM-DD), time "HH:MM", venue, neighborhood, price | free,
 #   link, genre, notes, heard (date you heard of it). Past dates are ignored; prune them anytime.
 # Easiest way to add one: tell Claude Code in this repo (see CLAUDE.md).
-gigs: []
+gigs:
+  - title: Feijoada da Mangueira com Jorge Aragão
+    artists: [Jorge Aragão, Vitor Art, Chacal do Sax, Dowglas Diniz, Bateria da Mangueira]
+    date: 2026-10-24
+    time: "13:00"
+    venue: Palácio do Samba (Quadra da Mangueira)
+    neighborhood: Mangueira
+    genre: samba
+    link: https://www.instagram.com/mangueira_oficial/
+    notes: Monthly Mangueira feijoada; announced on @mangueira_oficial.
+    heard: 2026-10-19

@@ -11,11 +11,11 @@ on the next run (scores are cached per taste.md version).
 - Jazz
 - Afro-Brazilian and diasporic traditions (jongo, ijexá, samba de roda, afrobeat, Afro-Cuban, etc.)
 - Flute- and sax-forward groups
+- Frevo, maracatu and the rest of Pernambuco's traditions (ciranda, coco, caboclinho)
+- Forró (pé-de-serra, xote, baião, forró rabecado)
 
 ## Interested
 - MPB
-- Forró pé-de-serra
-- Frevo / maracatu
 - Contemporary / minimalist classical
 
 ## Deprioritize

@@ -52,3 +52,136 @@ events:
     free: true
     genre: samba
     notes: Largo João da Baiana, Pequena África. Open-air roda.
+
+  - name: Samba do Passeio
+    venue: Passeio Público
+    neighborhood: Lapa
+    weekday: sunday
+    time: "12:00"
+    end_time: "23:00"
+    free: true
+    genre: samba
+    link: https://www.instagram.com/sambadopasseio/
+    notes: >-
+      Open-air samba in the park with a food and craft fair. Free (suggested contribution from
+      R$5; free ticket on Sympla). Confirmed on their Instagram, Oct 2026.
+
+  - name: Roda de Choro e Samba do Pixin Bodega
+    artists: [Pixin Bodega]
+    venue: Praça do Choro (Rua General Glicério)
+    neighborhood: Laranjeiras
+    weekday: saturday
+    time: "12:00"
+    free: true
+    genre: choro
+    link: https://www.instagram.com/pixinbodega/
+    notes: >-
+      Opposite Rua General Glicério 224, alongside the Saturday Laranjeiras street market. From
+      the city's 2025 Mapa das Rodas; the group's Instagram is active.
+
+  # From the city's Mapa das Rodas de Samba (Jan 2025), not reconfirmed since: check the
+  # day before going. Zona Sul and Centro weekend rodas only.
+  - name: Batuque no Coreto
+    venue: Praça São Salvador (coreto)
+    neighborhood: Laranjeiras
+    weekday: saturday
+    time: "18:00"
+    free: true
+    genre: samba
+    notes: From the city's 2025 Mapa das Rodas; not reconfirmed.
+
+  - name: Mal de Raiz (roda de samba)
+    artists: [Mal de Raiz]
+    venue: Rua do Ouvidor esq. Rua do Mercado
+    neighborhood: Centro
+    weekday: saturday
+    time: "14:00"
+    free: true
+    genre: samba
+    notes: Street roda near Praça XV. From the city's 2025 Mapa das Rodas; not reconfirmed.
+
+  - name: Samba no Armazém Senado
+    venue: Armazém Senado (Rua do Senado x Av. Gomes Freire)
+    neighborhood: Centro
+    weekday: saturday
+    time: "14:00"
+    free: true
+    genre: samba
+    notes: From the city's 2025 Mapa das Rodas; not reconfirmed.
+
+  - name: Choro da Gávea
+    venue: Praça Santos Dumont
+    neighborhood: Gávea
+    weekday: saturday
+    every: monthly
+    week_of_month: [1]
+    time: "15:00"
+    free: true
+    genre: choro
+    notes: From the city's 2025 Mapa das Rodas; not reconfirmed.
+
+  - name: Samba d'Ojuara
+    venue: Praça Chaim Weizmann
+    neighborhood: Botafogo
+    weekday: saturday
+    every: monthly
+    week_of_month: [2]
+    time: "14:00"
+    free: true
+    genre: samba
+    notes: From the city's 2025 Mapa das Rodas; not reconfirmed.
+
+  - name: Samba Sacopã
+    venue: Rua Sacopã 250
+    neighborhood: Lagoa
+    weekday: saturday
+    every: monthly
+    week_of_month: [2]
+    time: "17:00"
+    genre: samba
+    notes: From the city's 2025 Mapa das Rodas; not reconfirmed.
+
+  - name: O Samba é Meu Dom
+    venue: Rua das Laranjeiras 336
+    neighborhood: Laranjeiras
+    weekday: saturday
+    every: monthly
+    week_of_month: [3]
+    time: "16:00"
+    genre: samba
+    notes: From the city's 2025 Mapa das Rodas; not reconfirmed.
+
+  - name: Samba das Levianas
+    venue: Parque Garota de Ipanema
+    neighborhood: Arpoador
+    weekday: sunday
+    every: monthly
+    week_of_month: [2, 4]
+    time: "14:00"
+    free: true
+    genre: samba
+    notes: Women-led roda. From the city's 2025 Mapa das Rodas; not reconfirmed.
+
+  - name: Conjunto Grapiúna + Samba da Praça Mauro Duarte
+    artists: [Conjunto Grapiúna]
+    venue: Praça Compositor Mauro Duarte
+    neighborhood: Botafogo
+    weekday: sunday
+    every: monthly
+    week_of_month: [1]
+    time: "17:00"
+    free: true
+    genre: samba
+    notes: >-
+      Grapiúna at 17h, then the praça's own roda at 18h. From the city's 2025 Mapa das Rodas;
+      not reconfirmed.
+
+  - name: Canto do Samba
+    venue: Rua Arno Konder 100
+    neighborhood: Flamengo
+    weekday: sunday
+    every: monthly
+    week_of_month: [3]
+    time: "14:00"
+    genre: samba
+    notes: From the city's 2025 Mapa das Rodas; not reconfirmed.
