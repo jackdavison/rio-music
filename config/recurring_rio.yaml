@@ -187,3 +187,57 @@ events:
     time: "14:00"
     genre: samba
     notes: From the city's 2025 Mapa das Rodas; not reconfirmed.
+
+  # Choro rodas, researched Oct 2026 (Chorolab, Bafafá, the groups' Instagrams).
+  - name: Choro da Esquina
+    venue: Rio Soccer (ex-Boteco do Pires), Rua Marquês de Abrantes 45
+    neighborhood: Flamengo
+    weekday: monday
+    time: "19:00"
+    end_time: "22:00"
+    free: true
+    genre: choro
+    link: https://www.instagram.com/choro_da_esquina_oficial/
+    notes: >-
+      Open roda on the bar's veranda, going 11 years; players from several music schools sit in.
+      Bafafá listed it through Oct 2026 (some listings say until 23h).
+
+  - name: Quarteto de Ouro
+    artists: [Quarteto de Ouro]
+    venue: Baixo Gago, Rua Gago Coutinho 51
+    neighborhood: Laranjeiras
+    weekday: tuesday
+    time: "19:30"
+    end_time: "22:00"
+    kind: show
+    genre: choro
+    link: https://www.instagram.com/quartetodeourorj/
+    notes: >-
+      Choro quartet's weekly set (a fixed group, not a jam). Outdoors: cancelled when rain is
+      forecast, so check their Instagram that day.
+
+  - name: Xodó do Leme (choro, quinzenal)
+    venue: Xodó do Leme, Rua Gustavo Sampaio 410 (unconfirmed)
+    neighborhood: Leme
+    weekday: thursday
+    time: "19:00"
+    end_time: "22:00"
+    genre: choro
+    link: https://chorolab.com/rodas-de-choro/
+    notes: >-
+      Every other Thursday, but which weeks is unknown, so every Thursday is listed here: check
+      before going. Chorolab gives @vizinhosdoleme as the contact (a Leme neighbourhood account).
+      The venue is a guess from the name.
+
+  - name: Arruma o Coreto
+    venue: Praça São Salvador (coreto)
+    neighborhood: Laranjeiras
+    weekday: sunday
+    time: "11:00"
+    end_time: "14:00"
+    free: true
+    genre: choro
+    link: https://www.instagram.com/arrumaocoreto/
+    notes: >-
+      Every Sunday since 2007; city and state heritage. Open roda, but players stick to the
+      group's studied repertoire list. Confirmed by Bafafá and Partiu Rota, Oct 2026.
