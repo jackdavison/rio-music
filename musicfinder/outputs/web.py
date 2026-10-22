@@ -40,7 +40,7 @@ def payload(by_city: dict[str, list[Event]], names: dict[str, str]) -> dict:
                 "sources": e.sources, "image_url": e.image_url, "score": e.score,
                 "score_reason": e.score_reason, "sold_out": e.sold_out, "genres": e.genres,
                 "is_new": first >= new_cutoff, "watch": bool(matches(e)), "desc": _desc(e),
-                "tbc": bool(getattr(e, "time_unknown", False)),
+                "tbc": bool(getattr(e, "time_unknown", False)), "kind": e.kind,
             }
             if row["source_url"] == row["ticket_url"]:
                 row["source_url"] = ""

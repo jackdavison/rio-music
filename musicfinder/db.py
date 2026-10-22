@@ -39,7 +39,8 @@ CREATE TABLE IF NOT EXISTS events (
     genres TEXT NOT NULL DEFAULT '[]',
     description TEXT,
     content_hash TEXT,
-    active INTEGER NOT NULL DEFAULT 1        -- 0 once it disappears from all sources
+    active INTEGER NOT NULL DEFAULT 1,       -- 0 once it disappears from all sources
+    kind TEXT                                -- roda | show
 );
 CREATE INDEX IF NOT EXISTS events_city_start ON events(city, start_datetime);
 
@@ -69,6 +70,9 @@ def conn() -> sqlite3.Connection:
         _conn = sqlite3.connect(DB_PATH)
         _conn.row_factory = sqlite3.Row
         _conn.executescript(SCHEMA)
+        cols = {r[1] for r in _conn.execute("PRAGMA table_info(events)")}
+        if "kind" not in cols:  # added after the first dbs were committed
+            _conn.execute("ALTER TABLE events ADD COLUMN kind TEXT")
     return _conn
 
 
@@ -109,7 +113,7 @@ def _row_to_event(r: sqlite3.Row) -> Event:
         image_url=r["image_url"] or "", first_seen=r["first_seen"] or "", last_seen=r["last_seen"] or "",
         score=r["score"], score_reason=r["score_reason"] or "", sold_out=bool(r["sold_out"]),
         sources=json.loads(r["sources"]), genres=json.loads(r["genres"]),
-        description=r["description"] or "",
+        description=r["description"] or "", kind=r["kind"] or "",
     )
 
 
@@ -138,8 +142,8 @@ def upsert(ev: Event):
         INSERT INTO events (id, city, title, artists, venue, neighborhood, start_datetime,
             end_datetime, price_min, price_max, is_free, ticket_url, source, source_url, image_url,
             first_seen, last_seen, score, score_reason, sold_out, sources, genres, description,
-            content_hash, active)
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,1)
+            content_hash, active, kind)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,1,?)
         ON CONFLICT(id) DO UPDATE SET
             title=excluded.title, artists=excluded.artists, venue=excluded.venue,
             neighborhood=excluded.neighborhood, start_datetime=excluded.start_datetime,
@@ -148,7 +152,8 @@ def upsert(ev: Event):
             source=excluded.source, source_url=excluded.source_url, image_url=excluded.image_url,
             last_seen=excluded.last_seen, score=excluded.score, score_reason=excluded.score_reason,
             sold_out=excluded.sold_out, sources=excluded.sources, genres=excluded.genres,
-            description=excluded.description, content_hash=excluded.content_hash, active=1
+            description=excluded.description, content_hash=excluded.content_hash, active=1,
+            kind=excluded.kind
     """, (
         ev.id, ev.city, ev.title, json.dumps(ev.artists, ensure_ascii=False), ev.venue,
         ev.neighborhood, ev.start_datetime.isoformat(),
@@ -156,6 +161,7 @@ def upsert(ev: Event):
         int(ev.is_free), ev.ticket_url, ev.source, ev.source_url, ev.image_url, ev.first_seen,
         ev.last_seen, ev.score, ev.score_reason, int(ev.sold_out),
         json.dumps(ev.sources), json.dumps(ev.genres), ev.description[:2000], ev.content_hash(),
+        ev.kind or None,
     ))
 
 

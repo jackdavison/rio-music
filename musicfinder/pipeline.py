@@ -10,7 +10,7 @@ from . import changes, db
 from .collectors.base import CollectorResult, run_city
 from .config import CityConfig
 from .dedupe import dedupe
-from .genres import tag
+from .genres import kind_of, tag
 from .models import Event, TZ, norm, venue_key
 from .rank import rank
 
@@ -64,6 +64,7 @@ def process_city(city: CityConfig, only: list[str] | None = None,
     raw = [e for r in results for e in r.events]
     for e in raw:
         e.genres = tag(e)
+        e.kind = e.kind or kind_of(e)
 
     prev = db.load_events_by_id(city.slug)
     # Carry forward stored events whose sources didn't run OK this time (skipped, e.g. Instagram on

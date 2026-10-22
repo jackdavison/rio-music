@@ -74,6 +74,9 @@ def _llm_tiebreak(pairs: list[tuple[Event, Event]]) -> list[bool]:
     return res
 
 
+MANUAL_SOURCES = ("recurring", "gigs")  # hand-entered; their kind: is authoritative
+
+
 def merge(group: list[Event]) -> Event:
     group = sorted(group, key=lambda e: (SOURCE_RANK.get(e.source, 5), -len(e.description)))
     best = group[0]
@@ -97,6 +100,10 @@ def merge(group: list[Event]) -> Event:
         for s in other.sources:
             if s not in best.sources:
                 best.sources.append(s)
+        if other.kind == "roda" and best.source not in MANUAL_SOURCES:
+            best.kind = "roda"
+        if other.source in MANUAL_SOURCES and other.kind and best.source not in MANUAL_SOURCES:
+            best.kind = other.kind
         for g in other.genres:
             if g not in best.genres:
                 best.genres.append(g)

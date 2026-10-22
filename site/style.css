@@ -1,14 +1,14 @@
 :root {
   --bg: #faf7f2; --card: #ffffff; --ink: #1d1a16; --muted: #6f675d; --line: #e7e0d5;
   --accent: #b4462b; --accent-ink: #fff; --good: #2f7d4f; --mid: #a26b12; --low: #8a8278;
-  --chip: #f1ebe2; --radius: 14px;
+  --chip: #f1ebe2; --radius: 14px; --roda: #2a6f8f;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #15130f; --card: #201d18; --ink: #f1ece4; --muted: #a39a8e; --line: #34302a;
     --accent: #e0714f; --accent-ink: #15130f; --good: #5cc188; --mid: #e0a944; --low: #8d857a;
-    --chip: #2b2721; color-scheme: dark;
+    --chip: #2b2721; --roda: #73b8d9; color-scheme: dark;
   }
 }
 * { box-sizing: border-box; }
@@ -161,3 +161,10 @@ dialog .close { position: absolute; right: 10px; top: 8px; border: 0; background
   font-size: 11px; font-weight: 800; color: #fff; background: var(--low);
 }
 .ev-score.hi { background: var(--good); } .ev-score.mid { background: var(--mid); }
+
+/* roda vs show */
+.badge.kind-roda { background: transparent; color: var(--roda); box-shadow: inset 0 0 0 1.5px var(--roda); }
+.badge.kind-show { background: transparent; color: var(--muted); box-shadow: inset 0 0 0 1px var(--line); }
+.kind-toggle { margin: 0 0 10px; }
+.kind-toggle button[data-kind="roda"].on { color: var(--roda); }
+.kind-note { font-size: 13px; color: var(--roda); margin: 4px 0 8px; }

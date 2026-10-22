@@ -14,6 +14,8 @@ const I18N = {
     price: "Preço", genres_k: "Gêneros", source: "Fonte", page: "página", tickets: "Ingressos",
     view_sold: "Ver (esgotado)", star: "Favoritar", unstar: "Tirar dos favoritos", close: "Fechar",
     load_fail: "Não foi possível carregar events.json.", city: "Cidade", view: "Visualização",
+    k_all: "Tudo", k_roda: "Rodas", k_show: "Shows", roda: "roda aberta", show: "show",
+    roda_note: "Roda aberta: músicos sentam em volta da mesa e tocam juntos, a plateia fica em volta.",
     gone_note: "Este evento não aparece mais nas fontes (cancelado, esgotado e retirado, ou mudou de nome). Confira antes de ir.",
   },
   en: {
@@ -29,6 +31,8 @@ const I18N = {
     price: "Price", genres_k: "Genres", source: "Source", page: "page", tickets: "Tickets",
     view_sold: "View (sold out)", star: "Star", unstar: "Unstar", close: "Close",
     load_fail: "Couldn't load events.json.", city: "City", view: "View",
+    k_all: "All", k_roda: "Rodas", k_show: "Shows", roda: "open roda", show: "show",
+    roda_note: "Open roda: musicians sit around a table and play together, the crowd stands around them.",
     gone_note: "This event no longer appears in any source (cancelled, sold out and pulled, or renamed). Check before going.",
   },
 };
@@ -60,7 +64,7 @@ const store = {
 };
 
 const isPhone = () => window.matchMedia("(max-width: 700px)").matches;
-const DEFAULT_F = { minScore: 50, free: false, onlyNew: false, hood: "", from: "", to: "", genres: [] };
+const DEFAULT_F = { kind: "", minScore: 50, free: false, onlyNew: false, hood: "", from: "", to: "", genres: [] };
 
 const state = {
   data: null,
@@ -106,7 +110,7 @@ function scoreClass(s) { return s >= 75 ? "hi" : s >= 55 ? "mid" : ""; }
 // ---------- stars ----------
 
 const isStarred = (id) => Object.prototype.hasOwnProperty.call(state.stars, id);
-const SNAP_KEYS = ["id", "city", "title", "venue", "neighborhood", "start", "end", "ticket_url", "is_free", "price_min", "price_max", "tbc"];
+const SNAP_KEYS = ["id", "city", "title", "venue", "neighborhood", "start", "end", "ticket_url", "is_free", "price_min", "price_max", "tbc", "kind"];
 
 function toggleStar(id) {
   if (isStarred(id)) delete state.stars[id];
@@ -149,6 +153,7 @@ function cityEvents() { return state.data.events.filter((e) => e.city === state.
 function filtered() {
   const f = state.f;
   return cityEvents().filter((e) =>
+    kindOk(e) &&
     (e.score ?? 0) >= f.minScore &&
     (!f.free || e.is_free) &&
     (!f.onlyNew || e.is_new) &&
@@ -172,12 +177,15 @@ function starredEvents() {
   return out.sort((a, b) => a.start.localeCompare(b.start));
 }
 
+function kindOk(e) { return !state.f.kind || (e.kind || "show") === state.f.kind; }
+
 function selected() { return state.starOnly ? starredEvents() : filtered(); }
 
 // ---------- rendering ----------
 
 function badges(e) {
   let b = "";
+  if (e.kind) b += `<span class="badge kind-${e.kind}">${t(e.kind)}</span>`;
   if (e.gone) b += `<span class="badge out">${t("gone")}</span>`;
   if (e.is_new) b += `<span class="badge">${t("new")}</span>`;
   if (e.watch) b += '<span class="badge watch">watch</span>';
@@ -215,7 +223,7 @@ function renderTonight() {
   const today = todayStr();
   const notOver = (e) => (e.end ? Date.parse(e.end) : Date.parse(e.start) + 3 * 3600e3) > Date.now();
   const evs = cityEvents()
-    .filter((e) => localDate(e.start) === today && hhmm(e.start) >= "17:00" && notOver(e))
+    .filter((e) => localDate(e.start) === today && hhmm(e.start) >= "17:00" && notOver(e) && kindOk(e))
     .filter((e) => (e.score ?? 0) >= Math.min(state.f.minScore, 50))
     .sort((a, b) => (b.score ?? 0) - (a.score ?? 0)).slice(0, 10)
     .sort((a, b) => a.start.localeCompare(b.start));
@@ -263,7 +271,7 @@ function renderCalendar(evs) {
   if (!window.FullCalendar) { setTimeout(() => renderCalendar(selected()), 150); return; }
   const fcView = state.view === "week" ? (isPhone() ? "listWeek" : "timeGridWeek") : "dayGridMonth";
   const events = evs.map((e) => ({
-    id: e.id, title: [isStarred(e.id) ? "★" : "", e.score ?? "", e.title].filter((x) => x !== "").join(" "), start: e.start, end: e.end || undefined,
+    id: e.id, title: [isStarred(e.id) ? "★" : "", e.score ?? "", e.kind === "roda" ? "◯" : "", e.title].filter((x) => x !== "").join(" "), start: e.start, end: e.end || undefined,
     color: e.score >= 75 ? "var(--good)" : e.score >= 55 ? "var(--mid)" : "var(--low)",
   }));
   if (!calendar) {
@@ -303,6 +311,8 @@ function render(keepScroll = false) {
   $("filtersBtn").disabled = state.starOnly;
   if (state.starOnly) $("filters").hidden = true;
   $("tonight").hidden = state.starOnly;
+  $("kindToggle").hidden = state.starOnly;
+  for (const b of $("kindToggle").children) b.classList.toggle("on", b.dataset.kind === state.f.kind);
   if (!state.starOnly) renderTonight();
 
   const evs = selected();
@@ -365,6 +375,7 @@ function openDetail(id) {
     ${e.image_url ? `<img class="flyer" src="${esc(e.image_url)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ""}
     <h2>${esc(e.title)}${badges(e)}</h2>
     ${e.gone ? `<div class="reason">${t("gone_note")}</div>` : `<div class="reason"><b>${e.score ?? "–"}/100</b> — ${esc(e.score_reason || "")}</div>`}
+    ${e.kind === "roda" ? `<p class="kind-note">${t("roda_note")}</p>` : ""}
     ${e.desc ? `<p class="desc">${esc(e.desc)}</p>` : ""}
     <dl>${rows.map(([k, v]) => `<dt>${k}</dt><dd>${k === t("source") ? v : esc(v)}</dd>`).join("")}</dl>
     <div class="actions">
@@ -393,6 +404,10 @@ function wire() {
     const b = ev.target.closest("button"); if (!b) return;
     state.view = b.dataset.view; store.set("view", state.view); render();
   });
+  $("kindToggle").addEventListener("click", (ev) => {
+    const b = ev.target.closest("button"); if (!b) return;
+    state.f.kind = b.dataset.kind; saveFilters();
+  });
   $("starBtn").addEventListener("click", () => {
     state.starOnly = !state.starOnly; store.set("starOnly", state.starOnly); render(); window.scrollTo({ top: 0 });
   });
@@ -412,7 +427,7 @@ function wire() {
     b.classList.toggle("on"); saveFilters();
   });
   $("resetFilters").addEventListener("click", () => {
-    state.f = { ...DEFAULT_F, genres: [] };
+    state.f = { ...DEFAULT_F, kind: state.f.kind, genres: [] };
     buildFilters(); saveFilters();
   });
   document.body.addEventListener("click", (ev) => {

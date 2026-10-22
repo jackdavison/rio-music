@@ -7,8 +7,10 @@ Entry shape:
     weekday: monday            # or a list; english or portuguese names; or 0=Mon..6=Sun
     time: "19:00"
     end_time: "23:00"          # optional
-    every: weekly              # weekly | monthly
+    every: weekly              # weekly | biweekly | monthly
     week_of_month: [1, 3]      # monthly only: 1..5, or -1 for the last one
+    anchor: 2026-10-23         # biweekly only: any date it happens on
+    kind: roda                 # roda (open, sit-in; the default here) | show (staged performance)
     free: true
     price: 20                  # optional
     artists: [ ... ]           # optional
@@ -85,6 +87,9 @@ def expand(entry: dict, today: date, weeks: int = WEEKS_AHEAD) -> list[date]:
         if d.weekday() in days:
             if every == "weekly":
                 out.append(d)
+            elif every == "biweekly":
+                if (d - _as_date(entry["anchor"])).days % 14 == 0:
+                    out.append(d)
             elif every == "monthly":
                 n, last = _week_of_month(d)
                 if n in wom or (-1 in wom and last):
@@ -116,6 +121,7 @@ def events_for(city: str, entries: list[dict], today: date | None = None) -> lis
                 is_free=bool(e.get("free")), price_min=price, price_max=price,
                 ticket_url=e.get("link", ""), source_url=e.get("link", ""),
                 description=" ".join(x for x in [e.get("notes", ""), e.get("genre", "")] if x),
+                kind=e.get("kind", "roda"),
             ))
     return out
 

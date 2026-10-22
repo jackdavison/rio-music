@@ -57,6 +57,7 @@ class Event:
     sold_out: bool = False
     description: str = ""          # not persisted as a column of its own; feeds ranking/genres
     genres: list[str] = field(default_factory=list)
+    kind: str = ""                 # "roda" (open, sit-in) | "show" (staged); see genres.kind_of
     # set by the pipeline
     id: str = ""
     first_seen: str = ""

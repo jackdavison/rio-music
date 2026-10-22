@@ -49,6 +49,22 @@ def tag(ev: Event) -> list[str]:
     return found
 
 
+# An open roda (musicians sit in around a table, audience stands around) vs a staged show.
+# "samba de roda" is a Bahian genre, not a format, so it's stripped before matching.
+RODA_KWS = (" roda de samba", " roda de choro", " roda de pagode", " roda de partido", " roda de forro",
+            " roda de coco", " roda de jongo", " rodas de samba", " rodas de choro", " roda aberta",
+            " na roda", " pra roda", " a roda ", " sua roda", " jam session", " canja ")
+
+
+def kind_of(ev: Event) -> str:
+    t = " " + norm(" ".join([ev.title, ev.description[:300]])) + " "
+    t = t.replace(" samba de roda ", " ")
+    title = norm(ev.title)
+    if title.startswith(("roda ", "rodas ")) and not title.startswith(("roda de conversa", "roda de leitura")):
+        return "roda"
+    return "roda" if any(k in t for k in RODA_KWS) else "show"
+
+
 def heuristic_score(ev: Event) -> tuple[int, str]:
     """Rough 0-100 score from genre tags. Used only when Claude is unavailable."""
     g = set(ev.genres or tag(ev))

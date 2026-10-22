@@ -303,3 +303,27 @@ def test_llm_model_per_task(monkeypatch):
     assert llm.model_for("rank") == "claude-haiku-5-5"
     assert llm.model_for("extract") == llm.MODEL
     assert llm.cost("claude-haiku-5-5", 1_000_000, 1_000_000) == 0.6
+
+
+def test_kind_of_roda_vs_show():
+    from musicfinder.genres import kind_of
+    mk = lambda title, desc="": Event(city="rio", title=title, start_datetime=datetime(2026, 11, 1, 20, tzinfo=TZ),
+                                      source="x", description=desc)
+    assert kind_of(mk("Roda de Samba do Bip Bip")) == "roda"
+    assert kind_of(mk("Jam session no Beco")) == "roda"
+    assert kind_of(mk("Roda do Gallo 22.10")) == "roda"
+    assert kind_of(mk("Black Circle - Tributo a Pearl Jam")) == "show"
+    assert kind_of(mk("Roda de Conversa: Quintais do Samba")) == "show"
+    assert kind_of(mk("Mariene de Castro", "samba de roda do Recôncavo")) == "show"
+    assert kind_of(mk("Hamilton de Holanda Quarteto")) == "show"
+
+
+def test_recurring_biweekly_and_kind():
+    from datetime import date
+    from musicfinder.collectors.recurring import events_for
+    entries = [{"name": "Leme", "weekday": "thursday", "every": "biweekly", "anchor": "2026-10-22", "time": "19:00"},
+               {"name": "Palco", "weekday": "monday", "time": "20:00", "kind": "show"}]
+    evs = events_for("rio", entries, today=date(2026, 10, 20))
+    leme = [e.start_datetime.date().isoformat() for e in evs if e.title == "Leme"]
+    assert leme[:3] == ["2026-10-22", "2026-11-05", "2026-11-19"]
+    assert {e.title: e.kind for e in evs} == {"Leme": "roda", "Palco": "show"}

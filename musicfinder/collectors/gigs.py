@@ -51,7 +51,7 @@ def events_for(city: str, entries: list[dict], today: date | None = None) -> lis
             start_datetime=start, venue=g.get("venue", ""), neighborhood=g.get("neighborhood", ""),
             source="gigs", is_free=bool(g.get("free")), price_min=price, price_max=price,
             ticket_url=g.get("link", ""), source_url=g.get("link", ""),
-            description=" · ".join(x for x in notes if x),
+            description=" · ".join(x for x in notes if x), kind=g.get("kind", ""),
         )
         ev.time_unknown = unknown_time
         if in_horizon(ev):

@@ -1,7 +1,9 @@
 # Weekly / monthly rodas in São Paulo, expanded into dated events for the next 8 weeks.
 # Fields: name, venue, neighborhood, weekday (monday..sunday or segunda..domingo, or a list),
-#   time "HH:MM", end_time, every: weekly|monthly, week_of_month: [1..5 or -1 = last],
-#   free, price, artists, link, notes, genre, active_from, active_until (YYYY-MM-DD).
+#   time "HH:MM", end_time, every: weekly|biweekly|monthly, week_of_month: [1..5 or -1 = last],
+#   anchor (biweekly: any date it happens on), free, price, artists, link, notes, genre,
+#   kind (roda = open, musicians sit in; the default | show = staged performance),
+#   active_from, active_until (YYYY-MM-DD).
 # Entries with `placeholder: true` are ignored. Fill these in and delete the flag.
 events:
   - name: "PLACEHOLDER — Roda de samba (weekly)"
