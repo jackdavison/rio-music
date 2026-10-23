@@ -74,6 +74,8 @@ def process_city(city: CityConfig, only: list[str] | None = None,
     now_dt = datetime.now(TZ)
     carried = [e for e in db.load_events(city.slug) if e.start_datetime >= now_dt
                and not set(e.sources) & ok_sources]
+    for e in carried:  # stored before kind existed
+        e.kind = e.kind or kind_of(e)
     events = dedupe(raw + carried)
     _canonical_ids(city.slug, events, prev)
 
