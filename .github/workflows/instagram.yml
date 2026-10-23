@@ -59,7 +59,7 @@ jobs:
         run: |
           git config user.name "musicfinder-bot"
           git config user.email "musicfinder-bot@users.noreply.github.com"
-          git add data/events.db
+          git add data/events.db site/index.html   # index.html: cache-busting hashes from web.bust_cache
           git diff --cached --quiet || git commit -m "data: instagram $(date -u +%FT%TZ)"
           git pull --rebase -X theirs && git push
       - uses: actions/upload-pages-artifact@v3
