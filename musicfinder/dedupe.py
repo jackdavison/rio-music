@@ -174,7 +174,7 @@ def dedupe(events: list[Event]) -> list[Event]:
                 elif s >= AMBIGUOUS or (s >= SAME and not _time_close(a, b)):
                     ambiguous.append((a, b))
 
-    for (a, b), same in zip(ambiguous, _llm_tiebreak(ambiguous[:60])):
+    for (a, b), same in zip(ambiguous, _llm_tiebreak(ambiguous[:200])):
         if same:
             union(a, b)
 
