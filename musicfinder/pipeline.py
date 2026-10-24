@@ -9,7 +9,7 @@ from rapidfuzz import fuzz
 from . import changes, db
 from .collectors.base import CollectorResult, run_city
 from .config import CityConfig
-from .dedupe import dedupe
+from .dedupe import SAME, _time_close, dedupe, similarity, venues_match
 from .genres import kind_of, tag
 from .models import Event, TZ, norm, venue_key
 from .rank import rank
@@ -42,6 +42,26 @@ def _canonical_ids(city: str, events: list[Event], prev: dict[str, Event]) -> No
             if m != canon:
                 db.cache_put("alias", m, canon)
         e.id = canon
+
+
+def retire_superseded(city: str, events: list[Event]) -> None:
+    """Deactivate stored rows that this run's events stand in for, which deactivate_missing would
+    keep showing: rows merged into another event (an Instagram-sourced row is never retired as
+    missing) and rows a paginated source skipped this pass that duplicate a current event (they'd
+    otherwise sit beside it for the grace period)."""
+    current = {e.id for e in events}
+    absorbed = {m for e in events for m in getattr(e, "member_ids", []) if m not in current}
+    now = datetime.now(TZ)
+    by_day: dict = {}
+    for e in events:
+        by_day.setdefault(e.date, []).append(e)
+    for old in db.load_events(city):
+        if old.id in current or old.start_datetime < now:
+            continue
+        if old.id in absorbed or any(
+                venues_match(old, e) and similarity(old, e) >= SAME and _time_close(old, e)
+                for e in by_day.get(old.date, [])):
+            db.deactivate(old.id)
 
 
 def _moved_from(e: Event, prev: dict[str, Event], taken: set[str], present: set[str]) -> str | None:
@@ -97,6 +117,7 @@ def process_city(city: CityConfig, only: list[str] | None = None,
             db.log_change(e.id, "nearly_sold_out", "")
         db.upsert(e)
 
+    retire_superseded(city.slug, events)
     gone = db.deactivate_missing(city.slug, {e.id for e in events}, ok_sources)
     if gone:
         log.info("[%s] %d events disappeared from sources", city.slug, len(gone))

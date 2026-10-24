@@ -190,6 +190,10 @@ def deactivate_missing(city: str, seen_ids: set[str], ok_sources: set[str],
     return gone
 
 
+def deactivate(event_id: str) -> None:
+    conn().execute("UPDATE events SET active=0 WHERE id=?", (event_id,))
+
+
 def log_run(city: str, collector: str, ok: bool, n: int, error: str, seconds: float):
     conn().execute("INSERT INTO runs(started,city,collector,ok,n_events,error,seconds) VALUES(?,?,?,?,?,?,?)",
                    (now_iso(), city, collector, int(ok), n, error, seconds))
