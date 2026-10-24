@@ -87,7 +87,7 @@ const genreLabel = (g) => GENRE_LABELS[state.lang][g] || g;
 
 function localDate(iso) { return iso.slice(0, 10); }
 function hhmm(iso) { return iso.slice(11, 16); }
-function timeLabel(e) { return e.tbc ? t("tbc") : hhmm(e.start); }
+function timeLabel(e) { return e.tbc ? t("tbc") : e.times ? e.times.join(" · ") : hhmm(e.start); }
 function todayStr() {
   const d = new Date(new Date().toLocaleString("en-US", { timeZone: "America/Sao_Paulo" }));
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;

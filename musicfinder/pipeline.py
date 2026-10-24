@@ -72,10 +72,14 @@ def process_city(city: CityConfig, only: list[str] | None = None,
     # Instagram only sees recent posts, so absence from a run never means an event is gone.
     ok_sources = {r.name for r in results if r.ok} - {"instagram"}
     now_dt = datetime.now(TZ)
+    # An event any of whose sources didn't run is carried too (e.g. Instagram + a hand-entered gig):
+    # otherwise the source that did run yields it under a new id and the stored row, which
+    # deactivate_missing never retires while Instagram is among its sources, lingers as a duplicate.
     carried = [e for e in db.load_events(city.slug) if e.start_datetime >= now_dt
-               and not set(e.sources) & ok_sources]
-    for e in carried:  # stored before kind existed
-        e.kind = e.kind or kind_of(e)
+               and set(e.sources) - ok_sources]
+    for e in carried:
+        e.carried = True
+        e.kind = e.kind or kind_of(e)  # stored before kind existed
     events = dedupe(raw + carried)
     _canonical_ids(city.slug, events, prev)
 

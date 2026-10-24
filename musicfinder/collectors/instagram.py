@@ -28,7 +28,7 @@ log = logging.getLogger(__name__)
 
 APIFY_ACTOR = os.environ.get("APIFY_INSTAGRAM_ACTOR", "apify~instagram-post-scraper")
 APIFY_URL = "https://api.apify.com/v2/acts/{actor}/run-sync-get-dataset-items"
-MAX_IMAGES = 4          # carousel slides sent to Claude (2nd/3rd slides often hold the dates)
+MAX_IMAGES = 10         # carousel slides sent to Claude (Instagram's max; weekly agendas fill them)
 OVERLAP = timedelta(hours=2)   # Apify bills per post returned, so keep re-fetches small
 
 CITY_ALIASES = {

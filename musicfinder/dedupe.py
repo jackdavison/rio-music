@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import logging
+import re
 from collections import defaultdict
 
 from rapidfuzz import fuzz
@@ -31,11 +32,29 @@ def similarity(a: Event, b: Event) -> int:
     return int(max(s1, s2))
 
 
+_ADDRESS = re.compile(r"^(r|rua|av|avenida|estr|estrada|al|alameda|tv|travessa|pca|praca|largo|rod|rodovia)\b|^\d")
+
+
+def _venue_unknown(e: Event) -> bool:
+    """No usable venue name: empty, a bare street address (Sympla often gives one instead of the
+    venue's name), or just the event title repeated."""
+    v = norm(e.venue)
+    return not v or bool(_ADDRESS.match(v)) or fuzz.ratio(v, norm(e.title)) >= 90
+
+
 def venues_match(a: Event, b: Event) -> bool:
-    va, vb = venue_key(a.venue), venue_key(b.venue)
-    if not va or not vb:
+    if _venue_unknown(a) or _venue_unknown(b):
         return True  # unknown venue: let the artist/date match decide
+    va, vb = venue_key(a.venue), venue_key(b.venue)
     return va == vb or fuzz.token_set_ratio(va, vb) >= 85
+
+
+def _same_title_same_time(a: Event, b: Event) -> bool:
+    """Identical, specific title at the same hour: probably one show even if the venue names
+    disagree (an Instagram account's name vs the place, "Passeio Público" vs "Samba do Passeio")."""
+    ta, tb = norm(a.title), norm(b.title)
+    return len(ta) >= 15 and fuzz.ratio(ta, tb) >= 95 \
+        and abs((a.start_datetime - b.start_datetime).total_seconds()) <= 3600
 
 
 def _time_close(a: Event, b: Event) -> bool:
@@ -78,11 +97,15 @@ MANUAL_SOURCES = ("recurring", "gigs")  # hand-entered; their kind: is authorita
 
 
 def merge(group: list[Event]) -> Event:
-    group = sorted(group, key=lambda e: (SOURCE_RANK.get(e.source, 5), -len(e.description)))
+    # fresh listings before stored copies carried forward from earlier runs
+    group = sorted(group, key=lambda e: (getattr(e, "carried", False), SOURCE_RANK.get(e.source, 5), -len(e.description)))
     best = group[0]
     # every id this event has been known by; the pipeline keeps whichever is already stored so
     # ICS UIDs / calendar ids stay stable when a better source shows up later
     best.member_ids = sorted({i for e in group for i in getattr(e, "member_ids", [e.id])})
+    manual = next((e for e in group if e.source in MANUAL_SOURCES and not getattr(e, "time_unknown", False)), None)
+    if manual is not None and manual is not best:
+        best.start_datetime, best.end_datetime = manual.start_datetime, manual.end_datetime or best.end_datetime
     for other in group[1:]:
         for f in ("venue", "neighborhood", "image_url", "description", "source_url"):
             if not getattr(best, f) and getattr(other, f):
@@ -137,10 +160,13 @@ def dedupe(events: list[Event]) -> list[Event]:
     for bucket in buckets.values():
         for i, a in enumerate(bucket):
             for b in bucket[i + 1:]:
-                if a.source == b.source and a.source not in ("venues", "instagram"):
+                if a.source == b.source and a.source not in ("venues", "instagram") \
+                        and not (getattr(a, "carried", False) or getattr(b, "carried", False)):
                     continue  # a ticketing site never lists the same show twice on purpose;
                     # venue pages and Instagram (several posts per show) do
                 if not venues_match(a, b):
+                    if _same_title_same_time(a, b):
+                        ambiguous.append((a, b))
                     continue
                 s = similarity(a, b)
                 if s >= SAME and _time_close(a, b):

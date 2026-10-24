@@ -7,7 +7,7 @@ import re
 from datetime import datetime, timedelta
 from pathlib import Path
 
-from ..models import Event, TZ
+from ..models import Event, TZ, norm, venue_key
 from ..watchlist import matches
 
 NEW_DAYS = 3
@@ -47,6 +47,31 @@ def payload(by_city: dict[str, list[Event]], names: dict[str, str]) -> dict:
             # drop empty/false fields: keeps events.json small on phones
             out["events"].append({k: v for k, v in row.items() if not (v is None or v is False or v == "" or v == [])})
     out["events"].sort(key=lambda x: x["start"])
+    out["events"] = group_sessions(out["events"])
+    return out
+
+
+def group_sessions(rows: list[dict]) -> list[dict]:
+    """Fold several sessions of one show (same title, venue and day: Candlelight at 17h, 19h and
+    21h; Blue Note's two sets) into the first row, listing every start time in `times`.
+    Rows must be sorted by start."""
+    first: dict[tuple, dict] = {}
+    out = []
+    for r in rows:
+        k = (r["city"], r["start"][:10], norm(r["title"]), venue_key(r.get("venue", "")))
+        g = first.get(k)
+        if g is None:
+            first[k] = r
+            out.append(r)
+            continue
+        g.setdefault("times", [g["start"][11:16]]).append(r["start"][11:16])
+        g.setdefault("session_ids", []).append(r["id"])
+        g["score"] = max(g.get("score") or 0, r.get("score") or 0) or g.get("score")
+        for f in ("watch", "is_new"):
+            if r.get(f):
+                g[f] = True
+        if g.get("sold_out") and not r.get("sold_out"):
+            del g["sold_out"]  # sold out only if every session is
     return out
 
 

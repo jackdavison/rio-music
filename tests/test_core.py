@@ -327,3 +327,24 @@ def test_recurring_biweekly_and_kind():
     leme = [e.start_datetime.date().isoformat() for e in evs if e.title == "Leme"]
     assert leme[:3] == ["2026-10-22", "2026-11-05", "2026-11-19"]
     assert {e.title: e.kind for e in evs} == {"Leme": "roda", "Palco": "show"}
+
+
+def test_dedupe_address_venue_and_same_title():
+    mk = lambda title, venue, h, src: Event(city="rio", title=title, venue=venue, source=src,
+                                            start_datetime=datetime(2026, 11, 7, h, tzinfo=TZ))
+    out = dedupe([mk("FEIJOADA DA MANGUEIRA COM JORGE ARAGÃO", "R. Visc. de Niterói, 1072", 13, "sympla"),
+                  mk("Feijoada da Mangueira com Jorge Aragão", "Palácio do Samba", 13, "gigs")])
+    assert len(out) == 1 and out[0].source == "sympla"
+    # a hand-entered gig's time wins over a source that got it wrong
+    out = dedupe([mk("Feijoada da Mangueira", "Palácio do Samba", 20, "instagram"),
+                  mk("Feijoada da Mangueira", "Palácio do Samba", 18, "gigs")])
+    assert len(out) == 1 and out[0].start_datetime.hour == 18
+
+
+def test_web_groups_sessions():
+    rows = [{"id": "a", "city": "rio", "title": "Candlelight: Queen", "venue": "Solar", "start": "2026-11-06T17:00:00-03:00", "score": 40},
+            {"id": "b", "city": "rio", "title": "Candlelight: Queen", "venue": "Solar", "start": "2026-11-06T19:00:00-03:00", "score": 45, "sold_out": True},
+            {"id": "c", "city": "rio", "title": "Other", "venue": "Solar", "start": "2026-11-06T19:00:00-03:00"}]
+    out = web.group_sessions(rows)
+    assert [r["id"] for r in out] == ["a", "c"]
+    assert out[0]["times"] == ["17:00", "19:00"] and out[0]["score"] == 45 and "sold_out" not in out[0]

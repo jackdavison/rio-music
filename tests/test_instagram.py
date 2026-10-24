@@ -19,9 +19,8 @@ def _item(date, city="", time="21:00", title="Carlos Malta"):
 
 def test_carousel_images_deduped_and_capped():
     p = _post(childPosts=[{"displayUrl": "https://img/1.jpg"}, {"displayUrl": "https://img/2.jpg"}],
-              images=["https://img/3.jpg", "https://img/4.jpg", "https://img/5.jpg"])
-    assert ig.image_urls(p) == ["https://img/1.jpg", "https://img/2.jpg", "https://img/3.jpg",
-                                "https://img/4.jpg"]
+              images=[f"https://img/{i}.jpg" for i in range(2, 14)])
+    assert ig.image_urls(p) == [f"https://img/{i}.jpg" for i in range(1, ig.MAX_IMAGES + 1)]
 
 
 def test_city_routing():
