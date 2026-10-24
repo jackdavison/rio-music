@@ -16,5 +16,6 @@ pixinbodega                # Pixin Bodega: Saturday choro/samba at Praça do Cho
 mangueira_oficial          # Mangueira: monthly feijoada and Saturday events at the Palácio do Samba
 feijoadadosalgueiro        # Feijoada do Salgueiro (quiet since Jan 2026; usually a Sunday, 13h)
 imperioserrano             # Império Serrano, Madureira: feijoadas and rodas at the quadra
+rolesbons                  # Rolês Bons: Rio going-out guide; weekly agenda carousel (mostly food/places posts)
 # Dropped 2026-10-18 (no posts returned, handles probably wrong): trapichegamboa,
 # escolaportatildemusica
