@@ -85,7 +85,7 @@ def _llm_tiebreak(pairs: list[tuple[Event, Event]]) -> list[bool]:
         system="You decide whether two event listings from different ticketing sites describe the "
                "same live music performance (same act, same venue, same night). Different sessions "
                "of the same show at different times are different events.",
-        prompt="\n".join(lines), schema=TIEBREAK_SCHEMA, max_tokens=2000, cache_tag="dedupe", task="dedupe")
+        prompt="\n".join(lines), schema=TIEBREAK_SCHEMA, max_tokens=8000, cache_tag="dedupe", task="dedupe")
     res = [False] * len(pairs)
     for ans in (out or {}).get("answers", []):
         if 0 <= ans["pair"] < len(pairs):
