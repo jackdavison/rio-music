@@ -241,3 +241,15 @@ events:
     notes: >-
       Every Sunday since 2007; city and state heritage. Open roda, but players stick to the
       group's studied repertoire list. Confirmed by Bafafá and Partiu Rota, Oct 2026.
+
+  - name: Receita de Choro
+    venue: Rua Assunção 13
+    neighborhood: Botafogo
+    weekday: tuesday
+    time: "20:00"
+    end_time: "22:30"
+    genre: choro
+    link: https://www.instagram.com/receitadechoro/
+    notes: >-
+      Weekly choro roda; guest musicians sit in (canjas), all ages. Confirmed on their Instagram,
+      Oct 2026 ("todas as terças a partir das 20h"). Price not stated.
