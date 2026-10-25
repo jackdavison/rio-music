@@ -2,12 +2,13 @@
 from __future__ import annotations
 
 import logging
+import hashlib
 import re
 from collections import defaultdict
 
 from rapidfuzz import fuzz
 
-from . import llm
+from . import db, llm
 from .models import Event, norm, venue_key
 
 log = logging.getLogger(__name__)
@@ -73,24 +74,33 @@ TIEBREAK_SCHEMA = {
 }
 
 
+def _desc(e: Event) -> str:
+    return f"{e.title} | artists: {', '.join(e.artists)} | {e.venue} | {e.start_datetime:%Y-%m-%d %H:%M} | {e.source}"
+
+
+def _pair_key(a: Event, b: Event) -> str:
+    return hashlib.sha1("\n".join(sorted([_desc(a), _desc(b)])).encode()).hexdigest()
+
+
 def _llm_tiebreak(pairs: list[tuple[Event, Event]]) -> list[bool]:
-    if not pairs or not llm.available():
-        return [False] * len(pairs)
-
-    def desc(e: Event):
-        return f"{e.title} | artists: {', '.join(e.artists)} | {e.venue} | {e.start_datetime:%Y-%m-%d %H:%M} | {e.source}"
-
-    lines = [f"{i}. A: {desc(a)}\n   B: {desc(b)}" for i, (a, b) in enumerate(pairs)]
-    out = llm.json_call(
-        system="You decide whether two event listings from different ticketing sites describe the "
-               "same live music performance (same act, same venue, same night). Different sessions "
-               "of the same show at different times are different events.",
-        prompt="\n".join(lines), schema=TIEBREAK_SCHEMA, max_tokens=8000, cache_tag="dedupe", task="dedupe")
-    res = [False] * len(pairs)
-    for ans in (out or {}).get("answers", []):
-        if 0 <= ans["pair"] < len(pairs):
-            res[ans["pair"]] = ans["same"]
-    return res
+    """Claude's verdict per pair, cached per pair: the batch differs every run, so caching the
+    whole call would re-ask (and re-pay for) the same pairs every 3 hours."""
+    keys = [_pair_key(a, b) for a, b in pairs]
+    res = [db.cache_get("dedupe_pair", k) for k in keys]
+    todo = [i for i, r in enumerate(res) if r is None]
+    if todo and llm.available():
+        lines = [f"{n}. A: {_desc(pairs[i][0])}\n   B: {_desc(pairs[i][1])}" for n, i in enumerate(todo)]
+        out = llm.json_call(
+            system="You decide whether two event listings from different ticketing sites describe the "
+                   "same live music performance (same act, same venue, same night). Different sessions "
+                   "of the same show at different times are different events.",
+            prompt="\n".join(lines), schema=TIEBREAK_SCHEMA, max_tokens=8000, cache=False, task="dedupe")
+        for ans in (out or {}).get("answers", []):
+            if 0 <= ans["pair"] < len(todo):
+                i = todo[ans["pair"]]
+                res[i] = bool(ans["same"])
+                db.cache_put("dedupe_pair", keys[i], res[i])
+    return [bool(r) for r in res]
 
 
 MANUAL_SOURCES = ("recurring", "gigs")  # hand-entered; their kind: is authoritative
