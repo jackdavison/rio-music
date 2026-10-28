@@ -10,3 +10,5 @@ Salgueiro
 Mangueira
 Império Serrano
 venue: Renascença
+artist: Daniela Spielmann
+artist: Clarice Magalhães

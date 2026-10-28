@@ -20,6 +20,8 @@ marciobahiadrums rio            # Márcio Bahia
 flautista.antonio.rocha rio     # Antonio Rocha, flute (Niterói)
 ritmoaguiarbernardo rio         # Bernardo Aguiar, pandeiro
 marcos.china rio                # Marcos China, percussion
+claricemagallhaes rio           # Clarice Magalhães, pandeiro (Casa do Pandeiro, Centro)
+danielaspielmann rio            # Daniela Spielmann, sax/flute
 
 # São Paulo
 tecocardosooficial sp           # Teco Cardoso
