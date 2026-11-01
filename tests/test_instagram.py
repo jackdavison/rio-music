@@ -85,3 +85,23 @@ def test_collab_post_credited_to_requested_account(monkeypatch):
     monkeypatch.setattr(ig.http, "session", lambda: S())
     monkeypatch.setattr(ig, "_fetched", {})
     assert [p["id"] for p in ig.posts_for(["guinga_oficial"], 6, 10)] == ["c1"]
+
+
+def test_budget_guard_skips_apify(monkeypatch):
+    class R:
+        def __init__(self, data): self.data = data
+        def raise_for_status(self): pass
+        def json(self): return self.data
+
+    posted = []
+
+    class S:
+        def get(self, *a, **k): return R({"data": {"current": {"monthlyUsageUsd": 16.0}}})
+        def post(self, *a, **k): posted.append(k); return R([])
+
+    monkeypatch.setenv("APIFY_TOKEN", "t")
+    monkeypatch.setattr(ig.http, "session", lambda: S())
+    assert ig.fetch_posts(["a"], 6, 10) == [] and posted == []
+    monkeypatch.setenv("APIFY_BUDGET_USD", "20")
+    ig.fetch_posts(["a"], 6, 10)
+    assert posted and posted[0]["params"]["maxItems"] == 6

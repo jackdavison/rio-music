@@ -9,6 +9,8 @@ Cost control:
 - Each account is fetched only for posts newer than its last successful fetch (minus a small
   overlap), so a post is paid for on Apify about once. Accounts shared by several cities are
   fetched once per process.
+- Hard stop: no Apify calls once the billing month's spend reaches APIFY_BUDGET_USD, and each
+  run is capped with maxItems.
 - Each post is read by Claude once (cache keyed by post id), including posts that turned out not
   to be events. Raw posts are cached too, so `compare-models` can replay them.
 """
@@ -74,10 +76,14 @@ def fetch_posts(accounts: list[str], per_account: int, since_days: int) -> list[
         key = since.astimezone(timezone.utc).replace(minute=0, second=0, microsecond=0)
         windows.setdefault(key.strftime("%Y-%m-%dT%H:%M:%SZ"), []).append(a)
     posts: list[dict] = []
+    if over_budget(token):
+        return posts
     for since, group in windows.items():
         payload = {"username": group, "resultsLimit": per_account,
                    "onlyPostsNewerThan": since, "skipPinnedPosts": True}
-        r = http.session().post(APIFY_URL.format(actor=APIFY_ACTOR), params={"token": token},
+        # maxItems caps what one run can bill (the actor charges per post returned)
+        r = http.session().post(APIFY_URL.format(actor=APIFY_ACTOR),
+                                params={"token": token, "maxItems": per_account * len(group)},
                                 json=payload, timeout=600)
         r.raise_for_status()
         got = r.json()
@@ -86,6 +92,24 @@ def fetch_posts(accounts: list[str], per_account: int, since_days: int) -> list[
             db.cache_put("instagram_fetched", _state_key(a), now.isoformat(timespec="seconds"))
         log.info("apify: %d posts from %d accounts since %s", len(got), len(group), since)
     return posts
+
+
+def over_budget(token: str) -> bool:
+    """Skip scraping once this Apify billing month's spend reaches APIFY_BUDGET_USD (default 15;
+    steady state is ~$10/month). A failed check doesn't block the run."""
+    budget = float(os.environ.get("APIFY_BUDGET_USD") or 15)
+    try:
+        r = http.session().get("https://api.apify.com/v2/users/me/limits", params={"token": token}, timeout=30)
+        r.raise_for_status()
+        used = r.json()["data"]["current"]["monthlyUsageUsd"]
+    except Exception as e:  # noqa: BLE001
+        log.warning("apify: budget check failed (%s); scraping anyway", e)
+        return False
+    if used >= budget:
+        log.warning("apify: $%.2f used this cycle >= budget $%.2f; skipping Instagram", used, budget)
+        return True
+    log.info("apify: $%.2f of $%.2f budget used this cycle", used, budget)
+    return False
 
 
 _fetched: dict[str, list[dict]] = {}   # account -> posts, shared across cities in one process
