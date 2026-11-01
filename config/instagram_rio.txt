@@ -20,3 +20,4 @@ rolesbons                  # Rolês Bons: Rio going-out guide; weekly agenda car
 # Dropped 2026-10-18 (no posts returned, handles probably wrong): trapichegamboa,
 # escolaportatildemusica
 ccjfrj  # Centro Cultural Justiça Federal, Centro: theater shows (choro, samba, afro)
+fala.paulinhaa  # Fala Paulinha: weekly Rio samba/roda agenda carousel
