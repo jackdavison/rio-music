@@ -16,6 +16,11 @@ pixinbodega                # Pixin Bodega: Saturday choro/samba at Praça do Cho
 mangueira_oficial          # Mangueira: monthly feijoada and Saturday events at the Palácio do Samba
 feijoadadosalgueiro        # Feijoada do Salgueiro (quiet since Jan 2026; usually a Sunday, 13h)
 imperioserrano             # Império Serrano, Madureira: feijoadas and rodas at the quadra
+oficialportela             # Portela, Madureira: feijoadas, quadra events
+unidosdevilaisabel         # Unidos de Vila Isabel: quadra feijoadas, ensaios
+beijafloroficial           # Beija-Flor de Nilópolis: quadra events, ensaios
+granderio                  # Acadêmicos do Grande Rio (Duque de Caxias): quadra events
+unidosdoviradouro          # Unidos do Viradouro (Niterói): quadra events
 rolesbons                  # Rolês Bons: Rio going-out guide; weekly agenda carousel (mostly food/places posts)
 # Dropped 2026-10-18 (no posts returned, handles probably wrong): trapichegamboa,
 # escolaportatildemusica
