@@ -12,3 +12,4 @@ Império Serrano
 venue: Renascença
 artist: Daniela Spielmann
 artist: Clarice Magalhães
+artist: Guinga
