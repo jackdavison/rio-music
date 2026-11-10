@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Música ao vivo</title>
 <meta name="theme-color" content="#1d1a16">
-<link rel="stylesheet" href="../style.css?v=b9a81d75">
+<link rel="stylesheet" href="../style.css?v=765f27d7">
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js" defer></script>
 <script src="../app.js?v=22fa4c14" defer></script>
 <script data-goatcounter="https://jackdavison.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
@@ -22,6 +22,7 @@
 </header>
 
 <main>
+  <p class="meta" id="formLinks" hidden><button type="button" class="linkish" data-form="event" data-t="suggest">Sugerir um evento</button> · <button type="button" class="linkish" data-form="feedback" data-t="feedback">Comentários sobre o site</button></p>
   <section id="tonight" class="tonight">
     <h2 data-t="tonight">Hoje à noite</h2>
     <div class="tonight-list" id="tonightList"></div>
@@ -61,7 +62,6 @@
   <div id="sentinel"></div>
   <p class="meta" id="meta"></p>
   <p class="meta feeds" id="feeds"></p>
-  <p class="meta" id="formLinks" hidden><button type="button" class="linkish" data-form="event" data-t="suggest">Sugerir um evento</button> · <button type="button" class="linkish" data-form="feedback" data-t="feedback">Comentários sobre o site</button></p>
   <p class="meta" id="publicLink" hidden><a class="mode-link" href="../../" data-t="to_public">← Guia completo</a></p>
 </main>
 
