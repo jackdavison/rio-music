@@ -213,4 +213,5 @@ dialog .close { position: absolute; right: 10px; top: 8px; border: 0; background
 .send-form .cta:disabled { opacity: .6; cursor: default; }
 .form-status { margin: 0; font-size: 14px; color: var(--muted); min-height: 1.2em; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+#formLinks { text-align: right; margin: 8px 0 -8px; }   /* top of the page: the list below scrolls forever */
 #formLinks .linkish { font-size: 12px; color: var(--muted); }
