@@ -3,3 +3,11 @@
 # None yet: the venue sites (Casa de Francisca, Bourbon, JazzB...) are scraped directly.
 # Dropped 2026-10-18 (no posts returned, handles probably wrong): odoborogodo, tracodeuniao,
 # auditorioibirapuera
+# Sesc units: their site's API blocks scripts since 2026-10-31, so ticketed shows (dates
+# load from the API) only reach us via flyers. Handles unverified; added 2026-11-10.
+sescpompeia       # Sesc Pompeia
+sescpinheiros     # Sesc Pinheiros (Teatro Paulo Autran)
+sescvilamariana   # Sesc Vila Mariana
+sesc24demaio      # Sesc 24 de Maio (centro)
+sescbelenzinho    # Sesc Belenzinho
+sescavpaulista    # Sesc Avenida Paulista
