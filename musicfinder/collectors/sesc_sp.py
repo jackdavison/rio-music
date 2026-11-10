@@ -13,6 +13,14 @@ The programação SPA is backed by a public (unauthenticated) WordPress REST nam
   have no ticketing sessions, ``data-inicial`` / ``data-final`` attributes per session.
 * ``GET /wp-json/wp/v1/unidades-atividades`` lists units (slug + "capital"/"interior"/"litoral").
 
+Since 2026-10-31 CloudFront answers 403 to the whole ``/wp-json/`` namespace for non-browser
+clients (the HTML pages, sitemaps and RSS stay open; robots.txt allows everything). On a 403 the
+collector falls back to the public RSS feed of the music category
+(``/tipos-linguagens/musica/feed/?paged=N``, newest first) to find activities, and reads each
+activity page for its unit, title and sessions. Pages only carry session times for free activities
+(ticketed ones load theirs from the blocked API), so in fallback mode ticketed shows are kept only
+when an earlier run stored them.
+
 Config (config/sp.yaml -> collectors.sesc_sp), all optional::
 
     sesc_sp:
@@ -29,11 +37,14 @@ import html as htmllib
 import logging
 import re
 from concurrent.futures import ThreadPoolExecutor
-from datetime import datetime
+from datetime import datetime, timedelta
+from email.utils import parsedate_to_datetime
 
-from .. import http
+import requests
+
+from .. import db, http
 from ..config import CityConfig
-from ..models import Event
+from ..models import Event, TZ
 from .base import collector
 from .util import clean_text, parse_iso
 
@@ -128,6 +139,11 @@ def _artists(title: str, complemento: str) -> list[str]:
 _OG_DESC = re.compile(r'<meta\s+property="og:description"\s+content="([^"]*)"', re.I)
 _SESSION_ATTR = re.compile(r'data-inicial="([^"]+)"\s+data-final="([^"]*)"')
 _LOCAL = re.compile(r'evento--sessao--entrada--local">\s*Local:\s*<span>(.*?)</span>', re.S)
+_OG = re.compile(r'<meta\s+property="og:(title|image)"\s+content="([^"]*)"', re.I)
+_TITLE = re.compile(r'info--titulo">(.*?)</h2>', re.S)
+_COM = re.compile(r'info--com">(.*?)</h3>', re.S)
+_UNIT = re.compile(r'<!-- Unidade/Institucional -->\s*<a href="/unidades/([^"/]+)/?">(.*?)</a>', re.S)
+_FLAG = re.compile(r'data-(cancelado|esgotado)="([^"]*)"')
 
 
 def parse_activity_page(page_html: str) -> dict:
@@ -146,6 +162,18 @@ def parse_activity_page(page_html: str) -> dict:
     if m:
         out["room"] = clean_text(htmllib.unescape(m.group(1)))
     out["free"] = "evento--sessao--entrada--gratis" in page_html
+    # the rest stands in for the list API in fallback mode
+    og = dict((k.lower(), v) for k, v in _OG.findall(page_html))
+    m = _TITLE.search(page_html)
+    out["title"] = clean_text(htmllib.unescape(re.sub(r"<[^>]+>", "", m.group(1)) if m
+                                               else og.get("title", "")), 200)
+    m = _COM.search(page_html)
+    out["complemento"] = clean_text(htmllib.unescape(re.sub(r"<[^>]+>", "", m.group(1))), 300) if m else ""
+    out["image"] = og.get("image", "")
+    m = _UNIT.search(page_html)
+    out["unit"], out["unit_name"] = (m.group(1), clean_text(htmllib.unescape(m.group(2)))) if m else ("", "")
+    flags = {k: v.strip().lower() not in ("", "0", "false") for k, v in _FLAG.findall(page_html)}
+    out["cancelled"], out["sold_out"] = flags.get("cancelado", False), flags.get("esgotado", False)
     return out
 
 
@@ -287,14 +315,102 @@ def _wanted_units(cfg: dict) -> set[str]:
     return units
 
 
+# --------------------------------------------------------------------------- RSS fallback
+
+FEED = BASE + "/tipos-linguagens/{}/feed/"
+LOOKBACK_DAYS = 90       # activities are published a few weeks ahead of their dates
+FEED_MAX_PAGES = 120     # 10 items a page; ~10 music activities are published a day
+_ITEM = re.compile(r"<item>.*?<link>([^<]+)</link>.*?<pubDate>([^<]+)</pubDate>", re.S)
+
+
+def feed_urls(ling: str) -> list[str]:
+    """Activity URLs published in the last LOOKBACK_DAYS, paging the feed only back to what an
+    earlier run already saw."""
+    known: dict[str, str] = db.cache_get("sesc_sp_feed", ling) or {}
+    floor = datetime.now(TZ) - timedelta(days=LOOKBACK_DAYS)
+    stop = max([floor] + [datetime.fromisoformat(p) - timedelta(days=2) for p in known.values()])
+    for page in range(1, FEED_MAX_PAGES + 1):
+        try:
+            text = http.get(FEED.format(ling), params={"paged": page}).text
+        except requests.HTTPError:  # 404 past the last page
+            break
+        items = _ITEM.findall(text)
+        for link, pub in items:
+            known.setdefault(htmllib.unescape(link.strip()), parsedate_to_datetime(pub).isoformat())
+        if not items or parsedate_to_datetime(items[-1][1]) < stop:
+            break
+    known = {u: p for u, p in known.items() if datetime.fromisoformat(p) >= floor}
+    db.cache_put("sesc_sp_feed", ling, known)
+    return list(known)
+
+
+def _stale(cached: dict | None, wanted: set[str], now: datetime) -> bool:
+    """Refetch a page daily while it has upcoming sessions, weekly while it has none (ticketed),
+    never once its sessions are past or it's in a unit we don't keep."""
+    if not cached:
+        return True
+    page, age = cached["page"], now - datetime.fromisoformat(cached["fetched"])
+    if page.get("unit") and page["unit"] not in wanted:
+        return False
+    starts = [parse_iso(a) for a, _ in page.get("sessions") or []]
+    if not starts:
+        return age > timedelta(days=7)
+    return max(s for s in starts if s) > now and age > timedelta(hours=20)
+
+
+def collect_from_feed(city: CityConfig, cfg: dict, wanted: set[str]):
+    now = datetime.now(TZ)
+    urls = list(dict.fromkeys(u for ling in cfg.get("linguagens") or ["musica"] for u in feed_urls(ling)))
+    cached = {u: db.cache_get("sesc_sp_page", u) for u in urls}
+    todo = [u for u in urls if _stale(cached[u], wanted, now)]
+    with ThreadPoolExecutor(max_workers=int(cfg.get("workers", 6))) as pool:
+        for u, page in zip(todo, pool.map(fetch_page, todo)):
+            if page is not None:   # cache writes on this thread (one sqlite connection)
+                cached[u] = {"fetched": now.isoformat(), "page": page}
+                db.cache_put("sesc_sp_page", u, cached[u])
+    # ticketed shows: pages carry no dates, so keep what an earlier run stored for the same page
+    stored: dict[str, list[Event]] = {}
+    for e in db.load_events(city.slug, since=now):
+        if e.source == NAME or NAME in e.sources:
+            stored.setdefault(e.source_url, []).append(e)
+    n_kept = 0
+    for u in urls:
+        page = (cached.get(u) or {}).get("page")
+        if not page or page["unit"] not in wanted or page["cancelled"]:
+            continue
+        if page["sessions"]:
+            item = {"titulo": page["title"], "complemento": page["complemento"],
+                    "link": u.removeprefix(BASE), "imagem": page["image"], "gratuito": page["free"],
+                    "esgotado": page["sold_out"],
+                    "unidade": [{"name": page["unit_name"], "link": "/unidades/" + page["unit"]}]}
+            yield from build_events(item, page["unit"], None, page, city.slug)
+        for e in stored.get(u, []) if not page["sessions"] else []:
+            n_kept += 1
+            yield Event(city=city.slug, title=e.title, start_datetime=e.start_datetime,
+                        end_datetime=e.end_datetime, source=NAME, venue=e.venue,
+                        neighborhood=e.neighborhood, artists=e.artists, price_min=e.price_min,
+                        price_max=e.price_max, is_free=e.is_free,
+                        sold_out=e.sold_out or page["sold_out"], ticket_url=e.ticket_url,
+                        source_url=e.source_url, image_url=e.image_url, description=e.description)
+    log.info("sesc_sp (feed): %d activities, %d pages fetched, %d stored ticketed sessions kept",
+             len(urls), len(todo), n_kept)
+
+
 @collector(NAME)
 def collect(city: CityConfig, cfg: dict):
     cfg = cfg or {}
     wanted = _wanted_units(cfg)
     items: dict[str, dict] = {}
-    for ling in cfg.get("linguagens") or ["musica"]:
-        for it in fetch_list(ling):
-            items.setdefault(str(it.get("id")), it)
+    try:
+        for ling in cfg.get("linguagens") or ["musica"]:
+            for it in fetch_list(ling):
+                items.setdefault(str(it.get("id")), it)
+    except requests.HTTPError as exc:
+        if exc.response is None or exc.response.status_code != 403:
+            raise
+        log.warning("sesc_sp: API blocked (403); using the RSS feed and activity pages")
+        yield from collect_from_feed(city, cfg, wanted)
+        return
 
     keep, skipped_unit = [], 0
     for it in items.values():

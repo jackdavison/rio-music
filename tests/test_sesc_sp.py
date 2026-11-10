@@ -89,3 +89,78 @@ def test_free_activity_uses_page_sessions(monkeypatch):
 def test_unit_config(monkeypatch):
     events = _run(monkeypatch, {"units": ["pompeia"], "extra_units": ["ribeirao-preto"]})
     assert {e.venue for e in events} == {"Sesc Pompeia", "Sesc Ribeirão Preto"}
+
+
+# ---- fallback when /wp-json/ answers 403 (since 2026-10-31): RSS feed + activity pages
+
+def _page(title, unit, unit_name, sessions="", com="", free=True, cancelado=""):
+    return f"""<html><head><meta property="og:title" content="{title} - Sesc São Paulo" />
+<meta property="og:image" content="https://www.sescsp.org.br/img/{unit}.jpg" />
+<meta property="og:description" content="Show de choro." /></head><body>
+<div class="breadcrumbs--container"> <!-- Home --> <a href="https://www.sescsp.org.br">Home</a>&nbsp;|
+<!-- Unidade/Institucional --> <a href="/unidades/{unit}">{unit_name}</a> | Música</div>
+<h2 class="principal--post--row--programacao--info--titulo">{title}</h2>
+<h3 class="principal--post--row--programacao--info--com">{com}</h3>
+<div data-esgotado="" data-cancelado="{cancelado}"></div>
+{'<div class="evento--sessao--entrada--gratis"></div>' if free else ''}{sessions}
+<p class="evento--sessao--entrada--local"> Local: <span>&nbsp;Comedoria</span> </p></body></html>"""
+
+
+def _feed(urls):
+    items = "".join(f"<item><title>x</title><link>{u}</link><pubDate>{d}</pubDate></item>" for u, d in urls)
+    return f"<rss><channel>{items}</channel></rss>"
+
+
+def test_feed_fallback_when_api_blocked(monkeypatch):
+    import requests
+    from datetime import timedelta
+    from email.utils import format_datetime
+    from musicfinder import db
+    from musicfinder.models import Event
+
+    now = datetime.now(TZ).replace(second=0, microsecond=0)
+    day = (now + timedelta(days=5)).strftime("%Y-%m-%dT19:00")
+    pub = format_datetime(now - timedelta(days=3))
+    B = sesc_sp.BASE + "/programacao/"
+    pages = {
+        B + "choro/": _page("Choro na Comedoria", "pompeia", "Pompeia", com="com Trio Tal",
+                            sessions=f'<i data-inicial="{day}" data-final="" ></i>'),
+        B + "ingressos/": _page("Show Pago", "pinheiros", "Pinheiros", free=False),
+        B + "longe/": _page("Interior", "marilia", "Marília",
+                            sessions=f'<i data-inicial="{day}" data-final="" ></i>'),
+        B + "cancelado/": _page("Cancelado", "pompeia", "Pompeia", cancelado="1",
+                                sessions=f'<i data-inicial="{day}" data-final="" ></i>'),
+    }
+    # a ticketed show an earlier (API) run stored: kept, since its page carries no dates
+    old = Event(city="sp", title="Show Pago", start_datetime=now + timedelta(days=9), source="sesc_sp",
+                venue="Sesc Pinheiros", price_min=21.0, price_max=70.0, source_url=B + "ingressos/")
+    old.sources = ["sesc_sp"]
+    db.upsert(old)
+    fetched = []
+
+    def fake_get(url, params=None, **kw):
+        fetched.append(url)
+        if "/wp-json/" in url:
+            r = requests.Response()
+            r.status_code = 403
+            raise requests.HTTPError(response=r)
+        if url.endswith("/feed/"):
+            if params["paged"] > 1:
+                raise requests.HTTPError(response=requests.Response())
+            return _Resp(200, text=_feed([(u, pub) for u in pages]))
+        return _Resp(200, text=pages[url])
+
+    monkeypatch.setattr(sesc_sp.http, "get", fake_get)
+    monkeypatch.setattr(sesc_sp.http, "get_json", lambda url, **kw: fake_get(url, **kw).json())
+    events = list(sesc_sp.collect(CityConfig("sp", "São Paulo", {}), {}))
+    assert {(e.title, e.venue) for e in events} == {("Choro na Comedoria", "Sesc Pompeia"),
+                                                    ("Show Pago", "Sesc Pinheiros")}
+    choro = next(e for e in events if e.title == "Choro na Comedoria")
+    assert choro.is_free and choro.start_datetime.hour == 19 and choro.artists == ["Trio Tal"]
+    assert choro.neighborhood == "Pompeia" and "Comedoria" in choro.description
+    assert next(e for e in events if e.title == "Show Pago").price_max == 70.0
+
+    # second run: pages are cached, only the feed's first page is read
+    fetched.clear()
+    assert len(list(sesc_sp.collect(CityConfig("sp", "São Paulo", {}), {}))) == 2
+    assert not [u for u in fetched if "/programacao/" in u]
