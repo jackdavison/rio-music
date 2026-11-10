@@ -331,10 +331,17 @@ def feed_urls(ling: str) -> list[str]:
     stop = max([floor] + [datetime.fromisoformat(p) - timedelta(days=2) for p in known.values()])
     for page in range(1, FEED_MAX_PAGES + 1):
         try:
-            text = http.get(FEED.format(ling), params={"paged": page}).text
-        except requests.HTTPError:  # 404 past the last page
-            break
-        items = _ITEM.findall(text)
+            r = http.get(FEED.format(ling), params={"paged": page})
+        except requests.HTTPError as exc:
+            if page > 1 and exc.response is not None and exc.response.status_code == 404:
+                break  # past the last page
+            raise
+        items = _ITEM.findall(r.text)
+        if page == 1 and not items:
+            # e.g. a block page with status 200 (GitHub's IPs get no items). Failing keeps the
+            # stored events; an "ok" run with nothing would retire them all.
+            raise RuntimeError(f"sesc_sp feed: no items on page 1 ({r.status_code}, "
+                               f"{r.headers.get('content-type', '')}, {r.text[:80]!r})")
         for link, pub in items:
             known.setdefault(htmllib.unescape(link.strip()), parsedate_to_datetime(pub).isoformat())
         if not items or parsedate_to_datetime(items[-1][1]) < stop:

@@ -10,6 +10,8 @@ FIX = json.loads((Path(__file__).parent / "fixtures" / "sesc_sp_sample.json").re
 
 
 class _Resp:
+    headers: dict = {}
+
     def __init__(self, status, payload=None, text=""):
         self.status_code, self._payload, self.text = status, payload, text
 
@@ -136,7 +138,7 @@ def test_feed_fallback_when_api_blocked(monkeypatch):
                 venue="Sesc Pinheiros", price_min=21.0, price_max=70.0, source_url=B + "ingressos/")
     old.sources = ["sesc_sp"]
     db.upsert(old)
-    fetched = []
+    fetched, blocked = [], False
 
     def fake_get(url, params=None, **kw):
         fetched.append(url)
@@ -146,7 +148,11 @@ def test_feed_fallback_when_api_blocked(monkeypatch):
             raise requests.HTTPError(response=r)
         if url.endswith("/feed/"):
             if params["paged"] > 1:
-                raise requests.HTTPError(response=requests.Response())
+                r = requests.Response()
+                r.status_code = 404
+                raise requests.HTTPError(response=r)
+            if blocked:
+                return _Resp(200, text="<html>Request blocked</html>")
             return _Resp(200, text=_feed([(u, pub) for u in pages]))
         return _Resp(200, text=pages[url])
 
@@ -164,3 +170,9 @@ def test_feed_fallback_when_api_blocked(monkeypatch):
     fetched.clear()
     assert len(list(sesc_sp.collect(CityConfig("sp", "São Paulo", {}), {}))) == 2
     assert not [u for u in fetched if "/programacao/" in u]
+
+    # a feed that answers with no items is a failure, not "Sesc has nothing": keeps stored events
+    blocked = True
+    import pytest
+    with pytest.raises(RuntimeError):
+        list(sesc_sp.collect(CityConfig("sp", "São Paulo", {}), {}))
