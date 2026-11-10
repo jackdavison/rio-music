@@ -1,4 +1,4 @@
-"""collect -> dedupe -> stable ids -> tag -> rank -> track changes -> store."""
+"""collect -> dedupe -> stable ids -> tag -> rank -> describe -> track changes -> store."""
 from __future__ import annotations
 
 import logging
@@ -12,6 +12,7 @@ from .config import CityConfig
 from .dedupe import SAME, _time_close, dedupe, similarity, venues_match
 from .genres import kind_of, tag
 from .models import Event, TZ, norm, venue_key
+from .describe import describe
 from .rank import rank
 
 log = logging.getLogger(__name__)
@@ -104,6 +105,7 @@ def process_city(city: CityConfig, only: list[str] | None = None,
     _canonical_ids(city.slug, events, prev)
 
     rank(events)
+    describe(events, city.name)
 
     now = db.now_iso()
     for e in events:

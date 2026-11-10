@@ -1,4 +1,5 @@
-"""Write site/events.json for the static web calendar."""
+"""Write site/events.json for the static web calendar, and site/jack/index.html (the owner's
+curated view: same app, scores shown) from site/index.html (the public view)."""
 from __future__ import annotations
 
 import hashlib
@@ -7,6 +8,7 @@ import re
 from datetime import datetime, timedelta
 from pathlib import Path
 
+from ..describe import lookup
 from ..models import Event, TZ, norm, venue_key
 from ..watchlist import matches
 
@@ -42,6 +44,13 @@ def payload(by_city: dict[str, list[Event]], names: dict[str, str]) -> dict:
                 "is_new": first >= new_cutoff, "watch": bool(matches(e)), "desc": _desc(e),
                 "tbc": bool(getattr(e, "time_unknown", False)), "kind": e.kind,
             }
+            info = lookup(e) or {}
+            row["neighborhood"] = e.neighborhood or info.get("neighborhood", "")
+            row.update({"fmt": info.get("format", ""), "zone": info.get("zone", ""),
+                        "listing": info.get("listing", ""), "blurb_en": info.get("blurb_en", ""),
+                        "blurb_pt": info.get("blurb_pt", "")})
+            if row["listing"] == "music":
+                del row["listing"]  # the default; only flag parties/tourist products
             if row["source_url"] == row["ticket_url"]:
                 row["source_url"] = ""
             # drop empty/false fields: keeps events.json small on phones
@@ -89,6 +98,15 @@ def bust_cache(site_dir: Path) -> None:
             html = re.sub(rf'{re.escape(name)}(\?v=\w+)?"', f'{name}?v={h}"', html)
     if html != old:
         index.write_text(html)
+    jack = site_dir / "jack" / "index.html"
+    jack.parent.mkdir(exist_ok=True)
+    jack.write_text(jack_page(html))
+
+
+def jack_page(html: str) -> str:
+    """The public page, pointed one level up and switched to the curated (scored) mode."""
+    html = re.sub(r'(href|src)="(?!https?:|//|#)', r'\1="../', html)
+    return html.replace("<body>", '<body data-mode="jack" data-root="../">', 1)
 
 
 def write(site_dir: Path, by_city: dict[str, list[Event]], names: dict[str, str]) -> Path:

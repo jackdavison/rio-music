@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Música ao vivo</title>
+<meta name="theme-color" content="#1d1a16">
+<link rel="stylesheet" href="../style.css?v=b9a81d75">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js" defer></script>
+<script src="../app.js?v=b8f2b017" defer></script>
+<script data-goatcounter="https://jackdavison.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body data-mode="jack" data-root="../">
+<header class="top">
+  <div class="brand" id="brand">Música ao vivo</div>
+  <div class="top-right">
+    <div class="seg small" id="langToggle" aria-label="Idioma / Language">
+      <button data-lang="pt">PT</button><button data-lang="en">EN</button>
+    </div>
+    <div class="seg" id="cityToggle" role="tablist"></div>
+  </div>
+</header>
+
+<main>
+  <section id="tonight" class="tonight">
+    <h2 data-t="tonight">Hoje à noite</h2>
+    <div class="tonight-list" id="tonightList"></div>
+  </section>
+
+  <div class="toolbar">
+    <div class="seg" id="viewToggle" role="tablist">
+      <button data-view="stream" data-t="v_stream">Fluxo</button>
+      <button data-view="list" data-t="v_list">Lista</button>
+      <button data-view="week" data-t="v_week">Semana</button>
+      <button data-view="month" data-t="v_month">Mês</button>
+    </div>
+    <div class="toolbar-right">
+      <button id="starBtn" class="ghost star-toggle" aria-pressed="false"><span class="star-ico">☆</span> <span data-t="starred">Favoritos</span> <span id="starCount"></span></button>
+      <button id="filtersBtn" class="ghost" aria-expanded="false"><span data-t="filters">Filtros</span> <span id="filterCount"></span></button>
+    </div>
+  </div>
+
+  <div class="facets" id="facets"></div>
+
+  <form id="filters" class="filters" hidden>
+    <label class="row" id="minScoreRow"><span><span data-t="min_score">Nota mínima</span> <output id="minScoreOut">50</output></span>
+      <input type="range" id="minScore" min="0" max="100" step="5" value="50"></label>
+    <label class="check"><input type="checkbox" id="freeOnly"> <span data-t="free_only">Só grátis</span></label>
+    <label class="check"><input type="checkbox" id="newOnly"> <span data-t="new_only">Só novos</span></label>
+    <label class="check" id="allListingsRow"><input type="checkbox" id="allListings"> <span data-t="all_listings">Incluir festas e passeios turísticos</span></label>
+    <div class="row dates">
+      <label><span data-t="from">De</span> <input type="date" id="dateFrom"></label>
+      <label><span data-t="to">Até</span> <input type="date" id="dateTo"></label>
+    </div>
+    <button type="button" id="resetFilters" class="ghost small" data-t="clear">Limpar filtros</button>
+  </form>
+
+  <div id="streamView" class="stream"></div>
+  <div id="listView" class="list"></div>
+  <div id="calView" hidden></div>
+  <div id="sentinel"></div>
+  <p class="meta" id="meta"></p>
+  <p class="meta feeds" id="feeds"></p>
+  <p class="meta" id="formLinks" hidden><button type="button" class="linkish" data-form="event" data-t="suggest">Sugerir um evento</button> · <button type="button" class="linkish" data-form="feedback" data-t="feedback">Comentários sobre o site</button></p>
+  <p class="meta" id="publicLink" hidden><a class="mode-link" href="../../" data-t="to_public">← Guia completo</a></p>
+</main>
+
+<dialog id="formDialog">
+  <article>
+    <button class="close" id="closeForm">×</button>
+    <form id="sendForm" class="send-form">
+      <h2 id="formTitle"></h2>
+      <div class="ev-fields">
+        <label><span data-t="fl_event">O quê / quem</span> <input name="event" autocomplete="off"></label>
+        <label><span data-t="fl_when">Quando</span> <input name="when" autocomplete="off"></label>
+        <label><span data-t="fl_where">Onde</span> <input name="where" autocomplete="off"></label>
+        <label><span data-t="fl_link">Link (Instagram, ingressos…)</span> <input name="link" autocomplete="off"></label>
+      </div>
+      <label><span id="msgLabel"></span> <textarea name="message" rows="4"></textarea></label>
+      <label><span data-t="fl_contact">Contato (opcional)</span> <input name="contact" autocomplete="off"></label>
+      <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="cta" type="submit" data-t="fl_send">Enviar</button>
+      <p class="form-status" id="formStatus" role="status"></p>
+    </form>
+  </article>
+</dialog>
+
+<dialog id="detail">
+  <article>
+    <button class="close" id="closeDetail">×</button>
+    <div id="detailBody"></div>
+  </article>
+</dialog>
+</body>
+</html>

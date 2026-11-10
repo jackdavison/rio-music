@@ -17,7 +17,8 @@ log = logging.getLogger(__name__)
 MODEL = os.environ.get("MUSICFINDER_MODEL", "claude-opus-5-5")
 EFFORT = os.environ.get("MUSICFINDER_EFFORT", "low")
 # Per-task overrides: MUSICFINDER_MODEL_EXTRACT (venue pages), _VISION (Instagram flyers),
-# _RANK (taste scores), _DEDUPE (same-show tiebreak). Unset -> MUSICFINDER_MODEL.
+# _RANK (taste scores), _DEDUPE (same-show tiebreak), _DESCRIBE (public-site labels).
+# Unset -> TASK_DEFAULTS, then MUSICFINDER_MODEL.
 TASKS = ("extract", "vision", "rank", "dedupe")
 # USD per million tokens (input, output), platform.claude.com pricing as of 2026-10
 PRICES = {"claude-opus-5-5": (4.0, 20.0), "claude-sonnet-5-5": (2.0, 10.0),
@@ -34,8 +35,12 @@ def available() -> bool:
     return bool(os.environ.get("ANTHROPIC_API_KEY") or os.environ.get("ANTHROPIC_AUTH_TOKEN"))
 
 
+# Tasks that default to a cheaper model than MUSICFINDER_MODEL.
+TASK_DEFAULTS = {"describe": "claude-haiku-5-5"}
+
+
 def model_for(task: str) -> str:
-    return os.environ.get(f"MUSICFINDER_MODEL_{task.upper()}") or MODEL
+    return os.environ.get(f"MUSICFINDER_MODEL_{task.upper()}") or TASK_DEFAULTS.get(task) or MODEL
 
 
 def cost(model: str, input_tokens: int, output_tokens: int) -> float | None:

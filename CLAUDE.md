@@ -42,5 +42,16 @@ venue, price and ticket link.
 
 LLM steps and their model variables: venue pages `MUSICFINDER_MODEL_EXTRACT`, Instagram flyers
 `_VISION`, ranking `_RANK`, dedupe tiebreak `_DEDUPE`; all default to `MUSICFINDER_MODEL`.
+`_DESCRIBE` (taste-neutral type/zone/blurbs for the public page, `describe.py`) defaults to Haiku.
 `python -m musicfinder compare-models` runs the same inputs through several models and writes
 `data/model-comparison.md`.
+
+## Site
+
+`site/index.html` is the public guide (no scores; tag filters; hides parties/tourist packages by
+default). `site/jack/index.html` is generated from it by `web.py` and is the owner's scored view.
+Both run `site/app.js` (mode from `<body data-mode>`). GoatCounter (jackdavison.goatcounter.com)
+counts page views plus click events from `track()` in app.js. The public page's "suggest an event" /
+feedback form posts to Formspree (`FORM_ENDPOINT` in app.js), which emails the owner.
+Stars sync across the owner's devices via a secret gist (`musica-ao-vivo-stars.json`, see
+`starSync` in app.js); `gh gist list` / `gh gist view` reads it, e.g. for "what have I starred?".
