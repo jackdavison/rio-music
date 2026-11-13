@@ -348,3 +348,9 @@ def test_web_groups_sessions():
     out = web.group_sessions(rows)
     assert [r["id"] for r in out] == ["a", "c"]
     assert out[0]["times"] == ["17:00", "19:00"] and out[0]["score"] == 45 and "sold_out" not in out[0]
+
+
+def test_collector_errors_hide_url_tokens():
+    from musicfinder.collectors.base import redact
+    msg = "401 Client Error: Unauthorized for url: https://api.apify.com/v2/acts/x/run?token=apify_api_abc123&maxItems=36"
+    assert redact(msg) == "401 Client Error: Unauthorized for url: https://api.apify.com/v2/acts/x/run?token=***&maxItems=36"

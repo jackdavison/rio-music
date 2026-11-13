@@ -59,3 +59,4 @@ def test_jack_page_points_up_a_level():
     assert 'href="../style.css?v=1"' in out and 'src="../app.js?v=2"' in out
     assert 'src="https://cdn.x/y.js"' in out and 'src="//gc.zgo.at/count.js"' in out
     assert '<body data-mode="jack" data-root="../">' in out
+

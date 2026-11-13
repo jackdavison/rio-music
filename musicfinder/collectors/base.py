@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import logging
+import re
 import time
 import traceback
 from dataclasses import dataclass
@@ -17,6 +18,14 @@ log = logging.getLogger(__name__)
 REGISTRY: dict[str, Callable[[CityConfig, dict], Iterable[Event]]] = {}
 
 HORIZON_DAYS = 90
+
+_SECRET_PARAM = re.compile(r"((?:token|key|apikey|api_key|access_token)=)[^&\s'\"]+", re.I)
+
+
+def redact(text: str) -> str:
+    """Error messages land in the committed db (runs.error) and requests puts the full URL in
+    them, query-string tokens included."""
+    return _SECRET_PARAM.sub(r"\1***", text)
 
 
 def collector(name: str):
@@ -60,7 +69,7 @@ def run_collector(name: str, city: CityConfig, cfg: dict) -> CollectorResult:
         dt = time.time() - t0
         log.error("[%s/%s] FAILED after %.1fs: %s\n%s", city.slug, name, dt, exc,
                   traceback.format_exc(limit=3))
-        return CollectorResult(name, city.slug, [], False, error=f"{type(exc).__name__}: {exc}",
+        return CollectorResult(name, city.slug, [], False, error=redact(f"{type(exc).__name__}: {exc}"),
                                seconds=dt)
 
 
