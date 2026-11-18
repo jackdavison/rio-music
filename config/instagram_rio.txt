@@ -27,3 +27,4 @@ rolesbons                  # Rolês Bons: Rio going-out guide; weekly agenda car
 ccjfrj  # Centro Cultural Justiça Federal, Centro: theater shows (choro, samba, afro)
 fala.paulinhaa  # Fala Paulinha: weekly Rio samba/roda agenda carousel
 quintaldayaya  # Quintal da YAYA: Rio samba quintal/roda (14K followers; from owner)
+obailedamusicabrasileira   # O Baile da Música Brasileira: free Wednesday series, Monobloco + guests, Brava Arena Jockey (Gávea)
