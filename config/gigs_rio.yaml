@@ -306,3 +306,108 @@ gigs:
     link: https://www.instagram.com/obailedamusicabrasileira/
     notes: "Free Wednesday series. Tickets on Ticketmaster (2 per CPF), released the Monday before, or at the box office from 16h on the day, subject to capacity. Gates open at 18h. Time assumed from earlier weeks."
     heard: 2026-11-18
+  - title: "Duo de pianos: Maria Teresa Madeira & Erika Ribeiro"
+    artists: [Maria Teresa Madeira, Erika Ribeiro]
+    date: 2026-12-09
+    time: "19:00"
+    venue: Sala Cecília Meireles
+    neighborhood: Lapa
+    price: 10
+    genre: choro / erudito
+    kind: show
+    link: https://www.instagram.com/casadochoro/
+    notes: "Festival Radamés Gnattali 120 anos (Dec 9–15). Tickets R$10 / R$5 (meia)."
+    heard: 2026-11-19
+  - title: "Oficina de arranjo com Jayme Vignoli"
+    artists: [Jayme Vignoli]
+    date: 2026-12-10
+    time: "15:00"
+    venue: Casa do Choro
+    neighborhood: Centro
+    free: true
+    genre: choro / oficina
+    link: https://www.instagram.com/casadochoro/
+    notes: "Festival Radamés Gnattali 120 anos (Dec 9–15). Arranging workshop on 'Radamés Carinhoso': inspiration and creativity for a classic of Brazilian music. Free; sign up via the Google Form linked from @casadochoro."
+    heard: 2026-11-19
+  - title: "Oficina de análise com Marcílio Lopes"
+    artists: [Marcílio Lopes]
+    date: 2026-12-11
+    time: "14:00"
+    venue: Casa do Choro
+    neighborhood: Centro
+    free: true
+    genre: choro / oficina
+    link: https://www.instagram.com/casadochoro/
+    notes: "Festival Radamés Gnattali 120 anos (Dec 9–15). Analysis workshop on the Suíte Retratos and other works: how popular melody is transformed in Gnattali. Free; sign up via the Google Form linked from @casadochoro."
+    heard: 2026-11-19
+  - title: "Palestra: Roberto Gnattali, a música para rádio de Radamés Gnattali"
+    artists: [Roberto Gnattali]
+    date: 2026-12-11
+    time: "17:00"
+    venue: Casa do Choro
+    neighborhood: Centro
+    free: true
+    genre: choro / palestra
+    link: https://www.instagram.com/casadochoro/
+    notes: "Festival Radamés Gnattali 120 anos (Dec 9–15). A talk on Gnattali's radio music. Free entry. At 18h the exhibition 'Mostra Radamés Gnattali e seu tempo' opens (free)."
+    heard: 2026-11-19
+  - title: "Quarteto Radamés Gnattali"
+    artists: [Quarteto Radamés Gnattali, Carla Rincon, Luca Kevorkian, Clara Santos, Miguel Braga]
+    date: 2026-12-11
+    time: "19:00"
+    venue: Casa do Choro
+    neighborhood: Centro
+    price: 10
+    genre: choro / erudito
+    kind: show
+    link: https://www.instagram.com/casadochoro/
+    notes: "Festival Radamés Gnattali 120 anos (Dec 9–15). String quartet: Carla Rincon and Luca Kevorkian (violins), Clara Santos (viola), Miguel Braga (cello). Tickets R$10 / R$5."
+    heard: 2026-11-19
+  - title: "Orquestra Furiosa Portátil"
+    artists: [Orquestra Furiosa Portátil, Pedro Aragão]
+    date: 2026-12-12
+    time: "17:00"
+    venue: Sala Cecília Meireles
+    neighborhood: Lapa
+    price: 10
+    genre: choro
+    kind: show
+    link: https://www.instagram.com/casadochoro/
+    notes: "Festival Radamés Gnattali 120 anos (Dec 9–15). Conducted by Pedro Aragão. Tickets R$10 / R$5."
+    heard: 2026-11-19
+  - title: "Orquestra Petrobras Sinfônica e solistas"
+    artists: [Orquestra Petrobras Sinfônica, Luís Rabello, Fábio Peixoto, Felipe Prazeres]
+    date: 2026-12-13
+    time: "11:00"
+    venue: Sala Cecília Meireles
+    neighborhood: Lapa
+    price: 20
+    genre: erudito / choro
+    kind: show
+    link: https://www.instagram.com/casadochoro/
+    notes: "Festival Radamés Gnattali 120 anos (Dec 9–15). Luís Rabello (piano) and Fábio Peixoto (violin) as soloists, conducted by Felipe Prazeres. Tickets R$20 / R$10."
+    heard: 2026-11-19
+  - title: "Quarteto Maogani convida Daniel Migliavacca"
+    artists: [Quarteto Maogani, Daniel Migliavacca]
+    date: 2026-12-14
+    time: "19:00"
+    venue: Casa do Choro
+    neighborhood: Centro
+    price: 10
+    genre: choro
+    kind: show
+    link: https://www.instagram.com/casadochoro/
+    notes: "Festival Radamés Gnattali 120 anos (Dec 9–15). Carlos Chaves (violão requinto), Diogo Sili (7-string violão), Lucas Gralato and Paulo Aragão (violões), with Daniel Migliavacca (bandolim). Tickets R$10 / R$5."
+    heard: 2026-11-19
+  - title: "Novo Quinteto: homenagem a Oscar Bolão"
+    artists: [Novo Quinteto, Maria Teresa Madeira, Marcos Nimrichter, Henrique Cazes, Omar Cavalheiro, Marcus Thadeu]
+    date: 2026-12-15
+    time: "19:00"
+    venue: Casa do Choro
+    neighborhood: Centro
+    price: 10
+    genre: choro
+    kind: show
+    link: https://www.instagram.com/casadochoro/
+    notes: "Festival Radamés Gnattali 120 anos (Dec 9–15). Maria Teresa Madeira (piano), Marcos Nimrichter (accordion), Henrique Cazes (violão), Omar Cavalheiro (bass), Marcus Thadeu (drums). Tickets R$10 / R$5."
+    heard: 2026-11-19
