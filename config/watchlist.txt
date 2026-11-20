@@ -13,3 +13,5 @@ venue: Renascença
 artist: Daniela Spielmann
 artist: Clarice Magalhães
 artist: Guinga
+artist: Abel Luiz
+artist: Choro Novo
