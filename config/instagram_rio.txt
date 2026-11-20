@@ -15,6 +15,7 @@ sambadopasseio             # Samba do Passeio, Passeio Público: Sundays from 12
 pixinbodega                # Pixin Bodega: Saturday choro/samba at Praça do Choro, Laranjeiras
 mangueira_oficial          # Mangueira: monthly feijoada and Saturday events at the Palácio do Samba
 feijoadadosalgueiro        # Feijoada do Salgueiro (quiet since Jan 2026; usually a Sunday, 13h)
+salgueirooriginal          # Acadêmicos do Salgueiro (the school's main account): quadra nights, ensaios, feijoadas
 imperioserrano             # Império Serrano, Madureira: feijoadas and rodas at the quadra
 oficialportela             # Portela, Madureira: feijoadas, quadra events
 unidosdevilaisabel         # Unidos de Vila Isabel: quadra feijoadas, ensaios
