@@ -1,5 +1,6 @@
 # São Paulo. Same shape as rio.yaml.
 name: São Paulo
+paused: true           # 2026-11-21: not going to SP this trip; collect/digest skip it, db and site keep current data
 timezone: America/Sao_Paulo
 ics_min_score: 65
 gcal_calendar_id_env: GCAL_ID_SP

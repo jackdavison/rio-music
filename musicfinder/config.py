@@ -42,6 +42,12 @@ class CityConfig:
         return self.raw.get("collectors") or {}
 
     @property
+    def paused(self) -> bool:
+        """`paused: true` in config/<city>.yaml: collect and digest skip the city (no scraping,
+        Apify or Claude spend) unless named with --city; publish still shows what's in the db."""
+        return bool(self.raw.get("paused"))
+
+    @property
     def digest(self) -> dict:
         return self.raw.get("digest") or {}
 

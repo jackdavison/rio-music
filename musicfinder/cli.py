@@ -123,6 +123,8 @@ def main(argv=None):
     logging.getLogger("urllib3").setLevel(logging.WARNING)
     logging.getLogger("httpx").setLevel(logging.WARNING)
     cities = load_cities(args.city.split(",") if args.city else None)
+    if args.command in ("collect", "digest") and not args.city:
+        cities = [c for c in cities if not c.paused]
     {"collect": cmd_collect, "digest": cmd_digest, "alerts": cmd_alerts,
      "publish": cmd_publish, "status": cmd_status,
      "compare-models": cmd_compare}[args.command](cities, args)
