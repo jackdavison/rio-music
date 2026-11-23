@@ -11,6 +11,7 @@ rioscenarium               # Rio Scenarium, Lapa
 barlunatico                # LunÀtico, Botafogo
 casacarnavalrio            # Casa Carnaval, Centro
 bardoserginhodb2           # Bar do Serginho, Santa Teresa
+chorodaesquina             # Choro da Esquina quarteto: Mondays 17h30 at Bar do Serginho, weekly guest
 sambadopasseio             # Samba do Passeio, Passeio Público: Sundays from 12h
 pixinbodega                # Pixin Bodega: Saturday choro/samba at Praça do Choro, Laranjeiras
 mangueira_oficial          # Mangueira: monthly feijoada and Saturday events at the Palácio do Samba

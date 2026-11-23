@@ -202,6 +202,21 @@ events:
       Open roda on the bar's veranda, going 11 years; players from several music schools sit in.
       Bafafá listed it through Oct 2026 (some listings say until 23h).
 
+  - name: Choro da Esquina (quarteto)
+    artists: [Fernando Leitzke, Rui Alvim, Pedro Aune]
+    venue: Bar do Serginho
+    neighborhood: Santa Teresa
+    weekday: monday
+    time: "17:30"
+    end_time: "20:00"
+    price: 40
+    genre: choro
+    link: https://www.instagram.com/chorodaesquina/
+    notes: >-
+      Monday choro quartet (piano, clarinet, bass) with a guest each week; Rua Dias de Barros 2A.
+      R$40 at the door; arrive early for a table. Not the Flamengo roda of the same name above
+      (different Instagram). Seen 2026-11-22.
+
   - name: Quarteto de Ouro
     artists: [Quarteto de Ouro]
     venue: Baixo Gago, Rua Gago Coutinho 51
